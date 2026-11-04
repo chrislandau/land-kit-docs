@@ -4,12 +4,12 @@ Public documentation for AI assistants (Raven, etc.) building Grasshopper script
 
 ## 📖 Quick Access
 
-- **Manifest (start here):** [manifest.json](./ai-reference/manifest.json)
-- **Components:** [component_registry.json](./ai-reference/component_registry.json)
-- **Layers:** [layer_validation.json](./ai-reference/layer_validation.json)
-- **Workflows:** [workflow_patterns.json](./ai-reference/workflow_patterns.json)
-- **Errors:** [error_reference.json](./ai-reference/error_reference.json)
-- **Integration Guide:** [INTEGRATION_GUIDE.json](./ai-reference/INTEGRATION_GUIDE.json)
+- **Manifest (start here):** [manifest.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/manifest.json)
+- **Components:** [component_registry.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/component_registry.json)
+- **Layers:** [layer_validation.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/layer_validation.json)
+- **Workflows:** [workflow_patterns.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/workflow_patterns.json)
+- **Errors:** [error_reference.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/error_reference.json)
+- **Integration Guide:** [INTEGRATION_GUIDE.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/INTEGRATION_GUIDE.json)
 
 ## 🌐 GitHub Pages URLs
 
@@ -43,7 +43,7 @@ The manifest contains links to all reference files and implementation examples.
 
 ## 📝 For Developers
 
-See [INTEGRATION_GUIDE.json](./ai-reference/INTEGRATION_GUIDE.json) for Python code examples and caching strategies.
+See [INTEGRATION_GUIDE.json](https://github.com/chrislandau/land-kit-docs/blob/main/ai-reference/INTEGRATION_GUIDE.json) for Python code examples and caching strategies.
 
 ---
 
