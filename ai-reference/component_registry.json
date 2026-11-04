@@ -9,6 +9,7 @@
       "name": "Add Color Rule",
       "nickname": "+CR",
       "description": "Add paving color rule to an area",
+      "usage": "For mapping color to pavers based on a rule. Use for both visualization and documentation.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -28,13 +29,13 @@
       "file": "add_color_rule.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For color mapping. Use for visualization and result communication."
+      ]
     },
     {
       "name": "Add CSV Data",
       "nickname": "+CSV DATA",
       "description": "Adds data from a csv to a plant or an area.",
+      "usage": "For adding data or features. Use to augment designs with information.",
       "category": "3 areas",
       "inputs": [
         {
@@ -73,13 +74,13 @@
       "output_types": [
         "Generic",
         "Data"
-      ],
-      "usage": "For adding data or features. Use to augment designs with information."
+      ]
     },
     {
       "name": "Add Curb Cuts",
       "nickname": "+curbCUT",
       "description": "Adds curb cuts to collection of curbs from curb cut centerlines. Also returns ramp features.",
+      "usage": "For curb and edge conditions. Use for hardscape edges and transitions.",
       "category": "4 mods",
       "inputs": [
         {
@@ -137,13 +138,13 @@
         "Curb",
         "Curb",
         "Curb"
-      ],
-      "usage": "For curb and edge conditions. Use for hardscape edges and transitions."
+      ]
     },
     {
       "name": "Add Custom Pattern",
       "nickname": "+CPAT",
       "description": "Add custom paver shapes as curves to an area",
+      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -170,13 +171,13 @@
       "file": "add_custom_pattern.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements."
+      ]
     },
     {
       "name": "Layer by Formula",
       "nickname": "=FORMULA",
       "description": "Calculates an environment layer based on a formula from other layers. result_layer = slope + elevation",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -203,13 +204,13 @@
       "file": "add_layer_by_formula.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Catchments Layer",
       "nickname": "+CATCH",
       "description": "Adds catchment analysis layer to the environment",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -273,13 +274,13 @@
         "Area",
         "Layer",
         "Layer"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Elevation Layer",
       "nickname": "+ELE",
       "description": "Adds a layer of elevation analysis to the environment",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -299,13 +300,13 @@
       "file": "add_layer_elevation.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Feature Proximity Layer",
       "nickname": "+FeatPROX",
       "description": "Adds a feature proximity layer of analysis to the environment",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -339,13 +340,13 @@
       "file": "add_layer_featureproximity.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Layer Fill",
       "nickname": "+FILL",
       "description": "Adds an analysis layer that is all one value.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -379,13 +380,13 @@
       "file": "add_layer_fill.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Image Layer",
       "nickname": "+Image",
       "description": "Adds an image-based layer of analysis to the environment.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -426,13 +427,13 @@
       "file": "add_layer_image.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Occurrence Layer",
       "nickname": "+OCCUR",
       "description": "Adds a layer that tallies occurrences of geometry density",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -466,13 +467,13 @@
       "file": "add_layer_occurence.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Layer Overlay",
       "nickname": "Overlay=",
       "description": "Overlays multiple layers into one layer. Combines each value combination into concatenated string values.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -516,13 +517,13 @@
         "Layer",
         "Area",
         "Area"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Layer Shape Value Set",
       "nickname": "Shp/Value-SET",
       "description": "Gets shapes from the child layers of given layer.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -552,13 +553,13 @@
         "Layer[]",
         "Layer[]",
         "Color[]"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Shape Values Layer",
       "nickname": "+ShapeValues",
       "description": "Adds a shape values layer to the environment. If a cell is in a shape, it will have the corresponding value.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -599,13 +600,13 @@
       "file": "add_layer_shape_values.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Slope Layer",
       "nickname": "+SLOPE",
       "description": "Adds a layer of slope analysis to the environment",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -625,13 +626,13 @@
       "file": "add_layer_slope.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Static Storage Layer",
       "nickname": "STORAGE",
       "description": "Gets the depth of cells within static storage basin shapes and calculates their volumes.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -663,13 +664,13 @@
       "output_types": [
         "Environment",
         "Layer"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Sun Exposure Layer",
       "nickname": "+SUN",
       "description": "Adds a 'sun exposure' and 'hours_of_sun' analysis layers to the environment. 'sun exposure' layer is 'Sun', 'Part Shade', or 'Shade' based on the number of hours of sun per day. The hours_of_sun layer",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -724,13 +725,13 @@
       "file": "add_layer_sunexposure.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Upslope Area Layer",
       "nickname": "+UPSLOPE",
       "description": "Adds a layer of upslope area analysis to the environment",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -750,13 +751,13 @@
       "file": "add_layer_upslopearea.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Add Values Layer",
       "nickname": "+VALUES",
       "description": "Adds a layer with a list of values to the environment. Must be the same quantity as get environment layer output.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -790,13 +791,13 @@
       "file": "add_layer_values.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Add Land Use to Areas",
       "nickname": "AREAS +LU",
       "description": "Allows user to assign a land use(assembly) from Sasaki Carbon Conscience to each area.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -823,13 +824,13 @@
       "file": "add_materials_to_areas.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Add Path Cross Slope",
       "nickname": "+crossSLOPE",
       "description": "Adds cross slope to path. Mode determines which side shifts up or both.",
+      "usage": "For circulation paths. Use for site connectivity and movement design.",
       "category": "4 mods",
       "inputs": [
         {
@@ -863,13 +864,13 @@
       "file": "add_path_cross_slope.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For circulation paths. Use for site connectivity and movement design."
+      ]
     },
     {
       "name": "Add Path Pattern",
       "nickname": "+PATH PAT",
       "description": "Add a running paving pattern to a path or an area. Paths will convert to areas.",
+      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -936,13 +937,13 @@
       "output_types": [
         "Area",
         "Paver[]"
-      ],
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements."
+      ]
     },
     {
       "name": "Add Pattern to Area",
       "nickname": "+PAT",
       "description": "Add a paving pattern to an area",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1016,13 +1017,13 @@
       "output_types": [
         "Area",
         "Paver[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Add Plants Constrained",
       "nickname": "[+PLNT]",
       "description": "Add plants to a planting area if all rules and parameters are met",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "8 place",
       "inputs": [
         {
@@ -1082,13 +1083,13 @@
       "output_types": [
         "Area",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Add Tessellation Pattern",
       "nickname": "+TESS",
       "description": "Creates a preview of a tessellation and adds it to an area",
+      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1160,13 +1161,13 @@
         "Area",
         "Paver[]",
         "Pattern"
-      ],
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements."
+      ]
     },
     {
       "name": "Add to Geo Set",
       "nickname": "GT+x",
       "description": "Adds geometry to specific categories of a geo set for topo. ie contour curves, spots, etc",
+      "usage": "For adding data or features. Use to augment designs with information.",
       "category": "4 mods",
       "inputs": [
         {
@@ -1228,13 +1229,13 @@
       "file": "add_to_geo_set.py",
       "output_types": [
         "GeoSet"
-      ],
-      "usage": "For adding data or features. Use to augment designs with information."
+      ]
     },
     {
       "name": "Add Wall Tops",
       "nickname": "+WALL TOPS",
       "description": "Creates wall tops from other walls and top spots",
+      "usage": "For walls and barriers. Use for site edges and structural elements.",
       "category": "4 mods",
       "inputs": [
         {
@@ -1273,13 +1274,13 @@
       "output_types": [
         "Wall",
         "Curve[]"
-      ],
-      "usage": "For walls and barriers. Use for site edges and structural elements."
+      ]
     },
     {
       "name": "Apply Niches from Data",
       "nickname": "DATA>NICHE",
       "description": "Apply plant data fields as constraints in a niche.",
+      "usage": "For apply niches from data operations. Use in relevant design workflows.",
       "category": "9 data",
       "inputs": [
         {
@@ -1311,13 +1312,13 @@
       "output_types": [
         "Plant",
         "Niche"
-      ],
-      "usage": "For apply niches from data operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Area Stats",
       "nickname": "AREA=STATS",
       "description": "Get Area stats.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -1362,13 +1363,13 @@
         "Area",
         "Data",
         "Data"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Pull Areas by Name",
       "nickname": "PULLarea",
       "description": "Pulls subset of Areas from a list by name.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -1405,13 +1406,13 @@
         "Area",
         "Area",
         "Area"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Array Modules",
       "nickname": "MODULES",
       "description": "Arrays groupings of pavers into the paving units from another area",
+      "usage": "For array modules operations. Use in relevant design workflows.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1452,13 +1453,13 @@
       "file": "array_modules.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For array modules operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Attractor Color Rule",
       "nickname": "CR:Attr",
       "description": "Create a color rule to create a gradient that follows a curve",
+      "usage": "For color mapping. Use for visualization and result communication.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1492,13 +1493,13 @@
       "file": "attractor_color_rule.py",
       "output_types": [
         "Curb"
-      ],
-      "usage": "For color mapping. Use for visualization and result communication."
+      ]
     },
     {
       "name": "Bake Text",
       "nickname": "TEXT",
       "description": "Bakes text. Creates a new layer if it does not exist. Can apply multiple texts to multiple planes, with different fonts, sizes, and alignments.",
+      "usage": "For bake text operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -1566,13 +1567,13 @@
         }
       ],
       "outputs": [],
-      "file": "bake_text.py",
-      "usage": "For bake text operations. Use in relevant design workflows."
+      "file": "bake_text.py"
     },
     {
       "name": "Calculate CN Layer",
       "nickname": "CNs=",
       "description": "Calculates CN areas and values.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -1624,13 +1625,13 @@
         "Layer",
         "Layer",
         "Layer"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Calculate Carbon",
       "nickname": "CARBON=",
       "description": "Calculates carbon deceleration curves/totals.",
+      "usage": "For computational analysis. Use for hydrology, thermal, cost assessment.",
       "category": "3 areas",
       "inputs": [
         {
@@ -1677,13 +1678,13 @@
         "Curve[]",
         "Color[]",
         "Generic"
-      ],
-      "usage": "For computational analysis. Use for hydrology, thermal, cost assessment."
+      ]
     },
     {
       "name": "Calculate Heat Flux",
       "nickname": "=HEAT",
       "description": "EXPERIMENTAL! Attempts to calculate ground heat flux as 'heat_flux' layer and potential temperature shifts as 'temp_shift' layer. Requires sun exposure and assignment of albedo and emissivity data to ",
+      "usage": "For computational analysis. Use for hydrology, thermal, cost assessment.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -1724,13 +1725,13 @@
       "file": "calculate_heat_flux.py",
       "output_types": [
         "Generic"
-      ],
-      "usage": "For computational analysis. Use for hydrology, thermal, cost assessment."
+      ]
     },
     {
       "name": "Change Plant Attributes",
       "nickname": "changeATTR",
       "description": "Will change the value of select attributes and for select plants in a plant list",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -1776,13 +1777,13 @@
       "output_types": [
         "Plant",
         "String"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Change Plant Data Values",
       "nickname": "changeDATA",
       "description": "Will change the value of selected data fields and for select plants in a plant list",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -1828,13 +1829,13 @@
       "output_types": [
         "Plant",
         "String"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Clip Areas",
       "nickname": "CLIP",
       "description": "Clips areas to a single boundary.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -1871,13 +1872,13 @@
         "Area",
         "Surface[]",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Collage Areas",
       "nickname": "COLLAGE",
       "description": "Flattens a stack of overlapping areas into a plan.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -1907,13 +1908,13 @@
         "Area",
         "Surface[]",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Create Area",
       "nickname": "+AREA",
       "description": "Creates an area class, a material zone, described as a mesh, trimmed surface, or closed curve.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "2 create",
       "inputs": [
         {
@@ -1966,13 +1967,13 @@
       "output_types": [
         "Area",
         "Mesh"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Create Curbs",
       "nickname": "+CURBS",
       "description": "Creates curbs from a variety of inputs",
+      "usage": "For curb and edge conditions. Use for hardscape edges and transitions.",
       "category": "2 create",
       "inputs": [
         {
@@ -2018,13 +2019,13 @@
       "output_types": [
         "Curb",
         "Curve[]"
-      ],
-      "usage": "For curb and edge conditions. Use for hardscape edges and transitions."
+      ]
     },
     {
       "name": "Create Environment",
       "nickname": "+ENV",
       "description": "Creates an environment instance that can be used as a container for different layers of analysis.",
+      "usage": "For analytical grids. Use for watershed, solar, cost analysis.",
       "category": "2 create",
       "inputs": [
         {
@@ -2058,13 +2059,13 @@
       "file": "create_environment.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For analytical grids. Use for watershed, solar, cost analysis."
+      ]
     },
     {
       "name": "Create Geo Set",
       "nickname": "+GEOSET",
       "description": "Sorts a topo geometry set from Rhino. Sublayers- CONTOURS, SPOTS, BREAKLINES, OTHER_GEO, MEND",
+      "usage": "For generating objects. Use to build design elements.",
       "category": "2 create",
       "inputs": [
         {
@@ -2091,13 +2092,13 @@
       "file": "create_geo_set.py",
       "output_types": [
         "GeoSet"
-      ],
-      "usage": "For generating objects. Use to build design elements."
+      ]
     },
     {
       "name": "Create Mix",
       "nickname": "MIX*2",
       "description": "Create 2-color mix",
+      "usage": "For generating objects. Use to build design elements.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -2131,13 +2132,13 @@
       "file": "create_mix.py",
       "output_types": [
         "Mix"
-      ],
-      "usage": "For generating objects. Use to build design elements."
+      ]
     },
     {
       "name": "Create Multi Mix",
       "nickname": "MIXxn",
       "description": "Create a multi color mix",
+      "usage": "For generating objects. Use to build design elements.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -2157,13 +2158,13 @@
       "file": "create_multi_mix.py",
       "output_types": [
         "Mix"
-      ],
-      "usage": "For generating objects. Use to build design elements."
+      ]
     },
     {
       "name": "Create Niche",
       "nickname": "+NICHE",
       "description": "Create niche for a plant",
+      "usage": "For generating objects. Use to build design elements.",
       "category": "2 create",
       "inputs": [
         {
@@ -2197,13 +2198,13 @@
       "file": "create_niche.py",
       "output_types": [
         "Niche"
-      ],
-      "usage": "For generating objects. Use to build design elements."
+      ]
     },
     {
       "name": "Create Paths",
       "nickname": "+PATH",
       "description": "Creates path from centerline",
+      "usage": "For circulation paths. Use for site connectivity and movement design.",
       "category": "2 create",
       "inputs": [
         {
@@ -2249,13 +2250,13 @@
       "output_types": [
         "Plant",
         "Path"
-      ],
-      "usage": "For circulation paths. Use for site connectivity and movement design."
+      ]
     },
     {
       "name": "Create Paths with Variable Slope",
       "nickname": "+PATH ~",
       "description": "Creates path from centerline, topo mesh, and slope range.",
+      "usage": "For circulation paths. Use for site connectivity and movement design.",
       "category": "2 create",
       "inputs": [
         {
@@ -2315,13 +2316,13 @@
       "output_types": [
         "Plant",
         "Path"
-      ],
-      "usage": "For circulation paths. Use for site connectivity and movement design."
+      ]
     },
     {
       "name": "REPLACE W CREATE AREAS (Create Paving Areas)",
       "nickname": "+AREA",
       "description": "REPLACE W CREATE AREAS Creates an area, a material zone to add layers, plants, pavers",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "2 create",
       "inputs": [
         {
@@ -2341,13 +2342,13 @@
       "file": "create_paving_areas.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Create Plant",
       "nickname": "+PLNT",
       "description": "Creates simple plant instances from basic data",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "2 create",
       "inputs": [
         {
@@ -2409,13 +2410,13 @@
       "file": "create_plant.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Create Plants from CSV Data",
       "nickname": "CSV>PLNTS",
       "description": "Creates plants with data from a CSV file. Plant data is stored in plant.data.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -2475,13 +2476,13 @@
       "output_types": [
         "Plant",
         "Data"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Create Plant List from Prompt BETA",
       "nickname": "AI>PLNTS",
       "description": "Creates short plant list with a ChatGPT prompt. Results are NOT guaranteed. Please use your OpenAI API key and your common sense.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -2527,13 +2528,13 @@
       "output_types": [
         "Plant",
         "Data"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Create Plant Query",
       "nickname": "+QUERY",
       "description": "Creates a query or filter for the kind of plants you will be pulling from the database.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -2567,13 +2568,13 @@
       "file": "create_plant_query.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "REPLACE W CREATE AREAS (Create Planting Area)",
       "nickname": "+AREA",
       "description": "REPLACE W CREATE AREAS Create planting area from closed curve border or trimmed surface. Surfaces with holes will be split up.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "2 create",
       "inputs": [
         {
@@ -2600,13 +2601,13 @@
       "file": "create_planting_area.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Create Pseudo Plants",
       "nickname": "+PS.Plants",
       "description": "Creates fake plants that have some degree of believability. Great for plant archetypes and testing ideas quickly.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "2 create",
       "inputs": [
         {
@@ -2640,13 +2641,13 @@
       "file": "create_pseudo_plants.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Create Stairs",
       "nickname": "+STAIRS",
       "description": "Creates a set of stairs from surface",
+      "usage": "For generating objects. Use to build design elements.",
       "category": "2 create",
       "inputs": [
         {
@@ -2678,13 +2679,13 @@
       "output_types": [
         "Generic",
         "Generic"
-      ],
-      "usage": "For generating objects. Use to build design elements."
+      ]
     },
     {
       "name": "Create Topo",
       "nickname": "+TOPO",
       "description": "Creates topography as a mesh. Includes all geo set geometries and topo features as inputs.",
+      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
       "category": "2 create",
       "inputs": [
         {
@@ -2711,13 +2712,13 @@
       "file": "create_topo.py",
       "output_types": [
         "Topo"
-      ],
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design."
+      ]
     },
     {
       "name": "Create Walls",
       "nickname": "+WALLS",
       "description": "Creates walls from a variety of inputs",
+      "usage": "For walls and barriers. Use for site edges and structural elements.",
       "category": "2 create",
       "inputs": [
         {
@@ -2763,13 +2764,13 @@
       "output_types": [
         "Wall",
         "Curve[]"
-      ],
-      "usage": "For walls and barriers. Use for site edges and structural elements."
+      ]
     },
     {
       "name": "Create Environment",
       "nickname": "+H2O ENV",
       "description": "Creates an environment instance that can be used as a container for different layers of analysis.",
+      "usage": "For analytical grids. Use for watershed, solar, cost analysis.",
       "category": "2 create",
       "inputs": [
         {
@@ -2803,13 +2804,13 @@
       "file": "create_water_env.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For analytical grids. Use for watershed, solar, cost analysis."
+      ]
     },
     {
       "name": "Customize Parameters",
       "nickname": "PARAMS",
       "description": "Customize parameters in a dedicated window for selected geometry on a specific layer. Stores each parameter as user text, key and value. And keeps them in sync across geometry.",
+      "usage": "For customize parameters operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -2835,13 +2836,13 @@
         }
       ],
       "outputs": [],
-      "file": "customize_parameters.py",
-      "usage": "For customize parameters operations. Use in relevant design workflows."
+      "file": "customize_parameters.py"
     },
     {
       "name": "Cut Sections",
       "nickname": "SECTION",
       "description": "Cuts sections through geometry and provide corresponding planes.",
+      "usage": "For cut sections operations. Use in relevant design workflows.",
       "category": "3 areas",
       "inputs": [
         {
@@ -2897,13 +2898,13 @@
         "Layer[]",
         "Color[]",
         "Generic"
-      ],
-      "usage": "For cut sections operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Load Data",
       "nickname": "LOAD",
       "description": "Loads plant kit data from a .land file. Just plants for now.",
+      "usage": "For load data operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -2923,13 +2924,13 @@
       "file": "data_load.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For load data operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Save Data",
       "nickname": "SAVE",
       "description": "Saves plant kit data to a .land file. Just plants for now",
+      "usage": "For save data operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -2948,13 +2949,13 @@
         }
       ],
       "outputs": [],
-      "file": "data_save.py",
-      "usage": "For save data operations. Use in relevant design workflows."
+      "file": "data_save.py"
     },
     {
       "name": "Diffuse Layer",
       "nickname": "DIFFUSE",
       "description": "Diffuses the values of a layer between its cells",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -2995,13 +2996,13 @@
       "file": "diffuse_layer.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Draw Area Linework",
       "nickname": "areaLINEWORK",
       "description": "Draws area linework in a few different ways.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -3038,13 +3039,13 @@
         "Area",
         "Layer[]",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Draw Area Pattern",
       "nickname": "DRAW PAT",
       "description": "Draw the patterns in areas according to pattern, colors, and color rules.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "output",
       "inputs": [
         {
@@ -3100,13 +3101,13 @@
         "Color[]",
         "Mix",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Draw Areas as Meshes",
       "nickname": "AREA=MESH",
       "description": "Draws areas as meshes and projected to the underlying topo mesh",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -3148,13 +3149,13 @@
         "Mesh",
         "Layer[]",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Bake Areas as Hatches",
       "nickname": "AREA=HATCHES",
       "description": "Bakes areas as hatches into Rhino",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -3180,13 +3181,13 @@
         }
       ],
       "outputs": [],
-      "file": "draw_areas_as_hatches.py",
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      "file": "draw_areas_as_hatches.py"
     },
     {
       "name": "Draw Areas as Slabs",
       "nickname": "AREA=SLAB",
       "description": "Draws areas as thickened slabs with independent top and bottom topography. Mesh style is way faster",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -3244,13 +3245,13 @@
         "Area",
         "Layer[]",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Draw Areas as Surfaces",
       "nickname": "AREA=SRF",
       "description": "Draws areas as surfaces as closely as possible. Draw Areas -as meshes- is faster",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -3301,13 +3302,13 @@
         "Surface[]",
         "Layer[]",
         "Color[]"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Draw Bloom Calendar",
       "nickname": "BLOOMcal",
       "description": "Draws components of a bloom calendar in a few different styles.",
+      "usage": "For visualization output. Use for drawings, schedules, graphics.",
       "category": "output",
       "inputs": [
         {
@@ -3380,13 +3381,13 @@
         "Generic",
         "Generic",
         "Generic"
-      ],
-      "usage": "For visualization output. Use for drawings, schedules, graphics."
+      ]
     },
     {
       "name": "Draw Curbs",
       "nickname": "CURB=",
       "description": "Draws curb features",
+      "usage": "For curb and edge conditions. Use for hardscape edges and transitions.",
       "category": "output",
       "inputs": [
         {
@@ -3426,13 +3427,13 @@
         "Curb",
         "Curb",
         "Curb"
-      ],
-      "usage": "For curb and edge conditions. Use for hardscape edges and transitions."
+      ]
     },
     {
       "name": "Water Flow Lines",
       "nickname": "FLOWLINES=",
       "description": "Draws flow line polylines geometry on a mesh.",
+      "usage": "For water flow lines operations. Use in relevant design workflows.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -3480,13 +3481,13 @@
       "file": "draw_flow_lines.py",
       "output_types": [
         "Generic"
-      ],
-      "usage": "For water flow lines operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Draw Layer as Shapes",
       "nickname": "ENVlayerSHAPES",
       "description": "Draws unique areas of a layer as surfaces. Will work for any analysis layer. Default=catchments",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -3537,13 +3538,13 @@
         "Layer",
         "Layer",
         "Color[]"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Draw Layer as Mesh",
       "nickname": "ENVlayerMESH",
       "description": "Draw a particular environment layer as a mesh with colored vertices.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -3606,13 +3607,13 @@
         "Layer",
         "Color[]",
         "Layer"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Draw Paths",
       "nickname": "PATH=",
       "description": "Draws separate path geometries",
+      "usage": "For circulation paths. Use for site connectivity and movement design.",
       "category": "output",
       "inputs": [
         {
@@ -3637,13 +3638,13 @@
       "output_types": [
         "Surface[]",
         "Path"
-      ],
-      "usage": "For circulation paths. Use for site connectivity and movement design."
+      ]
     },
     {
       "name": "Draw Stairs",
       "nickname": "STAIRS=",
       "description": "Draws geometry for a stair instance",
+      "usage": "For visualization output. Use for drawings, schedules, graphics.",
       "category": "output",
       "inputs": [
         {
@@ -3668,13 +3669,13 @@
       "output_types": [
         "Generic",
         "Generic"
-      ],
-      "usage": "For visualization output. Use for drawings, schedules, graphics."
+      ]
     },
     {
       "name": "Draw Topo",
       "nickname": "TOPO=",
       "description": "Draws topography based on all modifications",
+      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
       "category": "output",
       "inputs": [
         {
@@ -3720,13 +3721,13 @@
       "output_types": [
         "Mesh",
         "Topo"
-      ],
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design."
+      ]
     },
     {
       "name": "Draw Walls",
       "nickname": "WALL=",
       "description": "Draws wall features",
+      "usage": "For walls and barriers. Use for site edges and structural elements.",
       "category": "output",
       "inputs": [
         {
@@ -3766,13 +3767,13 @@
         "Wall",
         "Wall",
         "Wall"
-      ],
-      "usage": "For walls and barriers. Use for site edges and structural elements."
+      ]
     },
     {
       "name": "Environment Color Rule",
       "nickname": "CR:Enviro",
       "description": "Create a color rule using a layer from an environment.",
+      "usage": "For color mapping. Use for visualization and result communication.",
       "category": "6 pattern",
       "inputs": [],
       "outputs": [
@@ -3784,13 +3785,13 @@
       "file": "environment_color_rule.py",
       "output_types": [
         "Curb"
-      ],
-      "usage": "For color mapping. Use for visualization and result communication."
+      ]
     },
     {
       "name": "Evaluate Environment",
       "nickname": "EVAL<E>",
       "description": "Will evaluate environment layers at given points",
+      "usage": "For analytical grids. Use for watershed, solar, cost analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -3834,13 +3835,13 @@
         "Layer[]",
         "Environment",
         "Environment"
-      ],
-      "usage": "For analytical grids. Use for watershed, solar, cost analysis."
+      ]
     },
     {
       "name": "Export Blocks as DAE",
       "nickname": "BLCKS=DAE",
       "description": "Export sublayers to dae files. Activating will initiate prompts.",
+      "usage": "For export blocks as dae operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -3852,13 +3853,13 @@
         }
       ],
       "outputs": [],
-      "file": "export_daes.py",
-      "usage": "For export blocks as dae operations. Use in relevant design workflows."
+      "file": "export_daes.py"
     },
     {
       "name": "Get Plant Block Info",
       "nickname": "{PLNT}S",
       "description": "Get info needed to make and place plant blocks",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "output",
       "inputs": [
         {
@@ -3910,13 +3911,13 @@
         "Plant",
         "Plant",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Bake Plant Blocks",
       "nickname": "{PLNT}S=BLCKS",
       "description": "Bake plant species to sub layers.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "output",
       "inputs": [
         {
@@ -3964,13 +3965,13 @@
       "file": "export_plant_blocks.py",
       "output_types": [
         "String"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Get Area Plants",
       "nickname": "AreaPLNT=",
       "description": "Get the plants from an area instance",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "output",
       "inputs": [
         {
@@ -3990,13 +3991,13 @@
       "file": "get_area_plants.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Get Current Plant Data",
       "nickname": "PLANTdata=",
       "description": "Reveals attributes and data, keys and values",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -4045,13 +4046,13 @@
         "Plant",
         "Data",
         "Data"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Get Environment Layer",
       "nickname": "ENVlayer",
       "description": "Get values from a particular environment layer",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -4083,13 +4084,13 @@
       "output_types": [
         "Environment",
         "Environment"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Get Plant Info",
       "nickname": "PLNT=",
       "description": "Get the attributes and geometries of a plant",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "output",
       "inputs": [
         {
@@ -4139,13 +4140,13 @@
         "Plant",
         "Plant",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Get Plant Niche Info",
       "nickname": "NICHEinfo",
       "description": "Gets a plant's niche information a few ways",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "output",
       "inputs": [
         {
@@ -4180,13 +4181,13 @@
         "Plant",
         "Plant",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Gradient Curve Color Rule",
       "nickname": "CR:Grad",
       "description": "Create a color rule to create a gradient that follows a curve",
+      "usage": "For color mapping. Use for visualization and result communication.",
       "category": "6 pattern",
       "inputs": [],
       "outputs": [
@@ -4198,13 +4199,13 @@
       "file": "gradient_curve_color_rule.py",
       "output_types": [
         "Curb"
-      ],
-      "usage": "For color mapping. Use for visualization and result communication."
+      ]
     },
     {
       "name": "Image Color Rule",
       "nickname": "CR:Image",
       "description": "Create a color rule using an image from a surface.",
+      "usage": "For color mapping. Use for visualization and result communication.",
       "category": "6 pattern",
       "inputs": [],
       "outputs": [
@@ -4216,33 +4217,33 @@
       "file": "image_color_rule.py",
       "output_types": [
         "Curb"
-      ],
-      "usage": "For color mapping. Use for visualization and result communication."
+      ]
     },
     {
       "name": "Land Kit Help",
       "nickname": "HELP!",
       "description": "Get more info, report a bug, or leave us some feedback. Component also updates all Land Kit component input and output names",
+      "usage": "For land kit help operations. Use in relevant design workflows.",
       "category": "1 info",
       "inputs": [],
       "outputs": [],
-      "file": "land_kit_help.py",
-      "usage": "For land kit help operations. Use in relevant design workflows."
+      "file": "land_kit_help.py"
     },
     {
       "name": "Land Kit License",
       "nickname": "LICENSE",
       "description": "Update Land Kit License with a key.",
+      "usage": "For land kit license operations. Use in relevant design workflows.",
       "category": "1 info",
       "inputs": [],
       "outputs": [],
-      "file": "land_kit_license.py",
-      "usage": "For land kit license operations. Use in relevant design workflows."
+      "file": "land_kit_license.py"
     },
     {
       "name": "Layer Pipeline",
       "nickname": "PIPELINE",
       "description": "Pulls geometry from Rhino layers as it is updated.",
+      "usage": "For environmental analysis layers. Use for scientific analysis.",
       "category": "output",
       "inputs": [
         {
@@ -4289,13 +4290,13 @@
         "Color[]",
         "Layer",
         "Layer"
-      ],
-      "usage": "For environmental analysis layers. Use for scientific analysis."
+      ]
     },
     {
       "name": "Freeze Area Plants",
       "nickname": "FREEZE!",
       "description": "Freezes or makes all plants fixed within an area during subsequent plant packing. Option to unfreeze.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "8 place",
       "inputs": [
         {
@@ -4322,13 +4323,13 @@
       "file": "layout_freeze_area.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Pack Plants",
       "nickname": "PACK",
       "description": "Packs plants to avoid overlap. Think fish eggs.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "8 place",
       "inputs": [
         {
@@ -4367,13 +4368,13 @@
       "output_types": [
         "Area",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Fill Area with Pattern",
       "nickname": "+fillPTRN[]",
       "description": "Fill a planting area based on given points, rules, and parameters. Individual self spacing has no effect.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "8 place",
       "inputs": [
         {
@@ -4454,13 +4455,13 @@
       "output_types": [
         "Area",
         "Area"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Layout Plant Row",
       "nickname": "+ROW",
       "description": "Create rows of plants. Will stack according to the plant's radius + spacing",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "8 place",
       "inputs": [
         {
@@ -4501,13 +4502,13 @@
       "file": "layout_plant_row.py",
       "output_types": [
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Fill Area with Plants",
       "nickname": "+fillPLNTS[]",
       "description": "Fill a planting area based on rules and parameters given",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "8 place",
       "inputs": [
         {
@@ -4576,13 +4577,13 @@
       "file": "layout_plants_fill_constrained.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Remove Overlaps",
       "nickname": "-OVERLAPS",
       "description": "Removes overlapping plants based on a max overlap value.",
+      "usage": "For remove overlaps operations. Use in relevant design workflows.",
       "category": "8 place",
       "inputs": [
         {
@@ -4621,13 +4622,13 @@
       "output_types": [
         "Area",
         "Generic"
-      ],
-      "usage": "For remove overlaps operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Update Conditions",
       "nickname": "UPDATE<A>",
       "description": "Will update planting areas based on new conditions. This will remove plants that are invalid based on the new environmental conditions.",
+      "usage": "For update conditions operations. Use in relevant design workflows.",
       "category": "8 place",
       "inputs": [
         {
@@ -4674,13 +4675,13 @@
         "Generic",
         "Layer[]",
         "Generic"
-      ],
-      "usage": "For update conditions operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Merge Plant Niche",
       "nickname": "+=NICHE",
       "description": "Adds constraints from a niche into a plant's niche",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "8 place",
       "inputs": [
         {
@@ -4726,13 +4727,13 @@
       "output_types": [
         "Plant",
         "String"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Grade Topo Mod",
       "nickname": "GRADE_mod",
       "description": "adjusts topography point elevations in relation to slope and geometry and feature elevations",
+      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4787,13 +4788,13 @@
       "file": "modify_grade_topo.py",
       "output_types": [
         "Topo"
-      ],
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design."
+      ]
     },
     {
       "name": "Patch Topo Mod",
       "nickname": "PATCH_mod",
       "description": "Patch changes into a topography instance. Includes all geo set geometries and topo features as inputs.",
+      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4827,13 +4828,13 @@
       "file": "modify_patch_topo.py",
       "output_types": [
         "Topo"
-      ],
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design."
+      ]
     },
     {
       "name": "Sculpt Topo Mod",
       "nickname": "SCULPT_mod",
       "description": "adjusts topography elevations in relation to height parameter and distance to inputs",
+      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4888,13 +4889,13 @@
       "file": "modify_sculpt_topo.py",
       "output_types": [
         "Topo"
-      ],
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design."
+      ]
     },
     {
       "name": "Smooth Topo Mod",
       "nickname": "SMOOTH_mod",
       "description": "modifies topography object by smoothing given areas",
+      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4956,13 +4957,13 @@
       "file": "modify_topo_smooth.py",
       "output_types": [
         "Topo"
-      ],
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design."
+      ]
     },
     {
       "name": "Niche Rule Loose Constraint",
       "nickname": "r=Loose",
       "description": "Creates a niche rule that acts like a loose constraint; if any parameters of this sub niche are met, constraint will be met.",
+      "usage": "For niche rule loose constraint operations. Use in relevant design workflows.",
       "category": "8 place",
       "inputs": [
         {
@@ -4982,13 +4983,13 @@
       "file": "niche_rule_loose_constraint.py",
       "output_types": [
         "Rule"
-      ],
-      "usage": "For niche rule loose constraint operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Niche Rule Mapped Constraint",
       "nickname": "r=MAPPED",
       "description": "Maps value at location from one analysis layer to another and compares to value on other map.",
+      "usage": "For niche rule mapped constraint operations. Use in relevant design workflows.",
       "category": "8 place",
       "inputs": [
         {
@@ -5036,13 +5037,13 @@
       "file": "niche_rule_mapped_constraint.py",
       "output_types": [
         "Rule"
-      ],
-      "usage": "For niche rule mapped constraint operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Paver Texture",
       "nickname": "+TEXTURE",
       "description": "Adds a randomly scaled texture to paver meshes within given scale range. Best with square images.",
+      "usage": "For creating paving patterns and hardscape. Use for surface design and material articulation.",
       "category": "output",
       "inputs": [
         {
@@ -5076,13 +5077,13 @@
       "file": "paver_textures.py",
       "output_types": [
         "Paver[]"
-      ],
-      "usage": "For creating paving patterns and hardscape. Use for surface design and material articulation."
+      ]
     },
     {
       "name": "Draw Plant Schedule",
       "nickname": "=SCHED",
       "description": "Draws a plant schedule at specified origin. Will save a csv file as well if csv path is given.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "output",
       "inputs": [
         {
@@ -5164,13 +5165,13 @@
         "Plant",
         "Plant",
         "Color[]"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Pull Plants by Name",
       "nickname": "PULLplant",
       "description": "Pulls subset of plants from a list by name",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -5202,13 +5203,13 @@
       "output_types": [
         "Plant",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Project Paver Meshes",
       "nickname": "PROJpav",
       "description": "Projects paver meshes to a topo mesh, while keeping them flat",
+      "usage": "For creating paving patterns and hardscape. Use for surface design and material articulation.",
       "category": "output",
       "inputs": [
         {
@@ -5235,13 +5236,13 @@
       "file": "project_paver_meshes.py",
       "output_types": [
         "Generic"
-      ],
-      "usage": "For creating paving patterns and hardscape. Use for surface design and material articulation."
+      ]
     },
     {
       "name": "Pseudo Niche Parameters",
       "nickname": "~nichePARAM",
       "description": "Creates fake niche paramters based on particularly available analysis layers in an environment.",
+      "usage": "For pseudo niche parameters operations. Use in relevant design workflows.",
       "category": "9 data",
       "inputs": [
         {
@@ -5285,13 +5286,13 @@
         "Niche",
         "Niche",
         "Niche"
-      ],
-      "usage": "For pseudo niche parameters operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Pseudo Plant Parameters",
       "nickname": "~plntPARAM",
       "description": "Randomly creates basic plant species parameters for non-existent species.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
       "category": "9 data",
       "inputs": [
         {
@@ -5357,13 +5358,13 @@
         "Plant",
         "Plant",
         "Plant"
-      ],
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts."
+      ]
     },
     {
       "name": "Rationalize Pattern",
       "nickname": "RATIONAL",
       "description": "Given a pattern of paver shapes and colors, in combination with an grid pattern, rationalize pattern.",
+      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
       "category": "output",
       "inputs": [
         {
@@ -5412,13 +5413,13 @@
         "Pattern",
         "Pattern",
         "Color[]"
-      ],
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements."
+      ]
     },
     {
       "name": "Rule Restriction Gradient",
       "nickname": "ruleGRAD",
       "description": "Limits plants in an environment by mapping an attribute range to an analysis layer range",
+      "usage": "For rule restriction gradient operations. Use in relevant design workflows.",
       "category": "8 place",
       "inputs": [
         {
@@ -5466,13 +5467,13 @@
       "file": "rule_restriction_gradient.py",
       "output_types": [
         "Environment"
-      ],
-      "usage": "For rule restriction gradient operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Set Age",
       "nickname": "AGE",
       "description": "Sets the age of the plants in a particular area. Based on max size and 'Growth Rate' data field (And Mature height(.5-100 ft) ('Slow'(5-200yr), 'Moderate'(2-50yr), and 'Rapid'(1-20yr)).",
+      "usage": "For set age operations. Use in relevant design workflows.",
       "category": "9 data",
       "inputs": [
         {
@@ -5499,13 +5500,13 @@
       "file": "set_age.py",
       "output_types": [
         "Area"
-      ],
-      "usage": "For set age operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Contours",
       "nickname": "CONTOURS",
       "description": "Cut topo mesh contours quickly.",
+      "usage": "For contours operations. Use in relevant design workflows.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5549,13 +5550,13 @@
         "Generic",
         "Generic",
         "Generic"
-      ],
-      "usage": "For contours operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Cut+Fill Analysis",
       "nickname": "CUT+FILL",
       "description": "Evaluates and visualizes the topo cut and fill volumes between 2 meshes",
+      "usage": "For cut+fill analysis operations. Use in relevant design workflows.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5616,13 +5617,13 @@
         "Generic",
         "Color[]",
         "Generic"
-      ],
-      "usage": "For cut+fill analysis operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Elevation Analysis",
       "nickname": "ELEVATION",
       "description": "Evaluates mesh elevation of vertices and creates a colored mesh.",
+      "usage": "For elevation analysis operations. Use in relevant design workflows.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5666,13 +5667,13 @@
         "Mesh",
         "Color[]",
         "Generic"
-      ],
-      "usage": "For elevation analysis operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Slope Analysis Pieces",
       "nickname": "SLOPEpieces",
       "description": "Evaluates mesh slope of each face and groups into separate mesh pieces",
+      "usage": "For slope analysis pieces operations. Use in relevant design workflows.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5716,13 +5717,13 @@
         "Mesh",
         "Color[]",
         "Generic"
-      ],
-      "usage": "For slope analysis pieces operations. Use in relevant design workflows."
+      ]
     },
     {
       "name": "Trim Pavers to Area",
       "nickname": "PAVTrim",
       "description": "Trim pavers in an area to the area border. This can be slower.",
+      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -5757,13 +5758,13 @@
         "Paver[]",
         "Area",
         "Area"
-      ],
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization."
+      ]
     },
     {
       "name": "Sort Key Values",
       "nickname": "SORT K-V",
       "description": "Takes a set of keys and values and creates component outputs for each key value pair.",
+      "usage": "For sort key values operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -5787,13 +5788,13 @@
           "description": "Varies depending on each key input. Outputs are built dynamically."
         }
       ],
-      "file": "custom_components/sort_key_values.py",
-      "usage": "For sort key values operations. Use in relevant design workflows."
+      "file": "custom_components/sort_key_values.py"
     },
     {
       "name": "Bake+Preview",
       "nickname": "BAKE+PREV",
       "description": "Bakes and previews geometry. Replaces geometry baked with the same bake name.",
+      "usage": "For bake+preview operations. Use in relevant design workflows.",
       "category": "output",
       "inputs": [
         {
@@ -5852,8 +5853,7 @@
           "description": "Baked geometry output."
         }
       ],
-      "file": "custom_components/bake.py",
-      "usage": "For bake+preview operations. Use in relevant design workflows."
+      "file": "custom_components/bake.py"
     }
   ]
 }
