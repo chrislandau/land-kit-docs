@@ -2,7 +2,7 @@
   "meta": {
     "version": "2.3.1",
     "last_updated": "2026-11-04",
-    "total_components": 123
+    "total_components": 125
   },
   "components": [
     {
@@ -5141,6 +5141,71 @@
         }
       ],
       "file": "trim_pavers_to_area.py"
+    },
+    {
+      "name": "Sort Key Values",
+      "nickname": "SORT K-V",
+      "description": "Takes a set of keys and values and creates component outputs for each key value pair.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "keys",
+          "nickname": "keys",
+          "description": "Input keys. One key for each value.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "values",
+          "nickname": "values",
+          "description": "Input values. One value for each key.",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "description": "Component outputs for each key-value pair"
+        }
+      ],
+      "file": "custom_components/sort_key_values.py"
+    },
+    {
+      "name": "Bake+Preview",
+      "nickname": "BAKE+PREV",
+      "description": "Bakes and previews geometry. Replaces geometry baked with the same bake name.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "Geometry to bake or preview.",
+          "type": "geometry",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Layer name for each piece of geometry.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "color",
+          "nickname": "color",
+          "description": "Color for baked geometry.",
+          "type": "color",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out",
+          "description": "Geometry output"
+        }
+      ],
+      "file": "custom_components/bake.py"
     }
   ]
 }
