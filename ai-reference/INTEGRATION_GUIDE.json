@@ -3,274 +3,265 @@
     "version": "2.3.1",
     "last_updated": "2026-11-04",
     "title": "Land Kit AI Integration Guide",
-    "description": "How to access and use Land Kit AI reference documentation"
+    "description": "How to access and use Land Kit AI reference documentation for comprehensive landscape design workflows",
+    "scope": "Land Kit is a broad toolkit for landscape design and analysis - plants, paving, grading, environmental analysis, cost estimation, visualization, and more"
   },
   "quick_start": {
-    "for_raven": "If you're using Raven in Grasshopper, here's how to reference Land Kit docs in your prompts",
-    "for_developers": "If you're building a Grasshopper AI tool, here's how to integrate Land Kit",
-    "for_users": "If you want to generate Land Kit scripts with AI, here's what to ask the AI"
+    "for_raven": "If you're using Raven in Grasshopper, reference Land Kit docs to generate scripts for any landscape design task",
+    "for_developers": "If you're building a Grasshopper AI tool, integrate Land Kit documentation to enable intelligent component chaining",
+    "for_users": "If you want to generate Land Kit scripts with AI, describe what you're designing - plants, paving, grading, analysis, or combinations"
+  },
+  "what_is_land_kit": {
+    "overview": "Land Kit is a comprehensive landscape design toolkit with 125+ components across multiple domains",
+    "domains": [
+      {
+        "name": "Plant Design",
+        "description": "Niche-based plant placement, constraint solving, species selection, bloom calendars, plant schedules",
+        "example": "Fill a garden with plants that fit site conditions (sun, soil, water)"
+      },
+      {
+        "name": "Paving & Patterns",
+        "description": "Tessellations, color patterns, custom paver layouts, rationalization, textured surfaces",
+        "example": "Create a paving pattern with color gradients across an area"
+      },
+      {
+        "name": "Site Grading",
+        "description": "Topographic modifications, slope analysis, stairs, walls, fill/cut analysis, terracing",
+        "example": "Create graded terraces with custom slopes and walls"
+      },
+      {
+        "name": "Environmental Analysis",
+        "description": "Hydrology (catchments, flow), soil infiltration (CN), solar exposure, temperature, cost, carbon",
+        "example": "Calculate watershed runoff and infiltration for drainage design"
+      },
+      {
+        "name": "Area & Slab Design",
+        "description": "Create, modify, and analyze landscape areas - surfaces, slabs, meshes, clipping, collaging",
+        "example": "Design overlapping planting areas with different plant mixes"
+      },
+      {
+        "name": "Output & Visualization",
+        "description": "Drawings, schedules, CAD export, baking, labeling, mesh generation",
+        "example": "Generate a plant schedule with blooming calendars and cost estimates"
+      }
+    ]
   },
   "github_endpoints": {
-    "base_url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference",
+    "base_url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference",
     "files": [
       {
         "file": "component_registry.json",
-        "size": "148 KB",
-        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/component_registry.json",
-        "use": "Get list of all components and their input/output specs",
+        "size": "~150 KB",
+        "url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/component_registry.json",
+        "use": "Complete catalog of all 125 components with inputs, outputs, and specifications",
+        "update_frequency": "Weekly (auto-generated from source)"
+      },
+      {
+        "file": "component_connections.json",
+        "size": "~50 KB",
+        "url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/component_connections.json",
+        "use": "Data type mapping showing which components can chain together",
         "update_frequency": "Weekly (auto-generated from source)"
       },
       {
         "file": "layer_validation.json",
-        "size": "6.7 KB",
-        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/layer_validation.json",
-        "use": "Validate layer names and acceptable values",
+        "size": "~10 KB",
+        "url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/layer_validation.json",
+        "use": "Standard layers (elevation, slope, plants, cost, etc.) and how to create custom layers",
         "update_frequency": "Monthly (manually updated)"
       },
       {
         "file": "workflow_patterns.json",
-        "size": "8.1 KB",
-        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/workflow_patterns.json",
-        "use": "Reference proven workflow sequences",
+        "size": "~10 KB",
+        "url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/workflow_patterns.json",
+        "use": "Example workflows across different domains - reference proven patterns",
         "update_frequency": "As new patterns are added"
       },
       {
         "file": "error_reference.json",
-        "size": "9.8 KB",
-        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/error_reference.json",
-        "use": "Troubleshoot errors and understand solutions",
+        "size": "~12 KB",
+        "url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/error_reference.json",
+        "use": "Common errors and troubleshooting solutions",
         "update_frequency": "As new errors are encountered"
       },
       {
         "file": "README.md",
-        "size": "4.6 KB",
-        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/README.md",
-        "use": "Overview of all AI reference files",
+        "size": "~5 KB",
+        "url": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/README.md",
+        "use": "Overview and quick access guide",
         "update_frequency": "As documentation changes"
       }
     ]
   },
   "usage_scenarios": [
     {
-      "scenario": "I want to generate a hydrology script",
+      "scenario": "I want to design a planting layout with constrained placement",
       "steps": [
-        "1. Ask AI: 'Generate a Land Kit Grasshopper script for basic hydrology analysis'",
-        "2. AI fetches workflow_patterns.json and finds 'basic_hydrology' workflow",
-        "3. AI references component_registry.json to get component details",
-        "4. AI generates script following the workflow sequence"
+        "1. Ask AI: 'Design a planting layout where plants fit available sun and soil conditions'",
+        "2. AI fetches component_connections.json to understand Plant workflow components",
+        "3. AI references component_registry.json for constraint options",
+        "4. AI generates script using Niche selection and constraint-based placement"
       ],
-      "prompt_example": "Using Land Kit, create a Grasshopper script that: creates an environment, adds elevation, calculates slope, and delineates catchments. Follow the basic_hydrology workflow pattern."
+      "prompt_example": "Create a Grasshopper script that places plants in areas based on niche constraints (sun exposure 3-6 hrs, soil moisture medium). Show a plant schedule output."
     },
     {
-      "scenario": "I want to add custom data layers",
+      "scenario": "I want to create paving with color patterns and optimize the pattern",
       "steps": [
-        "1. Ask AI: 'Add HSG and ground cover data to my Land Kit analysis'",
-        "2. AI looks up layer_validation.json to find valid HSG values",
-        "3. AI references workflow_patterns.json for cn_calculation workflow",
-        "4. AI generates appropriate 'Add Shape Values Layer' components"
+        "1. Ask AI: 'Create tessellation pattern with color gradients, then rationalize it'",
+        "2. AI finds pattern components and rationalization components via connections map",
+        "3. AI chains components: Tessellation → Color Rule → Rationalize Pattern",
+        "4. AI generates integrated workflow"
       ],
-      "prompt_example": "Add HSG (A, B, C, D) and ground cover (LAWN, WOODS, PASTURE) to my environment using shapes."
+      "prompt_example": "Generate a paving pattern using tessellations with a gradient color scheme. Rationalize the result to minimize paver types."
     },
     {
-      "scenario": "My script failed with an error",
+      "scenario": "I want multi-domain site analysis - environmental + cost",
       "steps": [
-        "1. Provide error message to AI",
-        "2. AI consults error_reference.json for known error patterns",
-        "3. AI suggests solution or debugging steps",
-        "4. AI may regenerate script with fix applied"
+        "1. Ask AI: 'Analyze site for hydrology AND calculate carbon/cost'",
+        "2. AI queries component_connections.json for analysis pathways",
+        "3. AI sees Environment layers feed both hydro and cost analyses",
+        "4. AI creates parallel workflows that share environment setup"
       ],
-      "prompt_example": "I got error 'Missing layer: hsg'. Why and how do I fix it?"
+      "prompt_example": "Create environment analysis for both stormwater runoff (CN calculation) and landscaping carbon footprint. Show results separately."
     },
     {
-      "scenario": "I want to validate my data before running",
+      "scenario": "I want to grade terrain with custom slopes and add walls",
       "steps": [
-        "1. Ask AI to validate data against layer_validation.json",
-        "2. AI checks that HSG values are A/B/C/D",
-        "3. AI checks that GC values match allowed types",
-        "4. AI flags any validation issues before generating script"
+        "1. Ask AI: 'Grade topography with variable slopes, add walls at edges'",
+        "2. AI finds Topo modification and wall components",
+        "3. AI chains: Elevation → Grade Topo Mod → Create Walls",
+        "4. AI generates grading script with wall integration"
       ],
-      "prompt_example": "Check my data: HSG values are [A, C, B, D], GC values are [LAWN, WOODS, PASTURE]. Are these valid?"
+      "prompt_example": "Create a script that modifies topo with custom slope values (2%, 5%, 8%) and adds retaining walls where slopes exceed 10%."
+    },
+    {
+      "scenario": "I want to combine plant design with visualization and schedules",
+      "steps": [
+        "1. Ask AI: 'Design plants AND generate schedule AND cost estimate'",
+        "2. AI chains: Plant layout → Get Plant Info → Draw Plant Schedule → Calculate costs",
+        "3. AI knows data flows through component_connections.json",
+        "4. AI creates multi-output workflow"
+      ],
+      "prompt_example": "Create a landscape design with plant placement, then output a plant schedule, bloom calendar, and cost breakdown."
     }
   ],
   "for_grasshopper_raven": {
     "how_to_prompt": [
-      "Reference workflow names: 'Follow the basic_hydrology workflow from the Land Kit documentation'",
-      "Reference components by nickname: 'Use +ShapeValues to add data'",
-      "Ask for validation: 'Check these HSG values against Land Kit validation rules'",
-      "Ask for error help: 'Why did I get this error? Reference Land Kit error_reference.json'"
+      "Describe what you're designing: 'Design a perennial garden with...' or 'Create paving with...' or 'Analyze site hydrology for...'",
+      "Reference domains: 'Use plant design components' or 'Focus on grading modifications' or 'Do environmental analysis'",
+      "Ask for specific operations: 'Add tessellation patterns', 'Calculate cost estimates', 'Generate plant schedules'",
+      "Ask for validation: 'Check component compatibility' or 'Validate data types in my workflow'",
+      "Reference component types by category: 'Use all PATTERN components' or 'Connect ANALYSIS outputs to OUTPUT components'"
     ],
-    "example_prompts": [
-      "Generate a Land Kit script following the 'cn_calculation' workflow. Import soil data using +ShapeValues, land use data, and condition ratings, then calculate CN values.",
-      "Create a hydrology analysis: basic_hydrology workflow + catchments + upslope areas. Export results as CSV.",
-      "I'm getting 'Invalid GC value' error. Validate my land use classifications against allowed values.",
-      "Design a drainage system: follow drainage_design workflow with detention pond storage areas."
+    "key_tips": [
+      "Land Kit has 125 components - Raven can combine them in novel ways based on data type compatibility",
+      "Use component_connections.json to understand what outputs feed what inputs",
+      "Many workflows are possible - describe the outcome you want, let AI find the path",
+      "You can layer multiple analyses on same environment (hydrology + solar + cost)",
+      "Custom layers can be created for any data type - not limited to predefined layers"
     ]
   },
-  "for_tool_developers": {
-    "integration_steps": [
-      "1. Cache component_registry.json on startup (148 KB)",
-      "2. Cache layer_validation.json and workflow_patterns.json (together ~15 KB)",
-      "3. Check version field in meta object for updates",
-      "4. When user encounters error, check error_reference.json"
+  "architecture_for_developers": {
+    "recommended_load_order": [
+      "1. Load component_registry.json on startup (list all available components)",
+      "2. Load component_connections.json (understand data type flow)",
+      "3. Load workflow_patterns.json (reference proven sequences)",
+      "4. Load layer_validation.json (for validation, not required)",
+      "5. Load error_reference.json (for error handling)"
     ],
     "caching_strategy": {
-      "approach": "Download and cache on startup, check version daily",
+      "approach": "Download and cache on startup, check version field daily",
+      "ttl": "24 hours for registry, 7 days for connections and patterns",
       "fallback": "Include minimal local copies for offline mode",
-      "update_check": "Compare meta.last_updated field with cached version"
+      "size_warning": "component_registry.json is ~150KB; others are smaller"
     },
-    "error_handling": [
-      "If fetch fails (no internet), use cached local copies",
-      "If cached data is missing, provide helpful error message",
-      "Store last successful fetch timestamp",
-      "Offer user option to update docs manually"
-    ],
-    "python_example": {
-      "language": "Python",
-      "description": "How to fetch and cache Land Kit reference docs",
-      "code": [
-        "import urllib2, json, os, time",
-        "",
-        "class LandKitReference:",
-        "    def __init__(self, cache_dir):",
-        "        self.cache_dir = cache_dir",
-        "        self.base_url = 'https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference'",
-        "        self.files = ['component_registry.json', 'layer_validation.json', 'workflow_patterns.json']",
-        "",
-        "    def fetch_file(self, filename, max_cache_age_hours=24):",
-        "        cache_path = os.path.join(self.cache_dir, filename)",
-        "        ",
-        "        # Check if cached copy exists and is fresh",
-        "        if os.path.exists(cache_path):",
-        "            cache_age = (time.time() - os.path.getmtime(cache_path)) / 3600",
-        "            if cache_age < max_cache_age_hours:",
-        "                with open(cache_path) as f:",
-        "                    return json.load(f)",
-        "        ",
-        "        # Fetch from GitHub",
-        "        url = self.base_url + '/' + filename",
-        "        response = urllib2.urlopen(url)",
-        "        data = json.load(response)",
-        "        ",
-        "        # Cache it",
-        "        with open(cache_path, 'w') as f:",
-        "            json.dump(data, f)",
-        "        ",
-        "        return data",
-        "",
-        "# Usage:",
-        "lk_ref = LandKitReference('/path/to/cache')",
-        "registry = lk_ref.fetch_file('component_registry.json')",
-        "validation = lk_ref.fetch_file('layer_validation.json')"
-      ]
+    "workflow_generation": {
+      "approach": "Use component_connections.json to route data types intelligently",
+      "benefits": [
+        "Enables novel component combinations",
+        "Not locked into predefined workflows",
+        "Works across all Land Kit domains",
+        "Allows creative multi-domain projects"
+      ],
+      "example": "If output type=Plant and input accepts=Plant, those can connect. Same for any data type."
+    },
+    "error_handling": {
+      "steps": [
+        "When user reports error, check error_reference.json",
+        "Look up error ID or error message text",
+        "Provide solution from reference",
+        "Optionally regenerate script with fix"
+      ],
+      "note": "Not all errors will be in reference; document new ones encountered"
     }
   },
-  "file_specifications": {
-    "component_registry.json": {
-      "structure": "List of component objects",
-      "schema": {
-        "meta": "Metadata including version, count",
-        "components": [
-          {
-            "name": "Component display name",
-            "nickname": "Short identifier for GH",
-            "description": "What it does",
-            "category": "Major category (e.g., '7 analysis')",
-            "inputs": [{"name", "nickname", "description", "type", "required"}],
-            "outputs": [{"name", "description"}],
-            "file": "Source Python file"
-          }
-        ]
-      },
-      "total_size": "~150 KB",
-      "total_components": 123,
-      "regeneration": "Auto-generated weekly from source components"
+  "python_example": {
+    "language": "Python",
+    "description": "How to integrate Land Kit docs in your AI tool",
+    "code": [
+      "import urllib.request, json",
+      "",
+      "class LandKitReference:",
+      "    BASE_URL = 'https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference'",
+      "    ",
+      "    def __init__(self):",
+      "        self.registry = self.fetch('component_registry.json')",
+      "        self.connections = self.fetch('component_connections.json')",
+      "        self.workflows = self.fetch('workflow_patterns.json')",
+      "    ",
+      "    def fetch(self, filename):",
+      "        url = f'{self.BASE_URL}/{filename}'",
+      "        with urllib.request.urlopen(url) as response:",
+      "            return json.loads(response.read())",
+      "    ",
+      "    def find_compatible_components(self, output_type):",
+      "        \"\"\"Find all components that accept this data type\"\"\"",
+      "        pathway = self.connections['connection_pathways'].get(output_type, {})",
+      "        return pathway.get('consumers', [])",
+      "    ",
+      "    def get_component_by_name(self, name):",
+      "        for comp in self.registry['components']:",
+      "            if comp['name'].lower() == name.lower():",
+      "                return comp",
+      "        return None",
+      "",
+      "# Usage:",
+      "lk = LandKitReference()",
+      "plant_consumers = lk.find_compatible_components('Plant')",
+      "print(f'Components that accept Plant input: {plant_consumers}')"
+    ]
+  },
+  "supported_domains": {
+    "note": "Land Kit supports creative combinations across these domains",
+    "plant_design": {
+      "components": 23,
+      "capabilities": ["Niche-based selection", "Constraint solving", "Schedules", "Cost estimation"]
     },
-    "layer_validation.json": {
-      "structure": "Dictionary of layer definitions and validation rules",
-      "schema": {
-        "layers": {
-          "layer_name": {
-            "description": "What the layer represents",
-            "type": "Data type (float, string, int, etc.)",
-            "valid_values": ["List of allowed values or range"],
-            "created_by": "Component that creates this layer",
-            "required_for": ["Components that need this layer"]
-          }
-        },
-        "layer_dependencies": {
-          "component_name": {"requires": [], "creates": []}
-        },
-        "validation_rules": {
-          "HSG_values": {"allowed": ["A", "B", "C", "D"]},
-          "GC_values": {"allowed": ["LAWN", "WOODS", ...]},
-          "Condition_values": {"allowed": ["POOR", "FAIR", "GOOD"]}
-        }
-      },
-      "total_size": "~7 KB",
-      "layers_defined": 18
+    "paving_patterns": {
+      "components": 13,
+      "capabilities": ["Tessellations", "Color patterns", "Rationalization", "Custom pavers"]
     },
-    "workflow_patterns.json": {
-      "structure": "List of workflow patterns",
-      "schema": {
-        "workflows": [
-          {
-            "id": "workflow_id",
-            "name": "Human-readable name",
-            "description": "What it accomplishes",
-            "steps": [
-              {
-                "order": 1,
-                "component": "Component name",
-                "inputs": ["List of input names"],
-                "outputs": ["List of output names"],
-                "description": "What this step does"
-              }
-            ],
-            "output_layers": ["Layers created"],
-            "use_case": "When to use this workflow"
-          }
-        ],
-        "workflow_dependency_graph": {
-          "component_name": ["prerequisite_components"]
-        }
-      },
-      "total_size": "~8 KB",
-      "workflows_included": 5
+    "grading_topo": {
+      "components": 18,
+      "capabilities": ["Slope modification", "Fill/cut analysis", "Stairs", "Walls", "Contours"]
     },
-    "error_reference.json": {
-      "structure": "List of documented errors and troubleshooting",
-      "schema": {
-        "errors": [
-          {
-            "error_id": "Unique identifier",
-            "error_message": "Exact error text",
-            "severity": "ERROR or WARNING",
-            "causes": ["Possible causes"],
-            "solution": "How to fix it"
-          }
-        ],
-        "troubleshooting_guide": {
-          "symptom": ["Possible causes and solutions"]
-        }
-      },
-      "total_size": "~10 KB",
-      "errors_documented": 15
+    "environmental_analysis": {
+      "components": 22,
+      "capabilities": ["Hydrology", "Solar exposure", "Cost/carbon", "Custom metrics"]
+    },
+    "areas_slabs": {
+      "components": 13,
+      "capabilities": ["Creation", "Clipping", "Analysis", "Visualization"]
+    },
+    "visualization_output": {
+      "components": 24,
+      "capabilities": ["Schedules", "Drawings", "CAD export", "Labels", "Meshes"]
     }
   },
-  "version_strategy": {
-    "semantic_versioning": "MAJOR.MINOR.PATCH",
-    "breaking_changes": "Would increment MAJOR version",
-    "new_features": "Increment MINOR version",
-    "bug_fixes": "Increment PATCH version",
+  "version_control": {
     "current_version": "2.3.1",
-    "version_check": "Always compare meta.version with cached version before using"
-  },
-  "future_enhancements": [
-    "Performance benchmarks by component",
-    "Python API reference with code examples",
-    "Component interaction matrix (which outputs feed which inputs)",
-    "Real-time documentation updates via GitHub API",
-    "Unit tests for validation rules",
-    "Multi-language support"
-  ]
+    "check_updates": "Compare meta.version field with cached version",
+    "breaking_changes": "Major version increment (e.g., 3.0.0) indicates breaking changes",
+    "backwards_compatible": "Minor and patch versions maintain compatibility with prior versions"
+  }
 }
