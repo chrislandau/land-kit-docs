@@ -99,7 +99,7 @@
       "error_id": "INVALID_CELL_SIZE",
       "error_message": "Cell size is too large or too small",
       "severity": "ERROR",
-      "component": "Create Water Environment",
+      "component": "Create Environment",
       "causes": [
         "Cell size is 0 or negative",
         "Cell size is so small it creates millions of cells (memory issue)",
@@ -112,7 +112,7 @@
       "error_id": "INVALID_BOUNDARY",
       "error_message": "Boundary curves are invalid or don't enclose area",
       "severity": "ERROR",
-      "component": "Create Water Environment",
+      "component": "Create Environment",
       "causes": [
         "Boundary curve is not closed",
         "Boundary is self-intersecting",
@@ -124,7 +124,7 @@
       "error_id": "MISSING_TOPO_MESH",
       "error_message": "Topography mesh is missing or invalid",
       "severity": "ERROR",
-      "component": "Create Water Environment",
+      "component": "Create Environment",
       "causes": [
         "No mesh was provided to topo input",
         "Mesh is empty or degenerate"

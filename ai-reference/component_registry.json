@@ -2483,7 +2483,7 @@
       "file": "create_walls.py"
     },
     {
-      "name": "Create Water Environment",
+      "name": "Create Environment",
       "nickname": "+H2O ENV",
       "description": "Creates an environment instance that can be used as a container for different layers of analysis.",
       "category": "2 create",

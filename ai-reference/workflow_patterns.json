@@ -12,7 +12,7 @@
       "steps": [
         {
           "order": 1,
-          "component": "Create Water Environment",
+          "component": "Create Environment",
           "inputs": ["boundaries (curves)", "cell size (number)", "topo (mesh)"],
           "outputs": ["E (Environment)"],
           "description": "Initialize the environment with grid cells"
@@ -88,7 +88,7 @@
       "steps": [
         {
           "order": 1,
-          "component": "Create Water Environment",
+          "component": "Create Environment",
           "inputs": ["boundaries (curves)", "cell size (number)", "topo (mesh)"],
           "outputs": ["E (Environment)"]
         },
@@ -161,7 +161,7 @@
       "steps": [
         {
           "order": 1,
-          "component": "Create Water Environment",
+          "component": "Create Environment",
           "inputs": ["boundaries", "cell size", "topo"],
           "outputs": ["E"]
         },
@@ -178,17 +178,17 @@
     }
   ],
   "workflow_dependency_graph": {
-    "Create Water Environment": [],
-    "Add Elevation Layer": ["Create Water Environment"],
+    "Create Environment": [],
+    "Add Elevation Layer": ["Create Environment"],
     "Add Slope Layer": ["Add Elevation Layer"],
     "Add Catchments Layer": ["Add Elevation Layer"],
     "Calculate CN Layer": ["Add Shape Values Layer (hsg)", "Add Shape Values Layer (gc)", "Add Shape Values Layer (condition)"],
     "Add Upslope Area Layer": ["Add Catchments Layer"],
-    "Add Sun Exposure Layer": ["Create Water Environment"],
+    "Add Sun Exposure Layer": ["Create Environment"],
     "Calculate Heat Flux": ["Add Sun Exposure Layer"],
-    "Add Static Storage Layer": ["Create Water Environment"],
+    "Add Static Storage Layer": ["Create Environment"],
     "Draw Flow Lines": ["Add Catchments Layer"],
-    "Add Layer by Formula": ["Create Water Environment"]
+    "Add Layer by Formula": ["Create Environment"]
   },
   "common_patterns": [
     {

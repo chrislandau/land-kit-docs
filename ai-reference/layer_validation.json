@@ -147,13 +147,13 @@
       "description": "Which boundary polygon the cell belongs to",
       "type": "integer",
       "auto_created": true,
-      "created_by": "Create Water Environment"
+      "created_by": "Create Environment"
     },
     "cell_index": {
       "description": "Unique sequential index for each cell",
       "type": "integer",
       "auto_created": true,
-      "created_by": "Create Water Environment"
+      "created_by": "Create Environment"
     }
   },
   "layer_dependencies": {
