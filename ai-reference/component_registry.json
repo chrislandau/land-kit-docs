@@ -5151,7 +5151,7 @@
         {
           "name": "keys",
           "nickname": "keys",
-          "description": "Input keys. One key for each value.",
+          "description": "Input keys. One key for each value. (key-value, layer-geometry, etc)",
           "type": "string",
           "required": false
         },
@@ -5166,7 +5166,7 @@
       "outputs": [
         {
           "name": "outputs",
-          "description": "Component outputs for each key-value pair"
+          "description": "Varies depending on each key input. Outputs are built dynamically."
         }
       ],
       "file": "custom_components/sort_key_values.py"
@@ -5180,29 +5180,57 @@
         {
           "name": "geometry",
           "nickname": "geometry",
-          "description": "Geometry to bake or preview.",
+          "description": "Geometry to bake or preview or both.",
           "type": "geometry",
           "required": true
         },
         {
           "name": "layer",
           "nickname": "layer",
-          "description": "Layer name for each piece of geometry.",
+          "description": "Layer name for each piece of geometry or data branch.",
           "type": "string",
           "required": false
         },
         {
           "name": "color",
           "nickname": "color",
-          "description": "Color for baked geometry.",
+          "description": "Color for each piece of geometry or data branch.",
           "type": "color",
+          "required": false
+        },
+        {
+          "name": "keys",
+          "nickname": "keys",
+          "description": "Keys for each data branch.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "values",
+          "nickname": "values",
+          "description": "Values to associate with each key, for each data branch.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "bake name",
+          "nickname": "bake name",
+          "description": "Name to use to keep track of what gets replaced when baking again.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "BAKE",
+          "nickname": "BAKE",
+          "description": "Boolean activation. True to bake geometry.",
+          "type": "boolean",
           "required": false
         }
       ],
       "outputs": [
         {
           "name": "out",
-          "description": "Geometry output"
+          "description": "Baked geometry output."
         }
       ],
       "file": "custom_components/bake.py"
