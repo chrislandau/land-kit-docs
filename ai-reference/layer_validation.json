@@ -2,7 +2,10 @@
   "meta": {
     "version": "2.3.1",
     "last_updated": "2026-11-04",
-    "description": "Validation rules for all environment layers in Land Kit"
+    "description": "Reference for standard Land Kit environment layers and their validation rules",
+    "important_note": "These are predefined layers used in standard workflows (hydrology, CN calculation, etc.). Users can create custom layers with any names and data types using 'Add Layer by Formula' or 'Add Shape Values Layer' for other applications.",
+    "standard_layers": 18,
+    "flexibility": "Users are not limited to these layers - custom layers can be created for any analysis or data type needed."
   },
   "layers": {
     "elevation": {
@@ -201,5 +204,41 @@
       "max": 98,
       "impervious_always": 98
     }
+  },
+  "custom_layers": {
+    "description": "Users can create custom layers for any application",
+    "how_to_create": [
+      "Use 'Add Layer by Formula' to create derived layers from existing layers",
+      "Use 'Add Shape Values Layer' to add categorical or numeric data from shapes",
+      "Use 'Add Layer Fill' to fill entire layer with constant values"
+    ],
+    "naming_convention": "Layer names should be lowercase and descriptive (e.g., 'pollution_index', 'solar_potential', 'cost_per_sqft')",
+    "examples": [
+      {
+        "name": "pollution_index",
+        "type": "float",
+        "description": "User-defined air quality or pollution metric",
+        "created_by": "Add Shape Values Layer"
+      },
+      {
+        "name": "tree_density",
+        "type": "integer",
+        "description": "Count of trees per cell",
+        "created_by": "Add Layer by Formula"
+      },
+      {
+        "name": "temperature_zone",
+        "type": "string",
+        "description": "Climate classification (e.g., 'warm', 'moderate', 'cool')",
+        "created_by": "Add Shape Values Layer"
+      },
+      {
+        "name": "infiltration_rate",
+        "type": "float",
+        "description": "Derived from infiltration = 100 - (cn / 98 * 100)",
+        "created_by": "Add Layer by Formula"
+      }
+    ]
   }
 }
+
