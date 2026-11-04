@@ -35,7 +35,7 @@
       "name": "Add CSV Data",
       "nickname": "+CSV DATA",
       "description": "Adds data from a csv to a plant or an area.",
-      "usage": "For adding data or features. Use to augment designs with information.",
+      "usage": "For adding data to areas. Use to augment plan areas with .data values.",
       "category": "3 areas",
       "inputs": [
         {
@@ -80,7 +80,7 @@
       "name": "Add Curb Cuts",
       "nickname": "+curbCUT",
       "description": "Adds curb cuts to collection of curbs from curb cut centerlines. Also returns ramp features.",
-      "usage": "For curb and edge conditions. Use for hardscape edges and transitions.",
+      "usage": "For adding curb cuts to curb and edge conditions. Use for hardscape edges and transitions.",
       "category": "4 mods",
       "inputs": [
         {
@@ -144,7 +144,7 @@
       "name": "Add Custom Pattern",
       "nickname": "+CPAT",
       "description": "Add custom paver shapes as curves to an area",
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
+      "usage": "For adding custom patterns to paving areas that are fully custom or are modified curves from another paving output.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -177,7 +177,7 @@
       "name": "Layer by Formula",
       "nickname": "=FORMULA",
       "description": "Calculates an environment layer based on a formula from other layers. result_layer = slope + elevation",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For synthesizing environmental analysis layers. names of layers can be used in the formula. Great for generating different kinds of suitability analysis. Basicaly uses python formulas to create new layers 'random' is treated as a random number between 0 and 1.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -280,7 +280,7 @@
       "name": "Add Elevation Layer",
       "nickname": "+ELE",
       "description": "Adds a layer of elevation analysis to the environment",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis of elevation data. Can be used for plant placement rules or niches.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -306,7 +306,7 @@
       "name": "Add Feature Proximity Layer",
       "nickname": "+FeatPROX",
       "description": "Adds a feature proximity layer of analysis to the environment",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For checking proximity to geometries etc. Can be used for plant placement rules or niches.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -326,7 +326,7 @@
         {
           "name": "features",
           "nickname": "features",
-          "description": "features to use to calculate proximity - path, door, etc",
+          "description": "geometry-based features to use to calculate proximity - path, door, etc",
           "type": "geometry",
           "required": false
         }
@@ -346,7 +346,7 @@
       "name": "Add Layer Fill",
       "nickname": "+FILL",
       "description": "Adds an analysis layer that is all one value.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "Good for quickly applying a uniform value across a layer.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -386,7 +386,7 @@
       "name": "Add Image Layer",
       "nickname": "+Image",
       "description": "Adds an image-based layer of analysis to the environment.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environment layers based on images. Can be used for plant placement rules or niches.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -433,7 +433,7 @@
       "name": "Add Occurrence Layer",
       "nickname": "+OCCUR",
       "description": "Adds a layer that tallies occurrences of geometry density",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis layers based on occurrences of geometry. Can be used for plant placement rules or niches.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -473,7 +473,7 @@
       "name": "Add Layer Overlay",
       "nickname": "Overlay=",
       "description": "Overlays multiple layers into one layer. Combines each value combination into concatenated string values.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For combining multiple layers into one overlay layer. Useful for analyzing or displaying or differentiating interactions between different environmental factors.",
       "category": "7 layer ops",
       "inputs": [
         {
@@ -523,7 +523,7 @@
       "name": "Layer Shape Value Set",
       "nickname": "Shp/Value-SET",
       "description": "Gets shapes from the child layers of given layer.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "Pulls shapes and their associated values from a set of children layers (given the parent layer). Uses the child layer names as values for the shape-value output.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -559,7 +559,7 @@
       "name": "Add Shape Values Layer",
       "nickname": "+ShapeValues",
       "description": "Adds a shape values layer to the environment. If a cell is in a shape, it will have the corresponding value.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis layers based on shapes and their associated values. Can be used for plant placement rules or niches.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -606,7 +606,7 @@
       "name": "Add Slope Layer",
       "nickname": "+SLOPE",
       "description": "Adds a layer of slope analysis to the environment",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis layers. Can be used for plant placement rules or niches.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -632,7 +632,7 @@
       "name": "Add Static Storage Layer",
       "nickname": "STORAGE",
       "description": "Gets the depth of cells within static storage basin shapes and calculates their volumes.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis layers. Can be used to evaluate static storage basin volumes for stormwater management.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -670,7 +670,7 @@
       "name": "Add Sun Exposure Layer",
       "nickname": "+SUN",
       "description": "Adds a 'sun exposure' and 'hours_of_sun' analysis layers to the environment. 'sun exposure' layer is 'Sun', 'Part Shade', or 'Shade' based on the number of hours of sun per day. The hours_of_sun layer",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis layers. Can be used to evaluate sun exposure for site design, comfort, and plant placement.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -690,7 +690,7 @@
         {
           "name": "vectors",
           "nickname": "vectors",
-          "description": "Optional: Sun vectors to use from the lady bug component. If not provided, vectors will be fetched a",
+          "description": "Optional: Sun vectors to use from the lady bug component. If not provided, vectors will be fetched automatically.",
           "type": "vector",
           "required": false
         },
@@ -711,7 +711,7 @@
         {
           "name": "alt name",
           "nickname": "alt name",
-          "description": "Alternative name for the output layer, in place of ",
+          "description": "Alternative name for the output layer, in place of the default name",
           "type": "string",
           "required": false
         }
@@ -731,7 +731,7 @@
       "name": "Add Upslope Area Layer",
       "nickname": "+UPSLOPE",
       "description": "Adds a layer of upslope area analysis to the environment",
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
+      "usage": "For evaluating upslope area in the environment. to understand the amount of upslope contributing to each location.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -757,7 +757,7 @@
       "name": "Add Values Layer",
       "nickname": "+VALUES",
       "description": "Adds a layer with a list of values to the environment. Must be the same quantity as get environment layer output.",
-      "usage": "For environmental analysis layers. Use for scientific analysis.",
+      "usage": "For environmental analysis layers. Use for scientific analysis or custom data evaluation. Great for recreating or modifying analysis layers.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -797,7 +797,7 @@
       "name": "Add Land Use to Areas",
       "nickname": "AREAS +LU",
       "description": "Allows user to assign a land use(assembly) from Sasaki Carbon Conscience to each area.",
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
+      "usage": "For creating or modifying landscape area land use designations, particularly for carbon analysis.",
       "category": "3 areas",
       "inputs": [
         {
@@ -830,7 +830,7 @@
       "name": "Add Path Cross Slope",
       "nickname": "+crossSLOPE",
       "description": "Adds cross slope to path. Mode determines which side shifts up or both.",
-      "usage": "For circulation paths. Use for site connectivity and movement design.",
+      "usage": "For corss grading paths. Helps to direct water in the right direction, preventing pooling and improving drainage performance.",
       "category": "4 mods",
       "inputs": [
         {
@@ -870,7 +870,7 @@
       "name": "Add Path Pattern",
       "nickname": "+PATH PAT",
       "description": "Add a running paving pattern to a path or an area. Paths will convert to areas.",
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
+      "usage": "For generating repeating patterns along paths. Useful for creating winding paving layouts and pattern designs.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -943,7 +943,7 @@
       "name": "Add Pattern to Area",
       "nickname": "+PAT",
       "description": "Add a paving pattern to an area",
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
+      "usage": "For applying generated patterns to specific areas. Use to fill areas with paving or planting patterns.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1412,7 +1412,7 @@
       "name": "Array Modules",
       "nickname": "MODULES",
       "description": "Arrays groupings of pavers into the paving units from another area",
-      "usage": "For array modules operations. Use in relevant design workflows.",
+      "usage": "For creating modular arrays of paving units or design elements. Use for systematic pattern layouts.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -2098,7 +2098,7 @@
       "name": "Create Mix",
       "nickname": "MIX*2",
       "description": "Create 2-color mix",
-      "usage": "For generating objects. Use to build design elements.",
+      "usage": "For defining paver or planting mixes with multiple components. Use to specify material composition.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -2138,7 +2138,7 @@
       "name": "Create Multi Mix",
       "nickname": "MIXxn",
       "description": "Create a multi color mix",
-      "usage": "For generating objects. Use to build design elements.",
+      "usage": "For creating multiple paver or planting mixes with different ratios. Use for complex pattern variations.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -5723,7 +5723,7 @@
       "name": "Trim Pavers to Area",
       "nickname": "PAVTrim",
       "description": "Trim pavers in an area to the area border. This can be slower.",
-      "usage": "For creating or modifying landscape areas. Use for site design and spatial organization.",
+      "usage": "For cutting and fitting pavers to area boundaries. Use to finalize paver layouts and edge conditions.",
       "category": "6 pattern",
       "inputs": [
         {
