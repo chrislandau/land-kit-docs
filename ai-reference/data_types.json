@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "description": "Data type reference showing what each type represents",
+    "total_types": 22
+  },
+  "data_types": {
+    "Area": {
+      "description": "Landscape area/zone",
+      "outputs_produced": 36,
+      "example_components": []
+    },
+    "Color[]": {
+      "description": "Color array or gradient",
+      "outputs_produced": 26,
+      "example_components": []
+    },
+    "Curb": {
+      "description": "Curb element",
+      "outputs_produced": 13,
+      "example_components": []
+    },
+    "Curve[]": {
+      "description": "Collection of curves",
+      "outputs_produced": 7,
+      "example_components": []
+    },
+    "Data": {
+      "description": "Structured data object",
+      "outputs_produced": 7,
+      "example_components": []
+    },
+    "Environment": {
+      "description": "Analytical environment with layers and cells",
+      "outputs_produced": 20,
+      "example_components": []
+    },
+    "Generic": {
+      "description": "Flexible/untyped data",
+      "outputs_produced": 28,
+      "example_components": []
+    },
+    "GeoSet": {
+      "description": "Geometry collection",
+      "outputs_produced": 2,
+      "example_components": []
+    },
+    "Layer": {
+      "description": "Single analytical layer",
+      "outputs_produced": 16,
+      "example_components": []
+    },
+    "Layer[]": {
+      "description": "Multiple analytical layers",
+      "outputs_produced": 11,
+      "example_components": []
+    },
+    "Mesh": {
+      "description": "Surface mesh geometry",
+      "outputs_produced": 8,
+      "example_components": []
+    },
+    "Mix": {
+      "description": "Plant or material mix specification",
+      "outputs_produced": 3,
+      "example_components": []
+    },
+    "Niche": {
+      "description": "Plant ecological niche definition",
+      "outputs_produced": 5,
+      "example_components": []
+    },
+    "Path": {
+      "description": "Pathway/circulation",
+      "outputs_produced": 3,
+      "example_components": []
+    },
+    "Pattern": {
+      "description": "Surface or paving pattern",
+      "outputs_produced": 3,
+      "example_components": []
+    },
+    "Paver[]": {
+      "description": "Paver/unit collection",
+      "outputs_produced": 6,
+      "example_components": []
+    },
+    "Plant": {
+      "description": "Plant instance or collection",
+      "outputs_produced": 45,
+      "example_components": []
+    },
+    "Rule": {
+      "description": "Constraint or placement rule",
+      "outputs_produced": 2,
+      "example_components": []
+    },
+    "Schedule": {
+      "description": "Output schedule (plants, materials, etc)",
+      "outputs_produced": 0,
+      "example_components": []
+    },
+    "String": {
+      "description": "Text output (messages, IDs)",
+      "outputs_produced": 4,
+      "example_components": []
+    },
+    "Surface[]": {
+      "description": "Collection of surfaces",
+      "outputs_produced": 4,
+      "example_components": []
+    },
+    "Topo": {
+      "description": "Topographic surface/mesh",
+      "outputs_produced": 6,
+      "example_components": []
+    },
+    "Wall": {
+      "description": "Wall or barrier element",
+      "outputs_produced": 7,
+      "example_components": []
+    }
+  }
+}

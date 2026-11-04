@@ -25,7 +25,10 @@
           "description": "Area with added color rule"
         }
       ],
-      "file": "add_color_rule.py"
+      "file": "add_color_rule.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Add CSV Data",
@@ -65,7 +68,11 @@
           "description": "list of data potentially added from csv"
         }
       ],
-      "file": "add_csv_data.py"
+      "file": "add_csv_data.py",
+      "output_types": [
+        "Generic",
+        "Data"
+      ]
     },
     {
       "name": "Add Curb Cuts",
@@ -123,7 +130,12 @@
           "description": "Preview of the new ramp outlines"
         }
       ],
-      "file": "add_curb_cuts.py"
+      "file": "add_curb_cuts.py",
+      "output_types": [
+        "Curb",
+        "Curb",
+        "Curb"
+      ]
     },
     {
       "name": "Add Custom Pattern",
@@ -152,7 +164,10 @@
           "description": "Area with custom pattern added"
         }
       ],
-      "file": "add_custom_pattern.py"
+      "file": "add_custom_pattern.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Layer by Formula",
@@ -181,7 +196,10 @@
           "description": "Environment Instance with formula layer added"
         }
       ],
-      "file": "add_layer_by_formula.py"
+      "file": "add_layer_by_formula.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Catchments Layer",
@@ -241,7 +259,16 @@
           "description": "areas for each catchment"
         }
       ],
-      "file": "add_layer_catchments.py"
+      "file": "add_layer_catchments.py",
+      "output_types": [
+        "Environment",
+        "Curve[]",
+        "Color[]",
+        "Layer",
+        "Area",
+        "Layer",
+        "Layer"
+      ]
     },
     {
       "name": "Add Elevation Layer",
@@ -263,7 +290,10 @@
           "description": "Environment Instance with elevation layer added"
         }
       ],
-      "file": "add_layer_elevation.py"
+      "file": "add_layer_elevation.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Feature Proximity Layer",
@@ -299,7 +329,10 @@
           "description": "Environment Instance with feature proximity layer added"
         }
       ],
-      "file": "add_layer_featureproximity.py"
+      "file": "add_layer_featureproximity.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Layer Fill",
@@ -335,7 +368,10 @@
           "description": "Environment to add restriction rule to"
         }
       ],
-      "file": "add_layer_fill.py"
+      "file": "add_layer_fill.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Image Layer",
@@ -378,7 +414,10 @@
           "description": "Environment Instance with image map added"
         }
       ],
-      "file": "add_layer_image.py"
+      "file": "add_layer_image.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Occurrence Layer",
@@ -414,7 +453,10 @@
           "description": "Environment Instance with occurrence layer added"
         }
       ],
-      "file": "add_layer_occurence.py"
+      "file": "add_layer_occurence.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Layer Overlay",
@@ -458,7 +500,12 @@
           "description": "Amount of area for each area id"
         }
       ],
-      "file": "add_layer_overlays.py"
+      "file": "add_layer_overlays.py",
+      "output_types": [
+        "Layer",
+        "Area",
+        "Area"
+      ]
     },
     {
       "name": "Layer Shape Value Set",
@@ -488,7 +535,12 @@
           "description": "Colors of child layers"
         }
       ],
-      "file": "add_layer_shape_value_set.py"
+      "file": "add_layer_shape_value_set.py",
+      "output_types": [
+        "Layer[]",
+        "Layer[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Add Shape Values Layer",
@@ -531,7 +583,10 @@
           "description": "Environment Instance with feature proximity layer added"
         }
       ],
-      "file": "add_layer_shape_values.py"
+      "file": "add_layer_shape_values.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Slope Layer",
@@ -553,7 +608,10 @@
           "description": "Environment Instance with slope layer added"
         }
       ],
-      "file": "add_layer_slope.py"
+      "file": "add_layer_slope.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Static Storage Layer",
@@ -586,7 +644,11 @@
           "description": "Volume of each static storage basin"
         }
       ],
-      "file": "add_layer_static_storage.py"
+      "file": "add_layer_static_storage.py",
+      "output_types": [
+        "Environment",
+        "Layer"
+      ]
     },
     {
       "name": "Add Sun Exposure Layer",
@@ -643,7 +705,10 @@
           "description": "Environment Instance with sun exposure layer added"
         }
       ],
-      "file": "add_layer_sunexposure.py"
+      "file": "add_layer_sunexposure.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Upslope Area Layer",
@@ -665,7 +730,10 @@
           "description": "Environment Instance with upslope_area layer added"
         }
       ],
-      "file": "add_layer_upslopearea.py"
+      "file": "add_layer_upslopearea.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Values Layer",
@@ -701,7 +769,10 @@
           "description": "Environment Instance with values layer added"
         }
       ],
-      "file": "add_layer_values.py"
+      "file": "add_layer_values.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Add Land Use to Areas",
@@ -730,7 +801,10 @@
           "description": "Areas with carbon data assigned. Ready to calculate carbon!"
         }
       ],
-      "file": "add_materials_to_areas.py"
+      "file": "add_materials_to_areas.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Add Path Cross Slope",
@@ -766,7 +840,10 @@
           "description": "Path with cross slope added"
         }
       ],
-      "file": "add_path_cross_slope.py"
+      "file": "add_path_cross_slope.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "Add Path Pattern",
@@ -834,7 +911,11 @@
           "description": "paver shapes"
         }
       ],
-      "file": "add_path_pattern.py"
+      "file": "add_path_pattern.py",
+      "output_types": [
+        "Area",
+        "Paver[]"
+      ]
     },
     {
       "name": "Add Pattern to Area",
@@ -909,7 +990,11 @@
           "description": "paver shapes"
         }
       ],
-      "file": "add_pattern_to_area.py"
+      "file": "add_pattern_to_area.py",
+      "output_types": [
+        "Area",
+        "Paver[]"
+      ]
     },
     {
       "name": "Add Plants Constrained",
@@ -970,7 +1055,11 @@
           "description": "invalid plant locations"
         }
       ],
-      "file": "add_plants_constrained.py"
+      "file": "add_plants_constrained.py",
+      "output_types": [
+        "Area",
+        "Plant"
+      ]
     },
     {
       "name": "Add Tessellation Pattern",
@@ -1042,7 +1131,12 @@
           "description": "A preview to show how the tessellation is working."
         }
       ],
-      "file": "add_tessellation_pattern.py"
+      "file": "add_tessellation_pattern.py",
+      "output_types": [
+        "Area",
+        "Paver[]",
+        "Pattern"
+      ]
     },
     {
       "name": "Add to Geo Set",
@@ -1106,7 +1200,10 @@
           "description": "Geo Set with add geometries to create or modify a topo instance"
         }
       ],
-      "file": "add_to_geo_set.py"
+      "file": "add_to_geo_set.py",
+      "output_types": [
+        "GeoSet"
+      ]
     },
     {
       "name": "Add Wall Tops",
@@ -1146,7 +1243,11 @@
           "description": "Curves for quickly previewing the walls. Use draw wall for masses etc"
         }
       ],
-      "file": "add_wall_tops.py"
+      "file": "add_wall_tops.py",
+      "output_types": [
+        "Wall",
+        "Curve[]"
+      ]
     },
     {
       "name": "Apply Niches from Data",
@@ -1179,7 +1280,11 @@
           "description": "Niche instances for further examination/manipulation"
         }
       ],
-      "file": "apply_niches_from_data.py"
+      "file": "apply_niches_from_data.py",
+      "output_types": [
+        "Plant",
+        "Niche"
+      ]
     },
     {
       "name": "Area Stats",
@@ -1221,7 +1326,15 @@
           "description": "Data values of any data in the Area"
         }
       ],
-      "file": "area_stats.py"
+      "file": "area_stats.py",
+      "output_types": [
+        "Area",
+        "Layer[]",
+        "Color[]",
+        "Area",
+        "Data",
+        "Data"
+      ]
     },
     {
       "name": "Pull Areas by Name",
@@ -1258,7 +1371,12 @@
           "description": "List of Area names found based on all names included."
         }
       ],
-      "file": "areas_by_name.py"
+      "file": "areas_by_name.py",
+      "output_types": [
+        "Area",
+        "Area",
+        "Area"
+      ]
     },
     {
       "name": "Array Modules",
@@ -1301,7 +1419,10 @@
           "description": "arrayed modules as areas"
         }
       ],
-      "file": "array_modules.py"
+      "file": "array_modules.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Attractor Color Rule",
@@ -1337,7 +1458,10 @@
           "description": "Gradient curve color rule. Add to area with add color rule component"
         }
       ],
-      "file": "attractor_color_rule.py"
+      "file": "attractor_color_rule.py",
+      "output_types": [
+        "Curb"
+      ]
     },
     {
       "name": "Bake Text",
@@ -1459,7 +1583,15 @@
           "description": "Average CN for each catchment id"
         }
       ],
-      "file": "calculate_CNs.py"
+      "file": "calculate_CNs.py",
+      "output_types": [
+        "Layer",
+        "Area",
+        "Area",
+        "Layer",
+        "Layer",
+        "Layer"
+      ]
     },
     {
       "name": "Calculate Carbon",
@@ -1504,7 +1636,14 @@
           "description": "Totals for each "
         }
       ],
-      "file": "calculate_carbon.py"
+      "file": "calculate_carbon.py",
+      "output_types": [
+        "Generic",
+        "Curve[]",
+        "Curve[]",
+        "Color[]",
+        "Generic"
+      ]
     },
     {
       "name": "Calculate Heat Flux",
@@ -1547,7 +1686,10 @@
           "description": "Environment with new heat_flux and temp_shift layers added."
         }
       ],
-      "file": "calculate_heat_flux.py"
+      "file": "calculate_heat_flux.py",
+      "output_types": [
+        "Generic"
+      ]
     },
     {
       "name": "Change Plant Attributes",
@@ -1594,7 +1736,11 @@
           "description": "Info regarding what we were able to change."
         }
       ],
-      "file": "change_plant_attributes.py"
+      "file": "change_plant_attributes.py",
+      "output_types": [
+        "Plant",
+        "String"
+      ]
     },
     {
       "name": "Change Plant Data Values",
@@ -1641,7 +1787,11 @@
           "description": "Info regarding what we were able to change."
         }
       ],
-      "file": "change_plant_data_values.py"
+      "file": "change_plant_data_values.py",
+      "output_types": [
+        "Plant",
+        "String"
+      ]
     },
     {
       "name": "Clip Areas",
@@ -1678,7 +1828,12 @@
           "description": "Area colors"
         }
       ],
-      "file": "clip_areas.py"
+      "file": "clip_areas.py",
+      "output_types": [
+        "Area",
+        "Surface[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Collage Areas",
@@ -1708,7 +1863,12 @@
           "description": "Area colors"
         }
       ],
-      "file": "collage_areas.py"
+      "file": "collage_areas.py",
+      "output_types": [
+        "Area",
+        "Surface[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Create Area",
@@ -1762,7 +1922,11 @@
           "description": "flat meshes"
         }
       ],
-      "file": "create_areas.py"
+      "file": "create_areas.py",
+      "output_types": [
+        "Area",
+        "Mesh"
+      ]
     },
     {
       "name": "Create Curbs",
@@ -1809,7 +1973,11 @@
           "description": "Curves for quickly previewing the curbs. Use draw curb for masses etc"
         }
       ],
-      "file": "create_curbs.py"
+      "file": "create_curbs.py",
+      "output_types": [
+        "Curb",
+        "Curve[]"
+      ]
     },
     {
       "name": "Create Environment",
@@ -1845,7 +2013,10 @@
           "description": "plant kit environment definition"
         }
       ],
-      "file": "create_environment.py"
+      "file": "create_environment.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Create Geo Set",
@@ -1874,7 +2045,10 @@
           "description": "Geo Set for creating or modifying topo"
         }
       ],
-      "file": "create_geo_set.py"
+      "file": "create_geo_set.py",
+      "output_types": [
+        "GeoSet"
+      ]
     },
     {
       "name": "Create Mix",
@@ -1910,7 +2084,10 @@
           "description": "Mix of colors. Can be input with colors into draw pattern area component"
         }
       ],
-      "file": "create_mix.py"
+      "file": "create_mix.py",
+      "output_types": [
+        "Mix"
+      ]
     },
     {
       "name": "Create Multi Mix",
@@ -1932,7 +2109,10 @@
           "description": "Mix of colors"
         }
       ],
-      "file": "create_multi_mix.py"
+      "file": "create_multi_mix.py",
+      "output_types": [
+        "Mix"
+      ]
     },
     {
       "name": "Create Niche",
@@ -1968,7 +2148,10 @@
           "description": "Niche Instance"
         }
       ],
-      "file": "create_niche.py"
+      "file": "create_niche.py",
+      "output_types": [
+        "Niche"
+      ]
     },
     {
       "name": "Create Paths",
@@ -2015,7 +2198,11 @@
           "description": "Path side breaklines"
         }
       ],
-      "file": "create_paths.py"
+      "file": "create_paths.py",
+      "output_types": [
+        "Plant",
+        "Path"
+      ]
     },
     {
       "name": "Create Paths with Variable Slope",
@@ -2076,7 +2263,11 @@
           "description": "newly elevated centerline of the path."
         }
       ],
-      "file": "create_paths_variable_slope.py"
+      "file": "create_paths_variable_slope.py",
+      "output_types": [
+        "Plant",
+        "Path"
+      ]
     },
     {
       "name": "REPLACE W CREATE AREAS (Create Paving Areas)",
@@ -2098,7 +2289,10 @@
           "description": "Paving Area Instance"
         }
       ],
-      "file": "create_paving_areas.py"
+      "file": "create_paving_areas.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Create Plant",
@@ -2162,7 +2356,10 @@
           "description": "Plant Instance"
         }
       ],
-      "file": "create_plant.py"
+      "file": "create_plant.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "Create Plants from CSV Data",
@@ -2223,7 +2420,11 @@
           "description": "plant data in a readable string format"
         }
       ],
-      "file": "create_plant_from_csv_data.py"
+      "file": "create_plant_from_csv_data.py",
+      "output_types": [
+        "Plant",
+        "Data"
+      ]
     },
     {
       "name": "Create Plant List from Prompt BETA",
@@ -2270,7 +2471,11 @@
           "description": "plant data in a readable string format"
         }
       ],
-      "file": "create_plant_from_prompt.py"
+      "file": "create_plant_from_prompt.py",
+      "output_types": [
+        "Plant",
+        "Data"
+      ]
     },
     {
       "name": "Create Plant Query",
@@ -2306,7 +2511,10 @@
           "description": "Plant Query Instance to feed into create_plant_from_csv_data"
         }
       ],
-      "file": "create_plant_query.py"
+      "file": "create_plant_query.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "REPLACE W CREATE AREAS (Create Planting Area)",
@@ -2335,7 +2543,10 @@
           "description": "Area Instance"
         }
       ],
-      "file": "create_planting_area.py"
+      "file": "create_planting_area.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Create Pseudo Plants",
@@ -2371,7 +2582,10 @@
           "description": "Pseudo plants"
         }
       ],
-      "file": "create_pseudo_plants.py"
+      "file": "create_pseudo_plants.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "Create Stairs",
@@ -2404,7 +2618,11 @@
           "description": "Preview curves of stairs."
         }
       ],
-      "file": "create_stairs.py"
+      "file": "create_stairs.py",
+      "output_types": [
+        "Generic",
+        "Generic"
+      ]
     },
     {
       "name": "Create Topo",
@@ -2433,7 +2651,10 @@
           "description": "Topo Instance"
         }
       ],
-      "file": "create_topo.py"
+      "file": "create_topo.py",
+      "output_types": [
+        "Topo"
+      ]
     },
     {
       "name": "Create Walls",
@@ -2480,7 +2701,11 @@
           "description": "Curves for quickly previewing the walls. Use draw wall for masses etc"
         }
       ],
-      "file": "create_walls.py"
+      "file": "create_walls.py",
+      "output_types": [
+        "Wall",
+        "Curve[]"
+      ]
     },
     {
       "name": "Create Environment",
@@ -2516,7 +2741,10 @@
           "description": "environment definition"
         }
       ],
-      "file": "create_water_env.py"
+      "file": "create_water_env.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Customize Parameters",
@@ -2602,7 +2830,13 @@
           "description": "Reference plane for each section"
         }
       ],
-      "file": "cut_sections.py"
+      "file": "cut_sections.py",
+      "output_types": [
+        "Generic",
+        "Layer[]",
+        "Color[]",
+        "Generic"
+      ]
     },
     {
       "name": "Load Data",
@@ -2624,7 +2858,10 @@
           "description": "Plants loaded from .land file"
         }
       ],
-      "file": "data_load.py"
+      "file": "data_load.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "Save Data",
@@ -2691,7 +2928,10 @@
           "description": "Environment Instance with specified area layer diffused or blurred."
         }
       ],
-      "file": "diffuse_layer.py"
+      "file": "diffuse_layer.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Draw Area Linework",
@@ -2728,7 +2968,12 @@
           "description": "Color for each linework curve."
         }
       ],
-      "file": "draw_area_linework.py"
+      "file": "draw_area_linework.py",
+      "output_types": [
+        "Area",
+        "Layer[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Draw Area Pattern",
@@ -2783,7 +3028,13 @@
           "description": "index of each color, regardless of mix index"
         }
       ],
-      "file": "draw_area_pattern.py"
+      "file": "draw_area_pattern.py",
+      "output_types": [
+        "Paver[]",
+        "Color[]",
+        "Mix",
+        "Color[]"
+      ]
     },
     {
       "name": "Draw Areas as Meshes",
@@ -2824,7 +3075,13 @@
           "description": "colors"
         }
       ],
-      "file": "draw_areas.py"
+      "file": "draw_areas.py",
+      "output_types": [
+        "Mesh",
+        "Mesh",
+        "Layer[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Bake Areas as Hatches",
@@ -2913,7 +3170,12 @@
           "description": "color of the area slab"
         }
       ],
-      "file": "draw_areas_as_slabs.py"
+      "file": "draw_areas_as_slabs.py",
+      "output_types": [
+        "Area",
+        "Layer[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Draw Areas as Surfaces",
@@ -2964,7 +3226,12 @@
           "description": "colors"
         }
       ],
-      "file": "draw_areas_as_surfaces.py"
+      "file": "draw_areas_as_surfaces.py",
+      "output_types": [
+        "Surface[]",
+        "Layer[]",
+        "Color[]"
+      ]
     },
     {
       "name": "Draw Bloom Calendar",
@@ -3034,7 +3301,15 @@
           "description": "Plants with updated colors at specified month."
         }
       ],
-      "file": "draw_bloom_calendar.py"
+      "file": "draw_bloom_calendar.py",
+      "output_types": [
+        "Curve[]",
+        "Color[]",
+        "Generic",
+        "Generic",
+        "Generic",
+        "Generic"
+      ]
     },
     {
       "name": "Draw Curbs",
@@ -3072,7 +3347,14 @@
           "description": "Spots along the bottom of curb"
         }
       ],
-      "file": "draw_curbs.py"
+      "file": "draw_curbs.py",
+      "output_types": [
+        "Curb",
+        "Curb",
+        "Curb",
+        "Curb",
+        "Curb"
+      ]
     },
     {
       "name": "Water Flow Lines",
@@ -3122,7 +3404,10 @@
           "description": "Curves describing the flow lines"
         }
       ],
-      "file": "draw_flow_lines.py"
+      "file": "draw_flow_lines.py",
+      "output_types": [
+        "Generic"
+      ]
     },
     {
       "name": "Draw Layer as Shapes",
@@ -3173,7 +3458,12 @@
           "description": "Random colors for each boundary surface name."
         }
       ],
-      "file": "draw_layer_as_shapes.py"
+      "file": "draw_layer_as_shapes.py",
+      "output_types": [
+        "Layer",
+        "Layer",
+        "Color[]"
+      ]
     },
     {
       "name": "Draw Layer as Mesh",
@@ -3235,7 +3525,13 @@
           "description": "tag keys for a legend"
         }
       ],
-      "file": "draw_layer_mesh.py"
+      "file": "draw_layer_mesh.py",
+      "output_types": [
+        "Mesh",
+        "Layer",
+        "Color[]",
+        "Layer"
+      ]
     },
     {
       "name": "Draw Paths",
@@ -3261,7 +3557,11 @@
           "description": "Curves defining the sides of the path"
         }
       ],
-      "file": "draw_paths.py"
+      "file": "draw_paths.py",
+      "output_types": [
+        "Surface[]",
+        "Path"
+      ]
     },
     {
       "name": "Draw Stairs",
@@ -3287,7 +3587,11 @@
           "description": "Breaklines of the stairs"
         }
       ],
-      "file": "draw_stairs.py"
+      "file": "draw_stairs.py",
+      "output_types": [
+        "Generic",
+        "Generic"
+      ]
     },
     {
       "name": "Draw Topo",
@@ -3334,7 +3638,11 @@
           "description": "Topo mesh points"
         }
       ],
-      "file": "draw_topo.py"
+      "file": "draw_topo.py",
+      "output_types": [
+        "Mesh",
+        "Topo"
+      ]
     },
     {
       "name": "Draw Walls",
@@ -3372,7 +3680,14 @@
           "description": "Spots along the bottom of wall"
         }
       ],
-      "file": "draw_walls.py"
+      "file": "draw_walls.py",
+      "output_types": [
+        "Wall",
+        "Wall",
+        "Wall",
+        "Wall",
+        "Wall"
+      ]
     },
     {
       "name": "Environment Color Rule",
@@ -3386,7 +3701,10 @@
           "description": "Resulting Color Rule. Add to area with the add color rule component"
         }
       ],
-      "file": "environment_color_rule.py"
+      "file": "environment_color_rule.py",
+      "output_types": [
+        "Curb"
+      ]
     },
     {
       "name": "Evaluate Environment",
@@ -3430,7 +3748,12 @@
           "description": "Summary of all layers and values for each point"
         }
       ],
-      "file": "evaluate_environment.py"
+      "file": "evaluate_environment.py",
+      "output_types": [
+        "Layer[]",
+        "Environment",
+        "Environment"
+      ]
     },
     {
       "name": "Export Blocks as DAE",
@@ -3496,7 +3819,15 @@
           "description": "plant heights"
         }
       ],
-      "file": "export_plant_block_info.py"
+      "file": "export_plant_block_info.py",
+      "output_types": [
+        "Plant",
+        "Plant",
+        "Color[]",
+        "Plant",
+        "Plant",
+        "Plant"
+      ]
     },
     {
       "name": "Bake Plant Blocks",
@@ -3546,7 +3877,10 @@
           "description": "message"
         }
       ],
-      "file": "export_plant_blocks.py"
+      "file": "export_plant_blocks.py",
+      "output_types": [
+        "String"
+      ]
     },
     {
       "name": "Get Area Plants",
@@ -3568,7 +3902,10 @@
           "description": "Plants from planting_area"
         }
       ],
-      "file": "get_area_plants.py"
+      "file": "get_area_plants.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "Get Current Plant Data",
@@ -3616,7 +3953,13 @@
           "description": "Values of plant data fields"
         }
       ],
-      "file": "get_current_plant_data.py"
+      "file": "get_current_plant_data.py",
+      "output_types": [
+        "Plant",
+        "Plant",
+        "Data",
+        "Data"
+      ]
     },
     {
       "name": "Get Environment Layer",
@@ -3649,7 +3992,11 @@
           "description": "layer values"
         }
       ],
-      "file": "get_environment_layer.py"
+      "file": "get_environment_layer.py",
+      "output_types": [
+        "Environment",
+        "Environment"
+      ]
     },
     {
       "name": "Get Plant Info",
@@ -3695,7 +4042,16 @@
           "description": "plant height"
         }
       ],
-      "file": "get_plant_info.py"
+      "file": "get_plant_info.py",
+      "output_types": [
+        "Plant",
+        "Plant",
+        "Plant",
+        "Color[]",
+        "Plant",
+        "Plant",
+        "Plant"
+      ]
     },
     {
       "name": "Get Plant Niche Info",
@@ -3729,7 +4085,13 @@
           "description": "compiled text dump of niche values"
         }
       ],
-      "file": "get_plant_niche_info.py"
+      "file": "get_plant_niche_info.py",
+      "output_types": [
+        "Plant",
+        "Plant",
+        "Plant",
+        "Plant"
+      ]
     },
     {
       "name": "Gradient Curve Color Rule",
@@ -3743,7 +4105,10 @@
           "description": "Gradient curve color rule. Add to area with add color rule component"
         }
       ],
-      "file": "gradient_curve_color_rule.py"
+      "file": "gradient_curve_color_rule.py",
+      "output_types": [
+        "Curb"
+      ]
     },
     {
       "name": "Image Color Rule",
@@ -3757,7 +4122,10 @@
           "description": "image color rule. Add to area with add color rule component"
         }
       ],
-      "file": "image_color_rule.py"
+      "file": "image_color_rule.py",
+      "output_types": [
+        "Curb"
+      ]
     },
     {
       "name": "Land Kit Help",
@@ -3820,7 +4188,14 @@
           "description": "usertext values for each geometry"
         }
       ],
-      "file": "layer_pipeline.py"
+      "file": "layer_pipeline.py",
+      "output_types": [
+        "Layer",
+        "Layer[]",
+        "Color[]",
+        "Layer",
+        "Layer"
+      ]
     },
     {
       "name": "Freeze Area Plants",
@@ -3849,7 +4224,10 @@
           "description": "Area whose plants have either all been frozen or all unfrozen"
         }
       ],
-      "file": "layout_freeze_area.py"
+      "file": "layout_freeze_area.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Pack Plants",
@@ -3889,7 +4267,11 @@
           "description": "Plants packed"
         }
       ],
-      "file": "layout_pack_plants.py"
+      "file": "layout_pack_plants.py",
+      "output_types": [
+        "Area",
+        "Plant"
+      ]
     },
     {
       "name": "Fill Area with Pattern",
@@ -3971,7 +4353,11 @@
           "description": "Points in pattern not filled due to limiting constraints or not enough tries."
         }
       ],
-      "file": "layout_pattern_fill_constrained.py"
+      "file": "layout_pattern_fill_constrained.py",
+      "output_types": [
+        "Area",
+        "Area"
+      ]
     },
     {
       "name": "Layout Plant Row",
@@ -4014,7 +4400,10 @@
           "description": "Plants in a row"
         }
       ],
-      "file": "layout_plant_row.py"
+      "file": "layout_plant_row.py",
+      "output_types": [
+        "Plant"
+      ]
     },
     {
       "name": "Fill Area with Plants",
@@ -4085,7 +4474,10 @@
           "description": "Area with random plants populated"
         }
       ],
-      "file": "layout_plants_fill_constrained.py"
+      "file": "layout_plants_fill_constrained.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Remove Overlaps",
@@ -4125,7 +4517,11 @@
           "description": "Plants that have been removed."
         }
       ],
-      "file": "layout_remove_overlaps.py"
+      "file": "layout_remove_overlaps.py",
+      "output_types": [
+        "Area",
+        "Generic"
+      ]
     },
     {
       "name": "Update Conditions",
@@ -4170,7 +4566,14 @@
           "description": "Values found on each layer at location specified."
         }
       ],
-      "file": "layout_update_conditions.py"
+      "file": "layout_update_conditions.py",
+      "output_types": [
+        "Area",
+        "Generic",
+        "Generic",
+        "Layer[]",
+        "Generic"
+      ]
     },
     {
       "name": "Merge Plant Niche",
@@ -4217,7 +4620,11 @@
           "description": "Info regarding what we were able to change."
         }
       ],
-      "file": "merge_plant_niche.py"
+      "file": "merge_plant_niche.py",
+      "output_types": [
+        "Plant",
+        "String"
+      ]
     },
     {
       "name": "Grade Topo Mod",
@@ -4274,7 +4681,10 @@
           "description": "Topo Instance"
         }
       ],
-      "file": "modify_grade_topo.py"
+      "file": "modify_grade_topo.py",
+      "output_types": [
+        "Topo"
+      ]
     },
     {
       "name": "Patch Topo Mod",
@@ -4310,7 +4720,10 @@
           "description": "Topo Instance"
         }
       ],
-      "file": "modify_patch_topo.py"
+      "file": "modify_patch_topo.py",
+      "output_types": [
+        "Topo"
+      ]
     },
     {
       "name": "Sculpt Topo Mod",
@@ -4367,7 +4780,10 @@
           "description": "Topo Instance"
         }
       ],
-      "file": "modify_sculpt_topo.py"
+      "file": "modify_sculpt_topo.py",
+      "output_types": [
+        "Topo"
+      ]
     },
     {
       "name": "Smooth Topo Mod",
@@ -4431,7 +4847,10 @@
           "description": "Topo Instance"
         }
       ],
-      "file": "modify_topo_smooth.py"
+      "file": "modify_topo_smooth.py",
+      "output_types": [
+        "Topo"
+      ]
     },
     {
       "name": "Niche Rule Loose Constraint",
@@ -4453,7 +4872,10 @@
           "description": "Niche Rule. Treat like a niche. Merge or add."
         }
       ],
-      "file": "niche_rule_loose_constraint.py"
+      "file": "niche_rule_loose_constraint.py",
+      "output_types": [
+        "Rule"
+      ]
     },
     {
       "name": "Niche Rule Mapped Constraint",
@@ -4503,7 +4925,10 @@
           "description": "Niche Rule. Should be treated like a niche when applying to plants. Merge or add."
         }
       ],
-      "file": "niche_rule_mapped_constraint.py"
+      "file": "niche_rule_mapped_constraint.py",
+      "output_types": [
+        "Rule"
+      ]
     },
     {
       "name": "Paver Texture",
@@ -4539,7 +4964,10 @@
           "description": "pavers with randomly scaled and rotated texturing."
         }
       ],
-      "file": "paver_textures.py"
+      "file": "paver_textures.py",
+      "output_types": [
+        "Paver[]"
+      ]
     },
     {
       "name": "Draw Plant Schedule",
@@ -4619,7 +5047,14 @@
           "description": "colors of plant symbols"
         }
       ],
-      "file": "plant_schedule_from_area.py"
+      "file": "plant_schedule_from_area.py",
+      "output_types": [
+        "Plant",
+        "Plant",
+        "Plant",
+        "Plant",
+        "Color[]"
+      ]
     },
     {
       "name": "Pull Plants by Name",
@@ -4652,7 +5087,11 @@
           "description": "set of plant names found"
         }
       ],
-      "file": "plants_by_name.py"
+      "file": "plants_by_name.py",
+      "output_types": [
+        "Plant",
+        "Plant"
+      ]
     },
     {
       "name": "Project Paver Meshes",
@@ -4681,7 +5120,10 @@
           "description": "Projected paver meshes"
         }
       ],
-      "file": "project_paver_meshes.py"
+      "file": "project_paver_meshes.py",
+      "output_types": [
+        "Generic"
+      ]
     },
     {
       "name": "Pseudo Niche Parameters",
@@ -4725,7 +5167,12 @@
           "description": "cushions for pseudo niche"
         }
       ],
-      "file": "pseudo_niche_param.py"
+      "file": "pseudo_niche_param.py",
+      "output_types": [
+        "Niche",
+        "Niche",
+        "Niche"
+      ]
     },
     {
       "name": "Pseudo Plant Parameters",
@@ -4788,7 +5235,15 @@
           "description": "Randomly generated weight for each species"
         }
       ],
-      "file": "pseudo_plant_param.py"
+      "file": "pseudo_plant_param.py",
+      "output_types": [
+        "Plant",
+        "Color[]",
+        "Plant",
+        "Plant",
+        "Plant",
+        "Plant"
+      ]
     },
     {
       "name": "Rationalize Pattern",
@@ -4836,7 +5291,13 @@
           "description": "test colors to show the application of percentages with random placements."
         }
       ],
-      "file": "rationalize_pattern.py"
+      "file": "rationalize_pattern.py",
+      "output_types": [
+        "Color[]",
+        "Pattern",
+        "Pattern",
+        "Color[]"
+      ]
     },
     {
       "name": "Rule Restriction Gradient",
@@ -4886,7 +5347,10 @@
           "description": "Environment to add restriction gradient rule to"
         }
       ],
-      "file": "rule_restriction_gradient.py"
+      "file": "rule_restriction_gradient.py",
+      "output_types": [
+        "Environment"
+      ]
     },
     {
       "name": "Set Age",
@@ -4915,7 +5379,10 @@
           "description": "Area with plants with modified values for .radius_current and .height_current"
         }
       ],
-      "file": "set_age.py"
+      "file": "set_age.py",
+      "output_types": [
+        "Area"
+      ]
     },
     {
       "name": "Contours",
@@ -4959,7 +5426,12 @@
           "description": "Planes for annotation along each contour elevation. If spacing is None, this will be empty."
         }
       ],
-      "file": "topo_analysis_contours.py"
+      "file": "topo_analysis_contours.py",
+      "output_types": [
+        "Generic",
+        "Generic",
+        "Generic"
+      ]
     },
     {
       "name": "Cut+Fill Analysis",
@@ -5018,7 +5490,14 @@
           "description": "Steps for the legend"
         }
       ],
-      "file": "topo_analysis_cut_fill.py"
+      "file": "topo_analysis_cut_fill.py",
+      "output_types": [
+        "Mesh",
+        "Generic",
+        "Generic",
+        "Color[]",
+        "Generic"
+      ]
     },
     {
       "name": "Elevation Analysis",
@@ -5062,7 +5541,12 @@
           "description": "Value of each legend step"
         }
       ],
-      "file": "topo_analysis_elevation.py"
+      "file": "topo_analysis_elevation.py",
+      "output_types": [
+        "Mesh",
+        "Color[]",
+        "Generic"
+      ]
     },
     {
       "name": "Slope Analysis Pieces",
@@ -5106,7 +5590,12 @@
           "description": "domains of the slope zones, i.e. 0 To 2"
         }
       ],
-      "file": "topo_analysis_slope_pieces.py"
+      "file": "topo_analysis_slope_pieces.py",
+      "output_types": [
+        "Mesh",
+        "Color[]",
+        "Generic"
+      ]
     },
     {
       "name": "Trim Pavers to Area",
@@ -5140,7 +5629,13 @@
           "description": "cut paver outlines"
         }
       ],
-      "file": "trim_pavers_to_area.py"
+      "file": "trim_pavers_to_area.py",
+      "output_types": [
+        "Area",
+        "Paver[]",
+        "Area",
+        "Area"
+      ]
     },
     {
       "name": "Sort Key Values",
