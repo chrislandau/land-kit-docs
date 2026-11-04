@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "last_updated": "2026-11-04",
+    "description": "Validation rules for all environment layers in Land Kit"
+  },
+  "layers": {
+    "elevation": {
+      "description": "Z-value/height of terrain at each cell",
+      "type": "float",
+      "unit": "feet",
+      "range": [0, 10000],
+      "created_by": "Add Elevation Layer",
+      "required_for": ["Calculate Slope", "Add Catchments Layer"],
+      "valid_values": "any numeric value"
+    },
+    "slope": {
+      "description": "Slope/gradient of terrain",
+      "type": "float",
+      "unit": "percent or ratio",
+      "range": [0, 1000],
+      "created_by": "Add Slope Layer",
+      "dependencies": ["elevation"],
+      "valid_values": "any numeric value >= 0"
+    },
+    "upslope_area": {
+      "description": "Contributing drainage area (catchment size)",
+      "type": "float",
+      "unit": "square feet",
+      "range": [0, 1000000000],
+      "created_by": "Add Upslope Area Layer",
+      "dependencies": ["elevation", "flow"],
+      "valid_values": "any numeric value >= 0"
+    },
+    "flow": {
+      "description": "Flow direction or flow accumulation",
+      "type": "float",
+      "created_by": "Flow analysis components",
+      "dependencies": ["elevation", "slope"],
+      "valid_values": "numeric or direction indicator"
+    },
+    "catchments": {
+      "description": "Watershed/catchment designation",
+      "type": "string/integer",
+      "created_by": "Add Catchments Layer",
+      "dependencies": ["elevation", "flow"],
+      "valid_values": "any alphanumeric identifier",
+      "examples": ["A", "B", "C1", "West Basin", "001"]
+    },
+    "hsg": {
+      "description": "Hydrologic Soil Group - soil infiltration classification",
+      "type": "string",
+      "created_by": "Manual layer creation (Add Shape Values Layer)",
+      "required_for": ["Calculate CN Layer"],
+      "valid_values": ["A", "B", "C", "D"],
+      "value_meanings": {
+        "A": "High infiltration, low runoff potential",
+        "B": "Moderate infiltration and runoff",
+        "C": "Low infiltration, moderate runoff",
+        "D": "Very low infiltration, high runoff"
+      }
+    },
+    "gc": {
+      "description": "Ground Cover type - vegetation and surface classification",
+      "type": "string",
+      "created_by": "Manual layer creation (Add Shape Values Layer)",
+      "required_for": ["Calculate CN Layer"],
+      "valid_values": ["LAWN", "PASTURE", "MEADOW", "ROW", "CONTOURED", "WOODS", "IMPERVIOUS"],
+      "value_meanings": {
+        "LAWN": "Maintained grass or turf",
+        "PASTURE": "Natural or managed grazing land",
+        "MEADOW": "Natural meadow or grassland",
+        "ROW": "Row crop cultivation",
+        "CONTOURED": "Row crops with contouring practices",
+        "WOODS": "Forest or wooded areas",
+        "IMPERVIOUS": "Non-infiltrating surfaces (pavement, concrete)"
+      }
+    },
+    "condition": {
+      "description": "Land condition - maintenance and vegetation density",
+      "type": "string",
+      "created_by": "Manual layer creation (Add Shape Values Layer)",
+      "required_for": ["Calculate CN Layer"],
+      "valid_values": ["POOR", "FAIR", "GOOD"],
+      "value_meanings": {
+        "POOR": "Limited vegetation, sparse cover, degraded condition",
+        "FAIR": "Moderate vegetation, average maintenance",
+        "GOOD": "Dense vegetation, well-established cover, good maintenance"
+      }
+    },
+    "cn": {
+      "description": "Curve Number - runoff potential (0-98)",
+      "type": "integer",
+      "unit": "dimensionless",
+      "range": [0, 98],
+      "created_by": "Calculate CN Layer",
+      "dependencies": ["hsg", "gc", "condition"],
+      "calculation_note": "Assigned from CN lookup table based on HSG:GC:Condition combination"
+    },
+    "water area": {
+      "description": "Unique area identifier combining catchment + HSG + GC + condition",
+      "type": "string",
+      "format": "catchment:hsg:gc:condition",
+      "created_by": "Calculate CN Layer",
+      "example": "A:C:LAWN:GOOD"
+    },
+    "hours_of_sun": {
+      "description": "Solar exposure/sun hours at each cell",
+      "type": "float",
+      "unit": "hours",
+      "range": [0, 24],
+      "created_by": "Add Sun Exposure Layer",
+      "valid_values": "numeric value 0-24"
+    },
+    "static_storage": {
+      "description": "Storage capacity of ground",
+      "type": "float",
+      "unit": "inches or feet",
+      "created_by": "Add Static Storage Layer",
+      "valid_values": "any numeric value >= 0"
+    },
+    "inlet_cells": {
+      "description": "Binary flag indicating inlet locations",
+      "type": "boolean/integer",
+      "valid_values": [0, 1, "True", "False"],
+      "created_by": "Manual specification"
+    },
+    "outlet_cells": {
+      "description": "Binary flag indicating outlet locations",
+      "type": "boolean/integer",
+      "valid_values": [0, 1, "True", "False"],
+      "created_by": "Manual specification"
+    },
+    "in_diffs": {
+      "description": "Incoming elevation differences (for flow calculation)",
+      "type": "float",
+      "unit": "feet",
+      "created_by": "Flow analysis"
+    },
+    "out_diffs": {
+      "description": "Outgoing elevation differences (for flow calculation)",
+      "type": "float",
+      "unit": "feet",
+      "created_by": "Flow analysis"
+    },
+    "boundary_index": {
+      "description": "Which boundary polygon the cell belongs to",
+      "type": "integer",
+      "auto_created": true,
+      "created_by": "Create Water Environment"
+    },
+    "cell_index": {
+      "description": "Unique sequential index for each cell",
+      "type": "integer",
+      "auto_created": true,
+      "created_by": "Create Water Environment"
+    }
+  },
+  "layer_dependencies": {
+    "Calculate CN Layer": {
+      "requires": ["hsg", "gc", "condition"],
+      "creates": ["cn", "water area"]
+    },
+    "Add Catchments Layer": {
+      "requires": ["elevation"],
+      "creates": ["catchments", "flow"]
+    },
+    "Add Slope Layer": {
+      "requires": ["elevation"],
+      "creates": ["slope"]
+    },
+    "Add Upslope Area Layer": {
+      "requires": ["elevation", "flow"],
+      "creates": ["upslope_area"]
+    },
+    "Add Sun Exposure Layer": {
+      "creates": ["hours_of_sun"]
+    },
+    "Add Static Storage Layer": {
+      "creates": ["static_storage"]
+    }
+  },
+  "validation_rules": {
+    "HSG_values": {
+      "allowed": ["A", "B", "C", "D"],
+      "case_sensitive": false,
+      "auto_default": "C"
+    },
+    "GC_values": {
+      "allowed": ["LAWN", "PASTURE", "MEADOW", "ROW", "CONTOURED", "WOODS", "IMPERVIOUS"],
+      "case_sensitive": false,
+      "auto_default": "LAWN"
+    },
+    "Condition_values": {
+      "allowed": ["POOR", "FAIR", "GOOD"],
+      "case_sensitive": false,
+      "auto_default": "GOOD"
+    },
+    "CN_range": {
+      "min": 0,
+      "max": 98,
+      "impervious_always": 98
+    }
+  }
+}

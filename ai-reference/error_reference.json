@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "last_updated": "2026-11-04",
+    "description": "Common errors and troubleshooting guide for Land Kit"
+  },
+  "errors": [
+    {
+      "error_id": "MISSING_LAYER_ELEVATION",
+      "error_message": "Missing layer: 'elevation'",
+      "severity": "ERROR",
+      "causes": [
+        "Add Elevation Layer was not run before this component",
+        "Environment was not properly initialized with topography mesh"
+      ],
+      "solution": "Run 'Add Elevation Layer' component before this operation. It requires a valid topography mesh.",
+      "workflow_step": "Add Elevation Layer before any terrain-dependent analysis"
+    },
+    {
+      "error_id": "MISSING_LAYER_HSG",
+      "error_message": "Missing layer: 'hsg'",
+      "severity": "ERROR",
+      "causes": [
+        "Calculate CN Layer requires HSG data that hasn't been added",
+        "User didn't provide soil group data"
+      ],
+      "solution": "Use 'Add Shape Values Layer' component to add HSG data. Pass soil survey boundaries/shapes with HSG values (A, B, C, or D).",
+      "example": "shapes = [soil_zone_1, soil_zone_2], values = ['A', 'C']"
+    },
+    {
+      "error_id": "MISSING_LAYER_GC",
+      "error_message": "Missing layer: 'gc' (ground cover)",
+      "severity": "ERROR",
+      "causes": [
+        "Calculate CN Layer requires ground cover data that hasn't been added",
+        "User didn't provide land use/cover classification"
+      ],
+      "solution": "Use 'Add Shape Values Layer' to add ground cover. Valid values: LAWN, PASTURE, MEADOW, ROW, CONTOURED, WOODS, IMPERVIOUS",
+      "example": "shapes = [residential_areas, forest_areas], values = ['LAWN', 'WOODS']"
+    },
+    {
+      "error_id": "MISSING_LAYER_CONDITION",
+      "error_message": "Missing layer: 'condition'",
+      "severity": "ERROR",
+      "causes": [
+        "Calculate CN Layer requires condition data that hasn't been added",
+        "User didn't provide land condition ratings"
+      ],
+      "solution": "Use 'Add Shape Values Layer' to add condition data. Valid values: POOR, FAIR, GOOD",
+      "default": "If not provided, defaults to GOOD"
+    },
+    {
+      "error_id": "INVALID_HSG_VALUE",
+      "error_message": "Invalid HSG value. Expected A, B, C, or D",
+      "severity": "ERROR",
+      "causes": [
+        "User provided HSG value outside allowed range",
+        "Typo in HSG data (e.g., 'a' instead of 'A')"
+      ],
+      "solution": "Ensure HSG values are exactly one of: A, B, C, D (case-insensitive, but will be normalized to uppercase)",
+      "note": "System automatically converts to uppercase, so lowercase values will work"
+    },
+    {
+      "error_id": "INVALID_GC_VALUE",
+      "error_message": "Invalid ground cover value",
+      "severity": "ERROR",
+      "valid_values": ["LAWN", "PASTURE", "MEADOW", "ROW", "CONTOURED", "WOODS", "IMPERVIOUS"],
+      "causes": [
+        "User provided GC value not in allowed list",
+        "Typo in ground cover classification"
+      ],
+      "solution": "Use only valid ground cover types from the allowed list. Check spelling carefully.",
+      "autocorrect_note": "System attempts to coerce names (e.g., GRASSLAND -> PASTURE, RANGE -> PASTURE)"
+    },
+    {
+      "error_id": "SHAPE_VALUE_MISMATCH",
+      "error_message": "Shape list length doesn't match value list length",
+      "severity": "ERROR",
+      "component": "Add Shape Values Layer",
+      "causes": [
+        "Number of shapes and values don't align",
+        "One list is empty when the other isn't"
+      ],
+      "solution": "Ensure shapes and values lists have the same length. Each shape needs exactly one corresponding value.",
+      "example_correct": "shapes = [area1, area2], values = ['LAWN', 'WOODS']",
+      "example_wrong": "shapes = [area1, area2], values = ['LAWN']"
+    },
+    {
+      "error_id": "AREA_SIZE_MISMATCH",
+      "error_message": "Area/shape instances and values don't match",
+      "severity": "WARNING",
+      "component": "Add Shape Values Layer",
+      "causes": [
+        "When using Area instances, values list might be ignored in favor of area.layer property"
+      ],
+      "solution": "If using Area instances, set area.layer property to the desired value. If mixing shapes and values, ensure they match."
+    },
+    {
+      "error_id": "INVALID_CELL_SIZE",
+      "error_message": "Cell size is too large or too small",
+      "severity": "ERROR",
+      "component": "Create Water Environment",
+      "causes": [
+        "Cell size is 0 or negative",
+        "Cell size is so small it creates millions of cells (memory issue)",
+        "Cell size is larger than the analysis boundary"
+      ],
+      "solution": "Use a reasonable cell size between 1 and 1000 feet. Consider your analysis area size and computer memory.",
+      "recommendation": "For most landscape projects, 5-10 feet is typical"
+    },
+    {
+      "error_id": "INVALID_BOUNDARY",
+      "error_message": "Boundary curves are invalid or don't enclose area",
+      "severity": "ERROR",
+      "component": "Create Water Environment",
+      "causes": [
+        "Boundary curve is not closed",
+        "Boundary is self-intersecting",
+        "Boundary is not a valid Rhino curve"
+      ],
+      "solution": "Ensure boundary curves are valid, closed curves. Join multiple curves if needed. Check that curve geometry is clean."
+    },
+    {
+      "error_id": "MISSING_TOPO_MESH",
+      "error_message": "Topography mesh is missing or invalid",
+      "severity": "ERROR",
+      "component": "Create Water Environment",
+      "causes": [
+        "No mesh was provided to topo input",
+        "Mesh is empty or degenerate"
+      ],
+      "solution": "Provide a valid topography mesh. Create one in Rhino from DEM data, survey points, or similar."
+    },
+    {
+      "error_id": "CN_CALCULATION_FAILED",
+      "error_message": "CN calculation could not find matching combination",
+      "severity": "ERROR",
+      "component": "Calculate CN Layer",
+      "causes": [
+        "Combination of HSG + GC + Condition doesn't exist in lookup table",
+        "One of the three layers is missing"
+      ],
+      "solution": "Verify that all three layers (hsg, gc, condition) are present and use valid values."
+    },
+    {
+      "error_id": "CSV_WRITE_FAILED",
+      "error_message": "CSV file could not be written",
+      "severity": "WARNING",
+      "component": "Calculate CN Layer, others",
+      "causes": [
+        "File is already open in another program (Excel, etc.)",
+        "Path is invalid or not writable",
+        "Insufficient disk space"
+      ],
+      "solution": "Close the CSV file if open elsewhere. Check file path is valid. Ensure write permissions to directory."
+    },
+    {
+      "error_id": "FORMULA_SYNTAX_ERROR",
+      "error_message": "Invalid formula syntax",
+      "severity": "ERROR",
+      "component": "Add Layer by Formula",
+      "causes": [
+        "Formula uses non-existent layer names",
+        "Python syntax error in formula",
+        "Invalid operators or functions"
+      ],
+      "solution": "Check formula syntax. Use correct layer names. Verify operations are supported (basic math: +, -, *, /, sqrt, etc.)",
+      "example_correct": "new_layer = elevation * 0.5 + slope",
+      "example_wrong": "new_layer = elevation * 0.5 + nonexistent_layer"
+    },
+    {
+      "error_id": "NO_CELLS_FOUND",
+      "error_message": "No cells found in shape",
+      "severity": "WARNING",
+      "component": "Add Shape Values Layer",
+      "causes": [
+        "Shape is too small relative to cell size",
+        "Shape doesn't overlap with environment boundary",
+        "Shape is outside the analysis area"
+      ],
+      "solution": "Ensure shapes overlap the environment boundary and are larger than cell size. Use smaller cell size if needed.",
+      "debugging": "Visualize the grid and shapes together to see if they overlap"
+    },
+    {
+      "error_id": "MEMORY_EXCEEDED",
+      "error_message": "Not enough memory to process",
+      "severity": "ERROR",
+      "causes": [
+        "Cell size too small, creating millions of cells",
+        "Analysis area too large",
+        "Computer doesn't have enough RAM"
+      ],
+      "solution": "Increase cell size, reduce analysis area, or run on a computer with more RAM.",
+      "estimate": "Each cell uses ~1KB of memory. A 1000-acre site with 5-ft cells = ~50,000 cells = ~50MB minimum"
+    }
+  ],
+  "warnings": [
+    {
+      "warning_id": "DEPRECATED_COMPONENT",
+      "message": "This component is deprecated",
+      "recommendation": "Use the newer alternative component instead"
+    },
+    {
+      "warning_id": "MISSING_OPTIONAL_INPUT",
+      "message": "Optional input not provided; using default",
+      "note": "Check component documentation for what default value is used"
+    },
+    {
+      "warning_id": "LAYER_ALREADY_EXISTS",
+      "message": "Layer already exists; it will be overwritten",
+      "action": "Existing layer data will be replaced with new values"
+    }
+  ],
+  "troubleshooting_guide": {
+    "script_not_running": [
+      "Check that all required inputs are connected",
+      "Verify input data types match component requirements",
+      "Look for red error indicators on components",
+      "Check Rhino console for error messages"
+    ],
+    "unexpected_results": [
+      "Verify input data is correct (check CAD geometry, layer names)",
+      "Ensure proper workflow order (dependencies are met)",
+      "Check that coordinate systems match",
+      "Review component descriptions for required data formats"
+    ],
+    "slow_performance": [
+      "Reduce cell size or analysis area",
+      "Close unnecessary Rhino windows/files",
+      "Check computer RAM availability",
+      "Run on a more powerful computer for large areas"
+    ],
+    "data_doesnt_match_reality": [
+      "Verify input data accuracy (soil survey, land use classification)",
+      "Check coordinate systems and projections",
+      "Confirm topography mesh is correctly georeferenced",
+      "Validate cell size is appropriate for study detail level"
+    ]
+  }
+}

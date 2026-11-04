@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "last_updated": "2026-11-04",
+    "title": "Land Kit AI Integration Guide",
+    "description": "How to access and use Land Kit AI reference documentation"
+  },
+  "quick_start": {
+    "for_raven": "If you're using Raven in Grasshopper, here's how to reference Land Kit docs in your prompts",
+    "for_developers": "If you're building a Grasshopper AI tool, here's how to integrate Land Kit",
+    "for_users": "If you want to generate Land Kit scripts with AI, here's what to ask the AI"
+  },
+  "github_endpoints": {
+    "base_url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference",
+    "files": [
+      {
+        "file": "component_registry.json",
+        "size": "148 KB",
+        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/component_registry.json",
+        "use": "Get list of all components and their input/output specs",
+        "update_frequency": "Weekly (auto-generated from source)"
+      },
+      {
+        "file": "layer_validation.json",
+        "size": "6.7 KB",
+        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/layer_validation.json",
+        "use": "Validate layer names and acceptable values",
+        "update_frequency": "Monthly (manually updated)"
+      },
+      {
+        "file": "workflow_patterns.json",
+        "size": "8.1 KB",
+        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/workflow_patterns.json",
+        "use": "Reference proven workflow sequences",
+        "update_frequency": "As new patterns are added"
+      },
+      {
+        "file": "error_reference.json",
+        "size": "9.8 KB",
+        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/error_reference.json",
+        "use": "Troubleshoot errors and understand solutions",
+        "update_frequency": "As new errors are encountered"
+      },
+      {
+        "file": "README.md",
+        "size": "4.6 KB",
+        "url": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/README.md",
+        "use": "Overview of all AI reference files",
+        "update_frequency": "As documentation changes"
+      }
+    ]
+  },
+  "usage_scenarios": [
+    {
+      "scenario": "I want to generate a hydrology script",
+      "steps": [
+        "1. Ask AI: 'Generate a Land Kit Grasshopper script for basic hydrology analysis'",
+        "2. AI fetches workflow_patterns.json and finds 'basic_hydrology' workflow",
+        "3. AI references component_registry.json to get component details",
+        "4. AI generates script following the workflow sequence"
+      ],
+      "prompt_example": "Using Land Kit, create a Grasshopper script that: creates an environment, adds elevation, calculates slope, and delineates catchments. Follow the basic_hydrology workflow pattern."
+    },
+    {
+      "scenario": "I want to add custom data layers",
+      "steps": [
+        "1. Ask AI: 'Add HSG and ground cover data to my Land Kit analysis'",
+        "2. AI looks up layer_validation.json to find valid HSG values",
+        "3. AI references workflow_patterns.json for cn_calculation workflow",
+        "4. AI generates appropriate 'Add Shape Values Layer' components"
+      ],
+      "prompt_example": "Add HSG (A, B, C, D) and ground cover (LAWN, WOODS, PASTURE) to my environment using shapes."
+    },
+    {
+      "scenario": "My script failed with an error",
+      "steps": [
+        "1. Provide error message to AI",
+        "2. AI consults error_reference.json for known error patterns",
+        "3. AI suggests solution or debugging steps",
+        "4. AI may regenerate script with fix applied"
+      ],
+      "prompt_example": "I got error 'Missing layer: hsg'. Why and how do I fix it?"
+    },
+    {
+      "scenario": "I want to validate my data before running",
+      "steps": [
+        "1. Ask AI to validate data against layer_validation.json",
+        "2. AI checks that HSG values are A/B/C/D",
+        "3. AI checks that GC values match allowed types",
+        "4. AI flags any validation issues before generating script"
+      ],
+      "prompt_example": "Check my data: HSG values are [A, C, B, D], GC values are [LAWN, WOODS, PASTURE]. Are these valid?"
+    }
+  ],
+  "for_grasshopper_raven": {
+    "how_to_prompt": [
+      "Reference workflow names: 'Follow the basic_hydrology workflow from the Land Kit documentation'",
+      "Reference components by nickname: 'Use +ShapeValues to add data'",
+      "Ask for validation: 'Check these HSG values against Land Kit validation rules'",
+      "Ask for error help: 'Why did I get this error? Reference Land Kit error_reference.json'"
+    ],
+    "example_prompts": [
+      "Generate a Land Kit script following the 'cn_calculation' workflow. Import soil data using +ShapeValues, land use data, and condition ratings, then calculate CN values.",
+      "Create a hydrology analysis: basic_hydrology workflow + catchments + upslope areas. Export results as CSV.",
+      "I'm getting 'Invalid GC value' error. Validate my land use classifications against allowed values.",
+      "Design a drainage system: follow drainage_design workflow with detention pond storage areas."
+    ]
+  },
+  "for_tool_developers": {
+    "integration_steps": [
+      "1. Cache component_registry.json on startup (148 KB)",
+      "2. Cache layer_validation.json and workflow_patterns.json (together ~15 KB)",
+      "3. Check version field in meta object for updates",
+      "4. When user encounters error, check error_reference.json"
+    ],
+    "caching_strategy": {
+      "approach": "Download and cache on startup, check version daily",
+      "fallback": "Include minimal local copies for offline mode",
+      "update_check": "Compare meta.last_updated field with cached version"
+    },
+    "error_handling": [
+      "If fetch fails (no internet), use cached local copies",
+      "If cached data is missing, provide helpful error message",
+      "Store last successful fetch timestamp",
+      "Offer user option to update docs manually"
+    ],
+    "python_example": {
+      "language": "Python",
+      "description": "How to fetch and cache Land Kit reference docs",
+      "code": [
+        "import urllib2, json, os, time",
+        "",
+        "class LandKitReference:",
+        "    def __init__(self, cache_dir):",
+        "        self.cache_dir = cache_dir",
+        "        self.base_url = 'https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference'",
+        "        self.files = ['component_registry.json', 'layer_validation.json', 'workflow_patterns.json']",
+        "",
+        "    def fetch_file(self, filename, max_cache_age_hours=24):",
+        "        cache_path = os.path.join(self.cache_dir, filename)",
+        "        ",
+        "        # Check if cached copy exists and is fresh",
+        "        if os.path.exists(cache_path):",
+        "            cache_age = (time.time() - os.path.getmtime(cache_path)) / 3600",
+        "            if cache_age < max_cache_age_hours:",
+        "                with open(cache_path) as f:",
+        "                    return json.load(f)",
+        "        ",
+        "        # Fetch from GitHub",
+        "        url = self.base_url + '/' + filename",
+        "        response = urllib2.urlopen(url)",
+        "        data = json.load(response)",
+        "        ",
+        "        # Cache it",
+        "        with open(cache_path, 'w') as f:",
+        "            json.dump(data, f)",
+        "        ",
+        "        return data",
+        "",
+        "# Usage:",
+        "lk_ref = LandKitReference('/path/to/cache')",
+        "registry = lk_ref.fetch_file('component_registry.json')",
+        "validation = lk_ref.fetch_file('layer_validation.json')"
+      ]
+    }
+  },
+  "file_specifications": {
+    "component_registry.json": {
+      "structure": "List of component objects",
+      "schema": {
+        "meta": "Metadata including version, count",
+        "components": [
+          {
+            "name": "Component display name",
+            "nickname": "Short identifier for GH",
+            "description": "What it does",
+            "category": "Major category (e.g., '7 analysis')",
+            "inputs": [{"name", "nickname", "description", "type", "required"}],
+            "outputs": [{"name", "description"}],
+            "file": "Source Python file"
+          }
+        ]
+      },
+      "total_size": "~150 KB",
+      "total_components": 123,
+      "regeneration": "Auto-generated weekly from source components"
+    },
+    "layer_validation.json": {
+      "structure": "Dictionary of layer definitions and validation rules",
+      "schema": {
+        "layers": {
+          "layer_name": {
+            "description": "What the layer represents",
+            "type": "Data type (float, string, int, etc.)",
+            "valid_values": ["List of allowed values or range"],
+            "created_by": "Component that creates this layer",
+            "required_for": ["Components that need this layer"]
+          }
+        },
+        "layer_dependencies": {
+          "component_name": {"requires": [], "creates": []}
+        },
+        "validation_rules": {
+          "HSG_values": {"allowed": ["A", "B", "C", "D"]},
+          "GC_values": {"allowed": ["LAWN", "WOODS", ...]},
+          "Condition_values": {"allowed": ["POOR", "FAIR", "GOOD"]}
+        }
+      },
+      "total_size": "~7 KB",
+      "layers_defined": 18
+    },
+    "workflow_patterns.json": {
+      "structure": "List of workflow patterns",
+      "schema": {
+        "workflows": [
+          {
+            "id": "workflow_id",
+            "name": "Human-readable name",
+            "description": "What it accomplishes",
+            "steps": [
+              {
+                "order": 1,
+                "component": "Component name",
+                "inputs": ["List of input names"],
+                "outputs": ["List of output names"],
+                "description": "What this step does"
+              }
+            ],
+            "output_layers": ["Layers created"],
+            "use_case": "When to use this workflow"
+          }
+        ],
+        "workflow_dependency_graph": {
+          "component_name": ["prerequisite_components"]
+        }
+      },
+      "total_size": "~8 KB",
+      "workflows_included": 5
+    },
+    "error_reference.json": {
+      "structure": "List of documented errors and troubleshooting",
+      "schema": {
+        "errors": [
+          {
+            "error_id": "Unique identifier",
+            "error_message": "Exact error text",
+            "severity": "ERROR or WARNING",
+            "causes": ["Possible causes"],
+            "solution": "How to fix it"
+          }
+        ],
+        "troubleshooting_guide": {
+          "symptom": ["Possible causes and solutions"]
+        }
+      },
+      "total_size": "~10 KB",
+      "errors_documented": 15
+    }
+  },
+  "version_strategy": {
+    "semantic_versioning": "MAJOR.MINOR.PATCH",
+    "breaking_changes": "Would increment MAJOR version",
+    "new_features": "Increment MINOR version",
+    "bug_fixes": "Increment PATCH version",
+    "current_version": "2.3.1",
+    "version_check": "Always compare meta.version with cached version before using"
+  },
+  "future_enhancements": [
+    "Performance benchmarks by component",
+    "Python API reference with code examples",
+    "Component interaction matrix (which outputs feed which inputs)",
+    "Real-time documentation updates via GitHub API",
+    "Unit tests for validation rules",
+    "Multi-language support"
+  ]
+}

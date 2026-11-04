@@ -1,0 +1,5146 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "last_updated": "2026-11-04",
+    "total_components": 123
+  },
+  "components": [
+    {
+      "name": "Add Color Rule",
+      "nickname": "+CR",
+      "description": "Add paving color rule to an area",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Color rule (as list)",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with added color rule"
+        }
+      ],
+      "file": "add_color_rule.py"
+    },
+    {
+      "name": "Add CSV Data",
+      "nickname": "+CSV DATA",
+      "description": "Adds data from a csv to a plant or an area.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "csv path",
+          "nickname": "csv path",
+          "description": "File path of csv with data values for plants and areas.",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "<P/A>",
+          "nickname": "<P/A>",
+          "description": "Plants of Areas to add data to",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "name key",
+          "nickname": "name key",
+          "description": "Key for the data column that represents the name of the plant or area. Matching is loose. Default = ",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P/A>",
+          "description": "Plant or Area with data added"
+        },
+        {
+          "name": "data list",
+          "description": "list of data potentially added from csv"
+        }
+      ],
+      "file": "add_csv_data.py"
+    },
+    {
+      "name": "Add Curb Cuts",
+      "nickname": "+curbCUT",
+      "description": "Adds curb cuts to collection of curbs from curb cut centerlines. Also returns ramp features.",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "<C>",
+          "nickname": "<C>",
+          "description": "Collection of Curb instances to add curb cuts to",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "cut cls",
+          "nickname": "cut cls",
+          "description": "Centerlines of curb cuts",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "width",
+          "nickname": "width",
+          "description": "Width of main ramp. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "run",
+          "nickname": "run",
+          "description": "Run distance of main ramp. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "flare",
+          "nickname": "flare",
+          "description": "Width of each side of the flare. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "curbs",
+          "description": "Curbs with cuts which are added"
+        },
+        {
+          "name": "ramps",
+          "description": "Ramp objects to add to your topo. These are like paths."
+        },
+        {
+          "name": "preview",
+          "description": "Preview of the new ramp outlines"
+        }
+      ],
+      "file": "add_curb_cuts.py"
+    },
+    {
+      "name": "Add Custom Pattern",
+      "nickname": "+CPAT",
+      "description": "Add custom paver shapes as curves to an area",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area to add custom pavers to",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "pavers",
+          "nickname": "pavers",
+          "description": "paver_curves",
+          "type": "curve",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with custom pattern added"
+        }
+      ],
+      "file": "add_custom_pattern.py"
+    },
+    {
+      "name": "Layer by Formula",
+      "nickname": "=FORMULA",
+      "description": "Calculates an environment layer based on a formula from other layers. result_layer = slope + elevation",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "formula",
+          "nickname": "formula",
+          "description": "Formula as a string using layer names, python math, and random functions formatted: destination_laye",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with formula layer added"
+        }
+      ],
+      "file": "add_layer_by_formula.py"
+    },
+    {
+      "name": "Add Catchments Layer",
+      "nickname": "+CATCH",
+      "description": "Adds catchment analysis layer to the environment",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "basins",
+          "nickname": "basins",
+          "description": "Basin boundaries to define and collect catchment destinations.",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "pipes",
+          "nickname": "pipes",
+          "description": "Curves to define conveyances between any point in one catchment to another.",
+          "type": "curve",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with catchment layer added"
+        },
+        {
+          "name": "curves",
+          "description": "cell-based flow curves"
+        },
+        {
+          "name": "colors",
+          "description": "colors for each flow curve based on length"
+        },
+        {
+          "name": "indices",
+          "description": "indices for each catchment"
+        },
+        {
+          "name": "areas",
+          "description": "areas for each catchment"
+        },
+        {
+          "name": "high pts",
+          "description": "areas for each catchment"
+        },
+        {
+          "name": "low pts",
+          "description": "areas for each catchment"
+        }
+      ],
+      "file": "add_layer_catchments.py"
+    },
+    {
+      "name": "Add Elevation Layer",
+      "nickname": "+ELE",
+      "description": "Adds a layer of elevation analysis to the environment",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with elevation layer added"
+        }
+      ],
+      "file": "add_layer_elevation.py"
+    },
+    {
+      "name": "Add Feature Proximity Layer",
+      "nickname": "+FeatPROX",
+      "description": "Adds a feature proximity layer of analysis to the environment",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "name",
+          "nickname": "name",
+          "description": "A name you want to give this layer.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "features",
+          "nickname": "features",
+          "description": "features to use to calculate proximity - path, door, etc",
+          "type": "geometry",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with feature proximity layer added"
+        }
+      ],
+      "file": "add_layer_featureproximity.py"
+    },
+    {
+      "name": "Add Layer Fill",
+      "nickname": "+FILL",
+      "description": "Adds an analysis layer that is all one value.",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Land Kit Environment",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer name",
+          "nickname": "layer name",
+          "description": "Name of analysis layer being filled with number, color, or string. Strings may be comma separated",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "value",
+          "nickname": "value",
+          "description": "Value to fill with. Number, Color, or String. String can be comma-separated",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment to add restriction rule to"
+        }
+      ],
+      "file": "add_layer_fill.py"
+    },
+    {
+      "name": "Add Image Layer",
+      "nickname": "+Image",
+      "description": "Adds an image-based layer of analysis to the environment.",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "name",
+          "nickname": "name",
+          "description": "A name you want to give to this layer. Default = image map",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "picture",
+          "nickname": "picture",
+          "description": "Reference to a surface from Rhino with an image applied.",
+          "type": "guid",
+          "required": false
+        },
+        {
+          "name": "channel",
+          "nickname": "channel",
+          "description": "Channels to use to create from given data. 0=Red 1=Green 2=Blue 3=All. Default = 0",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with image map added"
+        }
+      ],
+      "file": "add_layer_image.py"
+    },
+    {
+      "name": "Add Occurrence Layer",
+      "nickname": "+OCCUR",
+      "description": "Adds a layer that tallies occurrences of geometry density",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "name",
+          "nickname": "name",
+          "description": "A name you want to give this layer. Default = occurrences",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "Geometry to test. polyline vertices, pts, plants, mesh vertices",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with occurrence layer added"
+        }
+      ],
+      "file": "add_layer_occurence.py"
+    },
+    {
+      "name": "Add Layer Overlay",
+      "nickname": "Overlay=",
+      "description": "Overlays multiple layers into one layer. Combines each value combination into concatenated string values.",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with the layers you want to overlay.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layers",
+          "nickname": "layers",
+          "description": "Layers you want to combine.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "name",
+          "nickname": "name",
+          "description": "Name of the combined layer after overlaying. Default = layer1:layer2:layer3",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "E",
+          "description": "Environment with overlay layer added"
+        },
+        {
+          "name": "area id",
+          "description": "id for areas with unique attribute combinations or overlays"
+        },
+        {
+          "name": "area",
+          "description": "Amount of area for each area id"
+        }
+      ],
+      "file": "add_layer_overlays.py"
+    },
+    {
+      "name": "Layer Shape Value Set",
+      "nickname": "Shp/Value-SET",
+      "description": "Gets shapes from the child layers of given layer.",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Parent layer. Child layers should be named as values for shape-value output - ie ",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "layer shapes",
+          "description": "Geometry from child layers"
+        },
+        {
+          "name": "layer values",
+          "description": "Names of child layers"
+        },
+        {
+          "name": "layer colors",
+          "description": "Colors of child layers"
+        }
+      ],
+      "file": "add_layer_shape_value_set.py"
+    },
+    {
+      "name": "Add Shape Values Layer",
+      "nickname": "+ShapeValues",
+      "description": "Adds a shape values layer to the environment. If a cell is in a shape, it will have the corresponding value.",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "name",
+          "nickname": "name",
+          "description": "A name you want to give to this layer.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "shapes",
+          "nickname": "shapes",
+          "description": "Curves or flat surfaces that will match the values. Input areas will use the area.layer value.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "values",
+          "nickname": "values",
+          "description": "Values that will be assigned to cells within given shapes. Should match quantity of shapes unless us",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with feature proximity layer added"
+        }
+      ],
+      "file": "add_layer_shape_values.py"
+    },
+    {
+      "name": "Add Slope Layer",
+      "nickname": "+SLOPE",
+      "description": "Adds a layer of slope analysis to the environment",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with slope layer added"
+        }
+      ],
+      "file": "add_layer_slope.py"
+    },
+    {
+      "name": "Add Static Storage Layer",
+      "nickname": "STORAGE",
+      "description": "Gets the depth of cells within static storage basin shapes and calculates their volumes.",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "basins",
+          "nickname": "basins",
+          "description": "Shapes of static storage basins in plan.",
+          "type": "curve",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with "
+        },
+        {
+          "name": "volumes",
+          "description": "Volume of each static storage basin"
+        }
+      ],
+      "file": "add_layer_static_storage.py"
+    },
+    {
+      "name": "Add Sun Exposure Layer",
+      "nickname": "+SUN",
+      "description": "Adds a 'sun exposure' and 'hours_of_sun' analysis layers to the environment. 'sun exposure' layer is 'Sun', 'Part Shade', or 'Shade' based on the number of hours of sun per day. The hours_of_sun layer",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "other",
+          "nickname": "other",
+          "description": "Other meshes that cast a significant shadow",
+          "type": "mesh",
+          "required": false
+        },
+        {
+          "name": "vectors",
+          "nickname": "vectors",
+          "description": "Optional: Sun vectors to use from the lady bug component. If not provided, vectors will be fetched a",
+          "type": "vector",
+          "required": false
+        },
+        {
+          "name": "start",
+          "nickname": "start",
+          "description": "Starting month of the growing season",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "last",
+          "nickname": "last",
+          "description": "Last month of the growing season",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "alt name",
+          "nickname": "alt name",
+          "description": "Alternative name for the output layer, in place of ",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with sun exposure layer added"
+        }
+      ],
+      "file": "add_layer_sunexposure.py"
+    },
+    {
+      "name": "Add Upslope Area Layer",
+      "nickname": "+UPSLOPE",
+      "description": "Adds a layer of upslope area analysis to the environment",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with upslope_area layer added"
+        }
+      ],
+      "file": "add_layer_upslopearea.py"
+    },
+    {
+      "name": "Add Values Layer",
+      "nickname": "+VALUES",
+      "description": "Adds a layer with a list of values to the environment. Must be the same quantity as get environment layer output.",
+      "category": "7 analysis",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "values",
+          "nickname": "values",
+          "description": "Values representing a custom set of data.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Name of new layer. Pick a specific name! Default = values",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with values layer added"
+        }
+      ],
+      "file": "add_layer_values.py"
+    },
+    {
+      "name": "Add Land Use to Areas",
+      "nickname": "AREAS +LU",
+      "description": "Allows user to assign a land use(assembly) from Sasaki Carbon Conscience to each area.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances to add land use carbon data.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "activate",
+          "nickname": "activate",
+          "description": "boolean to activate land use selection dialog",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Areas with carbon data assigned. Ready to calculate carbon!"
+        }
+      ],
+      "file": "add_materials_to_areas.py"
+    },
+    {
+      "name": "Add Path Cross Slope",
+      "nickname": "+crossSLOPE",
+      "description": "Adds cross slope to path. Mode determines which side shifts up or both.",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Path to add cross slope to",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "slope",
+          "nickname": "slope",
+          "description": "Slope as a percent (2 for 2%). Default = 2 ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "mode",
+          "nickname": "mode",
+          "description": "Modes: 0=right side up, 1=left side up, 2=right twist, 3=left twist. Default = 2. By twist we only m",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Path with cross slope added"
+        }
+      ],
+      "file": "add_path_cross_slope.py"
+    },
+    {
+      "name": "Add Path Pattern",
+      "nickname": "+PATH PAT",
+      "description": "Add a running paving pattern to a path or an area. Paths will convert to areas.",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A/P>",
+          "nickname": "<A/P>",
+          "description": "Area or Path to add running paving pattern to. Paving will replace existing paving.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "centerline",
+          "nickname": "centerline",
+          "description": "Centerline curve of running pattern. Do not use if you are filling a path.",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "path width",
+          "nickname": "path width",
+          "description": "Width of desired pattern. Do not use if you are filling a path. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "length",
+          "nickname": "length",
+          "description": "Dimension of first or primary side. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "width",
+          "nickname": "width",
+          "description": "Dimension of second or secondary side. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "seam",
+          "nickname": "seam",
+          "description": "Size of seam. A larger seam will not cut into paver dimensions. Default = 0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "start mode",
+          "nickname": "start mode",
+          "description": "Integer determining the start of the pattern. 0=None 1=running bond 2=random 3=seams. Default = 1",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area or areas with pavers added. Polyline centerlines will produce separate areas per section."
+        },
+        {
+          "name": "pavers",
+          "description": "paver shapes"
+        }
+      ],
+      "file": "add_path_pattern.py"
+    },
+    {
+      "name": "Add Pattern to Area",
+      "nickname": "+PAT",
+      "description": "Add a paving pattern to an area",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area to add paving to. Paving will replace existing paving.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "nickname": "pattern",
+          "description": "Index of pattern - 0-Grid, 1-RunningBond, 2-Hex, 3-Tri, 4-HerringBone, 5-Radial. Default = 1",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "POB",
+          "nickname": "POB",
+          "description": "Point of beginning for each area. Default = center of area",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "length",
+          "nickname": "length",
+          "description": "Dimension of first or primary side. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "width",
+          "nickname": "width",
+          "description": "Dimension of second or secondary side. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "steps",
+          "nickname": "steps",
+          "description": "Number of steps if required, like in Running Bond or Herringbone. Default = 2",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "seam",
+          "nickname": "seam",
+          "description": "Size of seam. A larger seam will not cut into paver dimensions. Default = 0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "rotation",
+          "nickname": "rotation",
+          "description": "Number of degrees rotate the pattern. Default = 0",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with pavers added (replaced)"
+        },
+        {
+          "name": "pavers",
+          "description": "paver shapes"
+        }
+      ],
+      "file": "add_pattern_to_area.py"
+    },
+    {
+      "name": "Add Plants Constrained",
+      "nickname": "[+PLNT]",
+      "description": "Add plants to a planting area if all rules and parameters are met",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area to add plants to",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with needed layers to apply niche constraints and rules.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plants to add",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "locs",
+          "nickname": "locs",
+          "description": "Optional plant locations if plants do not have them. Not needed if plants have a location",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "fixed",
+          "nickname": "fixed",
+          "description": "Whether plants will remain fixed during area packing. Default = False",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "constrained",
+          "nickname": "constrained",
+          "description": "Whether plants will be constrained by niches. Default = True.",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with added plants that are fixed"
+        },
+        {
+          "name": "invalid",
+          "description": "invalid plant locations"
+        }
+      ],
+      "file": "add_plants_constrained.py"
+    },
+    {
+      "name": "Add Tessellation Pattern",
+      "nickname": "+TESS",
+      "description": "Creates a preview of a tessellation and adds it to an area",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "area to add the tessellation pattern to",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "POB",
+          "nickname": "POB",
+          "description": "point of beginning for laying out the tessellation in the area. Default = 0,0,0",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "tess geo",
+          "nickname": "tess geo",
+          "description": "closed curves or trim flat surfaces describing the tessellation module",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "origin",
+          "nickname": "origin",
+          "description": "start point of the tessellation local to the input module",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "u point",
+          "nickname": "u point",
+          "description": "point that describes a step in the first direction of the pattern - generally orient with x axis",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "v point",
+          "nickname": "v point",
+          "description": "point that describes a step in the second direction of the pattern- generally orient with y axis",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "rotation",
+          "nickname": "rotation",
+          "description": "Number of degrees to rotate the pattern around the POB. Default = 0",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "area with tessellation added"
+        },
+        {
+          "name": "pavers",
+          "description": "paver outlines if you need them already"
+        },
+        {
+          "name": "tess preview",
+          "description": "A preview to show how the tessellation is working."
+        }
+      ],
+      "file": "add_tessellation_pattern.py"
+    },
+    {
+      "name": "Add to Geo Set",
+      "nickname": "GT+x",
+      "description": "Adds geometry to specific categories of a geo set for topo. ie contour curves, spots, etc",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "geo set",
+          "nickname": "geo set",
+          "description": "Existing geo set for topo. Will make a new one if nothing is input here.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "contours",
+          "nickname": "contours",
+          "description": "Contours as elevated curves. Open and disconnected, okay, poly-lines with super tiny segments, bad.",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "spots",
+          "nickname": "spots",
+          "description": "Points representing spot elevations.",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "breaklines",
+          "nickname": "breaklines",
+          "description": "3D Curves. Similar results and rules as the contours.",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "other geo",
+          "nickname": "other geo",
+          "description": "Meshes or Breps that describe sculpted topo.",
+          "type": "geometry",
+          "required": false
+        },
+        {
+          "name": "mendlines",
+          "nickname": "mendlines",
+          "description": "Curves drawn between contours that will help reduce sawtooth meshing at steep grades. Use sparingly",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "boundaries",
+          "nickname": "boundaries",
+          "description": "Curve boundary of the extent of area being created or modified.",
+          "type": "curve",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<GT>",
+          "description": "Geo Set with add geometries to create or modify a topo instance"
+        }
+      ],
+      "file": "add_to_geo_set.py"
+    },
+    {
+      "name": "Add Wall Tops",
+      "nickname": "+WALL TOPS",
+      "description": "Creates wall tops from other walls and top spots",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "walls",
+          "nickname": "walls",
+          "description": "walls that you want to add onto",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "spots",
+          "nickname": "spots",
+          "description": "3D points that describe the top elevation of tops of wall",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "spot tol",
+          "nickname": "spot tol",
+          "description": "Distance tolerance between input walls faces and spot in plan to determine spot matching. Default >>",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<W>",
+          "description": "Wall Instances"
+        },
+        {
+          "name": "curves",
+          "description": "Curves for quickly previewing the walls. Use draw wall for masses etc"
+        }
+      ],
+      "file": "add_wall_tops.py"
+    },
+    {
+      "name": "Apply Niches from Data",
+      "nickname": "DATA>NICHE",
+      "description": "Apply plant data fields as constraints in a niche.",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plants to apply niches to based on data field names provided.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "fields",
+          "nickname": "fields",
+          "description": "List of data fields you would like to apply as constraints and add to the plant niche.",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plants with data fields applied as constraints"
+        },
+        {
+          "name": "<N>",
+          "description": "Niche instances for further examination/manipulation"
+        }
+      ],
+      "file": "apply_niches_from_data.py"
+    },
+    {
+      "name": "Area Stats",
+      "nickname": "AREA=STATS",
+      "description": "Get Area stats.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances with stats",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "geometry",
+          "description": "Area surface geometry"
+        },
+        {
+          "name": "layer",
+          "description": "Area layer "
+        },
+        {
+          "name": "color",
+          "description": "Area color"
+        },
+        {
+          "name": "srf area",
+          "description": "Surface area of the Area."
+        },
+        {
+          "name": "data keys",
+          "description": "Data keys of any data in the Area"
+        },
+        {
+          "name": "data values",
+          "description": "Data values of any data in the Area"
+        }
+      ],
+      "file": "area_stats.py"
+    },
+    {
+      "name": "Pull Areas by Name",
+      "nickname": "PULLarea",
+      "description": "Pulls subset of Areas from a list by name.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "List of Area Instances.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "names",
+          "nickname": "names",
+          "description": "Provide area name or name with a wildcard to match. Example: area_name*",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "remaining",
+          "description": "List of Areas remaining."
+        },
+        {
+          "name": "pulled",
+          "description": "List of Areas found based on all names included."
+        },
+        {
+          "name": "found",
+          "description": "List of Area names found based on all names included."
+        }
+      ],
+      "file": "areas_by_name.py"
+    },
+    {
+      "name": "Array Modules",
+      "nickname": "MODULES",
+      "description": "Arrays groupings of pavers into the paving units from another area",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "area with a pattern to array modules - be sure pavers are untrimmed",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "module curves",
+          "nickname": "module curves",
+          "description": "curve outlines describing the paver units within a module",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "module area",
+          "nickname": "module area",
+          "description": "surface describing the shape of the module in relation to the module_curves. Best to start with a re",
+          "type": "brep",
+          "required": false
+        },
+        {
+          "name": "trim",
+          "nickname": "trim",
+          "description": "Whether to trim the pavers and module areas to the original area. Default = True",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "modules <A>",
+          "description": "arrayed modules as areas"
+        }
+      ],
+      "file": "array_modules.py"
+    },
+    {
+      "name": "Attractor Color Rule",
+      "nickname": "CR:Attr",
+      "description": "Create a color rule to create a gradient that follows a curve",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "attractors",
+          "nickname": "attractors",
+          "description": "Geometry to test for paver proximity",
+          "type": "geometry",
+          "required": false
+        },
+        {
+          "name": "min dist",
+          "nickname": "min dist",
+          "description": "Minimum distance from the attractor. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "max dist",
+          "nickname": "max dist",
+          "description": "Maximum distance from the attractor. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<C>",
+          "description": "Gradient curve color rule. Add to area with add color rule component"
+        }
+      ],
+      "file": "attractor_color_rule.py"
+    },
+    {
+      "name": "Bake Text",
+      "nickname": "TEXT",
+      "description": "Bakes text. Creates a new layer if it does not exist. Can apply multiple texts to multiple planes, with different fonts, sizes, and alignments.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "text",
+          "nickname": "text",
+          "description": "String values for each text object.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "planes",
+          "nickname": "planes",
+          "description": "Planes or Point locations for text objects. Points will be converted to XY planes.",
+          "type": "plane",
+          "required": false
+        },
+        {
+          "name": "font",
+          "nickname": "font",
+          "description": "Font. Multiple fonts can be used if you have one font per plane.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "size",
+          "nickname": "size",
+          "description": "Size. Multiple sizes can be used if you have one size per plane.",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "alignment",
+          "nickname": "alignment",
+          "description": "Justification. Multiple justifications can be used if you have one justification per plane. top: 0=l",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Layer to bake text objects to. One layer per data tree branch. Default = ",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "color",
+          "nickname": "color",
+          "description": "Color to set the layer to if creating a new layer. Default = White",
+          "type": "color",
+          "required": false
+        },
+        {
+          "name": "bakename",
+          "nickname": "bakename",
+          "description": "Name to use if you want to overwrite specific text objects. One name per data tree branch.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "bake",
+          "nickname": "bake",
+          "description": "Will activate baking the text objects. Use a button or a boolean value.",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [],
+      "file": "bake_text.py"
+    },
+    {
+      "name": "Calculate CN Layer",
+      "nickname": "CNs=",
+      "description": "Calculates CN areas and values.",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with catchments, HSG, ground cover, soil condition",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "csv path",
+          "nickname": "csv path",
+          "description": "Path to write cn information as csv file",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "E",
+          "description": "Environment with new CN information"
+        },
+        {
+          "name": "water area id",
+          "description": "ids for areas with particular attributes"
+        },
+        {
+          "name": "area",
+          "description": "Amount of area for each area id"
+        },
+        {
+          "name": "types",
+          "description": "Simplified list of area types"
+        },
+        {
+          "name": "catchment id",
+          "description": "Name or id of each catchment included for average CN calculation"
+        },
+        {
+          "name": "Average CNs",
+          "description": "Average CN for each catchment id"
+        }
+      ],
+      "file": "calculate_CNs.py"
+    },
+    {
+      "name": "Calculate Carbon",
+      "nickname": "CARBON=",
+      "description": "Calculates carbon deceleration curves/totals.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<P/A>",
+          "nickname": "<P/A>",
+          "description": "Plants or Areas to assess for CO2.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "years",
+          "nickname": "years",
+          "description": "Number of years to include. Default = 60",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "materials",
+          "description": "Plant or Area types, materiality."
+        },
+        {
+          "name": "dec curves",
+          "description": "(De)Acceleration curves describing the rate of carbon sequestration/embodiment."
+        },
+        {
+          "name": "curves",
+          "description": "Curves describing how the carbon will disappear (or not) for each "
+        },
+        {
+          "name": "colors",
+          "description": "Colors for each "
+        },
+        {
+          "name": "totals",
+          "description": "Totals for each "
+        }
+      ],
+      "file": "calculate_carbon.py"
+    },
+    {
+      "name": "Calculate Heat Flux",
+      "nickname": "=HEAT",
+      "description": "EXPERIMENTAL! Attempts to calculate ground heat flux as 'heat_flux' layer and potential temperature shifts as 'temp_shift' layer. Requires sun exposure and assignment of albedo and emissivity data to ",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with hours_of_sun layer.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Areas that have albedo and emissivity assigned via Add CSV Data component",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "S",
+          "nickname": "S",
+          "description": "Solar Radiation per square meter between 625 and 1050. Visit Global Solar Atlas. Default = 800",
+          "type": "float",
+          "required": false
+        },
+        {
+          "name": "C",
+          "nickname": "C",
+          "description": "Approximate degrees Celsius. Default = 25",
+          "type": "float",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "E",
+          "description": "Environment with new heat_flux and temp_shift layers added."
+        }
+      ],
+      "file": "calculate_heat_flux.py"
+    },
+    {
+      "name": "Change Plant Attributes",
+      "nickname": "changeATTR",
+      "description": "Will change the value of select attributes and for select plants in a plant list",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "List of plants",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "plant names",
+          "nickname": "plant names",
+          "description": "Names of plants whose attributes you want to change",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "attributes",
+          "nickname": "attributes",
+          "description": "Attributes that you want to change for all named plants",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "new values",
+          "nickname": "new values",
+          "description": "New values for plant attributes",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Updated plant list with changed plant attributes"
+        },
+        {
+          "name": "message",
+          "description": "Info regarding what we were able to change."
+        }
+      ],
+      "file": "change_plant_attributes.py"
+    },
+    {
+      "name": "Change Plant Data Values",
+      "nickname": "changeDATA",
+      "description": "Will change the value of selected data fields and for select plants in a plant list",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "List of plants",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "plant names",
+          "nickname": "plant names",
+          "description": "Names of plants whose data values you want to change",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "keys",
+          "nickname": "keys",
+          "description": "Keys for data fields that you want to change for all named plants",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "new values",
+          "nickname": "new values",
+          "description": "New values for plant data fields specified by keys",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Updated plant list with changed plant data"
+        },
+        {
+          "name": "message",
+          "description": "Info regarding what we were able to change."
+        }
+      ],
+      "file": "change_plant_data_values.py"
+    },
+    {
+      "name": "Clip Areas",
+      "nickname": "CLIP",
+      "description": "Clips areas to a single boundary.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A/F>",
+          "nickname": "<A/F>",
+          "description": "Area Instances and Topo Features like Walls to clip. Features will come out as areas.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "boundary",
+          "nickname": "boundary",
+          "description": "Boundary to use to clip Areas. Only one at a time for now.",
+          "type": "curve",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Clipped Area Instances"
+        },
+        {
+          "name": "surfaces",
+          "description": "Clipped Area surfaces"
+        },
+        {
+          "name": "colors",
+          "description": "Area colors"
+        }
+      ],
+      "file": "clip_areas.py"
+    },
+    {
+      "name": "Collage Areas",
+      "nickname": "COLLAGE",
+      "description": "Flattens a stack of overlapping areas into a plan.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A/F>",
+          "nickname": "<A/F>",
+          "description": "Area Instances and Topo Features like Walls to collage.",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Trimmed and flattened Area Instances"
+        },
+        {
+          "name": "surfaces",
+          "description": "Trimmed and flattened Area surfaces"
+        },
+        {
+          "name": "colors",
+          "description": "Area colors"
+        }
+      ],
+      "file": "collage_areas.py"
+    },
+    {
+      "name": "Create Area",
+      "nickname": "+AREA",
+      "description": "Creates an area class, a material zone, described as a mesh, trimmed surface, or closed curve.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "plan area as defined as a flat closed curve or trimmed surface",
+          "type": "brep",
+          "required": true
+        },
+        {
+          "name": "dist tol",
+          "nickname": "dist tol",
+          "description": "distance tolerance for creating a mesh. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "edge tol",
+          "nickname": "edge tol",
+          "description": "edge tolerance for creating a mesh. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "name of the layer the area should be part of. Default = 0",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "color",
+          "nickname": "color",
+          "description": "area color",
+          "type": "color",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area Instance"
+        },
+        {
+          "name": "mesh",
+          "description": "flat meshes"
+        }
+      ],
+      "file": "create_areas.py"
+    },
+    {
+      "name": "Create Curbs",
+      "nickname": "+CURBS",
+      "description": "Creates curbs from a variety of inputs",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "curves",
+          "nickname": "curves",
+          "description": "front and back curves drawn flat, with similarly located end points",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "spots",
+          "nickname": "spots",
+          "description": "3D points that describe the top or bottom elevation of a curb",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "curve tol",
+          "nickname": "curve tol",
+          "description": "Distance tolerance between curve midpoints for pairing fronts and backs. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "spot tol",
+          "nickname": "spot tol",
+          "description": "Distance tolerance between curve and spot in plan to determine spot matching. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<C>",
+          "description": "Curb Instances"
+        },
+        {
+          "name": "curves",
+          "description": "Curves for quickly previewing the curbs. Use draw curb for masses etc"
+        }
+      ],
+      "file": "create_curbs.py"
+    },
+    {
+      "name": "Create Environment",
+      "nickname": "+ENV",
+      "description": "Creates an environment instance that can be used as a container for different layers of analysis.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "boundaries",
+          "nickname": "boundaries",
+          "description": "Boundaries where environmental analysis occurs. Simplest approach is to provide a big rectangle.",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "cell size",
+          "nickname": "cell size",
+          "description": "Size of environment cells. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "topo",
+          "nickname": "topo",
+          "description": "topo mesh",
+          "type": "mesh",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "plant kit environment definition"
+        }
+      ],
+      "file": "create_environment.py"
+    },
+    {
+      "name": "Create Geo Set",
+      "nickname": "+GEOSET",
+      "description": "Sorts a topo geometry set from Rhino. Sublayers- CONTOURS, SPOTS, BREAKLINES, OTHER_GEO, MEND",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "parent layer name of geo set geometry as string. Will use and create Sublayers- CONTOURS, SPOTS, BRE",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "refresh",
+          "nickname": "refresh",
+          "description": "Any changing input here will trigger the component to refresh",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<GT>",
+          "description": "Geo Set for creating or modifying topo"
+        }
+      ],
+      "file": "create_geo_set.py"
+    },
+    {
+      "name": "Create Mix",
+      "nickname": "MIX*2",
+      "description": "Create 2-color mix",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "color 1",
+          "nickname": "color 1",
+          "description": "First color",
+          "type": "color",
+          "required": true
+        },
+        {
+          "name": "color 2",
+          "nickname": "color 2",
+          "description": "Second color",
+          "type": "color",
+          "required": true
+        },
+        {
+          "name": "mix %",
+          "nickname": "mix %",
+          "description": "Mix percentage of first color between 0.00 and 1.00. Default = .5",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<M>",
+          "description": "Mix of colors. Can be input with colors into draw pattern area component"
+        }
+      ],
+      "file": "create_mix.py"
+    },
+    {
+      "name": "Create Multi Mix",
+      "nickname": "MIXxn",
+      "description": "Create a multi color mix",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "colors",
+          "nickname": "colors",
+          "description": "proportion of each color- think 2 parts sugar, 1 part nitroglycerin",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<M>",
+          "description": "Mix of colors"
+        }
+      ],
+      "file": "create_multi_mix.py"
+    },
+    {
+      "name": "Create Niche",
+      "nickname": "+NICHE",
+      "description": "Create niche for a plant",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "constraints",
+          "nickname": "constraints",
+          "description": "Constraint names to match environment layer.",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "domains",
+          "nickname": "domain",
+          "description": "Domain of niche - numeric domain, number, color, string, or comma-separated string",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "cushions",
+          "nickname": "cushion",
+          "description": "Cushion beyond niche boundaries. Positive or negative values work. Works for numbers and domains. De",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<N>",
+          "description": "Niche Instance"
+        }
+      ],
+      "file": "create_niche.py"
+    },
+    {
+      "name": "Create Paths",
+      "nickname": "+PATH",
+      "description": "Creates path from centerline",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "centerlines",
+          "nickname": "centerlines",
+          "description": "Centerlines of the paths in plan in 2D",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "width",
+          "nickname": "width",
+          "description": "Width of path. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "bottoms",
+          "nickname": "bottoms",
+          "description": "Points describing the bottom-center point of each path - will snap to closest centerline start point",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "slope",
+          "nickname": "slope",
+          "description": "Percent slope of the path. Default = 5",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Path instances"
+        },
+        {
+          "name": "breaklines",
+          "description": "Path side breaklines"
+        }
+      ],
+      "file": "create_paths.py"
+    },
+    {
+      "name": "Create Paths with Variable Slope",
+      "nickname": "+PATH ~",
+      "description": "Creates path from centerline, topo mesh, and slope range.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "centerline",
+          "nickname": "centerline",
+          "description": "Centerline of the path in plan; flat",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "width",
+          "nickname": "width",
+          "description": "Width of path. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "slope min",
+          "nickname": "slope min",
+          "description": "Minimum percent slope of the path. Default = 1.0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "slope max",
+          "nickname": "slope max",
+          "description": "Maximum percent slope of the path. Default = 4.99",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Topo mesh of a pre-existing grading condition to adjust towards.",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "smoothing",
+          "nickname": "smoothing",
+          "description": "Amount to smooth or simplify the existing grading between 0 and 1. Default = .5",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Path instance"
+        },
+        {
+          "name": "elevated centerline",
+          "description": "newly elevated centerline of the path."
+        }
+      ],
+      "file": "create_paths_variable_slope.py"
+    },
+    {
+      "name": "REPLACE W CREATE AREAS (Create Paving Areas)",
+      "nickname": "+AREA",
+      "description": "REPLACE W CREATE AREAS Creates an area, a material zone to add layers, plants, pavers",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "paving area as defined as a flat closed curve or trimmed surface",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Paving Area Instance"
+        }
+      ],
+      "file": "create_paving_areas.py"
+    },
+    {
+      "name": "Create Plant",
+      "nickname": "+PLNT",
+      "description": "Creates simple plant instances from basic data",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "species",
+          "nickname": "species",
+          "description": "species name. Or one will be generated.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "radius",
+          "nickname": "radius",
+          "description": "Plant radius. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "color",
+          "nickname": "color",
+          "description": "Plant color. Default = White",
+          "type": "color",
+          "required": false
+        },
+        {
+          "name": "height",
+          "nickname": "height",
+          "description": "Plant height. Default >> ",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "<N>",
+          "nickname": "<N>",
+          "description": "Niche Instance. Default = No Niche or No Constraints",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "self spacing",
+          "nickname": "self spacing",
+          "description": "Spacing between the plant and it",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "cluster radius",
+          "nickname": "cluster radius",
+          "description": "Radius of planting clusters. Default = No clustering",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plant Instance"
+        }
+      ],
+      "file": "create_plant.py"
+    },
+    {
+      "name": "Create Plants from CSV Data",
+      "nickname": "CSV>PLNTS",
+      "description": "Creates plants with data from a CSV file. Plant data is stored in plant.data.",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "csv_path",
+          "nickname": "csv_path",
+          "description": "Path to the csv file you wish to import. If None, data will be pulled from a Land Kit API.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "names",
+          "nickname": "names",
+          "description": "Names of plants you would like to create. If None, plants will be randomly selected.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "num",
+          "nickname": "num",
+          "description": "Number of random plants to get if no plant names are provided.",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "species_key",
+          "nickname": "species_key",
+          "description": "Name of the column that defines the species name. Default = Scientific Name",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "random",
+          "nickname": "random",
+          "description": "Whether to pull plants sequentially or randomly from the database. Default = True",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "<Q>",
+          "nickname": "<Q>",
+          "description": "Query Instance defining search constraints",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "plants from csv file with basic attributes applied. All other plant data stored in plant.data"
+        },
+        {
+          "name": "data",
+          "description": "plant data in a readable string format"
+        }
+      ],
+      "file": "create_plant_from_csv_data.py"
+    },
+    {
+      "name": "Create Plant List from Prompt BETA",
+      "nickname": "AI>PLNTS",
+      "description": "Creates short plant list with a ChatGPT prompt. Results are NOT guaranteed. Please use your OpenAI API key and your common sense.",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "prompt",
+          "nickname": "prompt",
+          "description": "Text describing the plants. Include descriptors like native, etc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "API",
+          "nickname": "API",
+          "description": "OpenAI API key.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "model",
+          "nickname": "model",
+          "description": "LLM model to use. Default = gpt-4",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "activate",
+          "nickname": "activate",
+          "description": "Whether to activate the prompt.",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plants generated from the prompt results with basic attributes applied. All other plant data stored "
+        },
+        {
+          "name": "data",
+          "description": "plant data in a readable string format"
+        }
+      ],
+      "file": "create_plant_from_prompt.py"
+    },
+    {
+      "name": "Create Plant Query",
+      "nickname": "+QUERY",
+      "description": "Creates a query or filter for the kind of plants you will be pulling from the database.",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "fields",
+          "nickname": "fields",
+          "description": "Names of data fields to use for search criteria. examples: Soil Moisture, Distribution USA, etc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "values",
+          "nickname": "values",
+          "description": "Values to use as criteria. examples: Moist, PA, etc",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "includes",
+          "nickname": "includes",
+          "description": "Whether to include or exclude plants that have the search values.",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<Q>",
+          "description": "Plant Query Instance to feed into create_plant_from_csv_data"
+        }
+      ],
+      "file": "create_plant_query.py"
+    },
+    {
+      "name": "REPLACE W CREATE AREAS (Create Planting Area)",
+      "nickname": "+AREA",
+      "description": "REPLACE W CREATE AREAS Create planting area from closed curve border or trimmed surface. Surfaces with holes will be split up.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "planting area as a closed curve or trimmed surface",
+          "type": "geometry",
+          "required": true
+        },
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area Instance"
+        }
+      ],
+      "file": "create_planting_area.py"
+    },
+    {
+      "name": "Create Pseudo Plants",
+      "nickname": "+PS.Plants",
+      "description": "Creates fake plants that have some degree of believability. Great for plant archetypes and testing ideas quickly.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "number",
+          "nickname": "number",
+          "description": "Number of pseudo plants to generate. Default = 10",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "filter",
+          "nickname": "filter",
+          "description": "Filter for plant types 0=All 1=Tree 2=Shrub 3=Herb 4=Grass(Graminoid) 5=Vine Default = 0",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "activate",
+          "nickname": "activate",
+          "description": "Will generate plants if input is True. Default = True",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<PS>",
+          "description": "Pseudo plants"
+        }
+      ],
+      "file": "create_pseudo_plants.py"
+    },
+    {
+      "name": "Create Stairs",
+      "nickname": "+STAIRS",
+      "description": "Creates a set of stairs from surface",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "surface",
+          "nickname": "surface",
+          "description": "Surface to describe stairs. Drawn in 3D. Will be passing through top-back and bottom-front edges.",
+          "type": "surface",
+          "required": true
+        },
+        {
+          "name": "rise",
+          "nickname": "rise",
+          "description": "Amount of rise per step. Will average if not exact. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<S>",
+          "description": "Instance of stairs"
+        },
+        {
+          "name": "preview",
+          "description": "Preview curves of stairs."
+        }
+      ],
+      "file": "create_stairs.py"
+    },
+    {
+      "name": "Create Topo",
+      "nickname": "+TOPO",
+      "description": "Creates topography as a mesh. Includes all geo set geometries and topo features as inputs.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "<GT>",
+          "nickname": "<GT>",
+          "description": "Geometry Set for Topo- created from spots and contours, etc",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<F>",
+          "nickname": "<F>",
+          "description": "List of topographic feature instances - Walls, Paths, Stairs, Curbs, etc",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<T>",
+          "description": "Topo Instance"
+        }
+      ],
+      "file": "create_topo.py"
+    },
+    {
+      "name": "Create Walls",
+      "nickname": "+WALLS",
+      "description": "Creates walls from a variety of inputs",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "curves",
+          "nickname": "curves",
+          "description": "front and back curves drawn flat, with similarly located end points",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "spots",
+          "nickname": "spots",
+          "description": "3D points that describe the top or bottom elevation of a wall",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "curve tol",
+          "nickname": "curve tol",
+          "description": "Distance tolerance between curve midpoints for pairing fronts and backs. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "spot tol",
+          "nickname": "spot tol",
+          "description": "Distance tolerance between curve and spot in plan to determine spot matching. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<W>",
+          "description": "Wall Instances"
+        },
+        {
+          "name": "curves",
+          "description": "Curves for quickly previewing the walls. Use draw wall for masses etc"
+        }
+      ],
+      "file": "create_walls.py"
+    },
+    {
+      "name": "Create Water Environment",
+      "nickname": "+H2O ENV",
+      "description": "Creates an environment instance that can be used as a container for different layers of analysis.",
+      "category": "2 create",
+      "inputs": [
+        {
+          "name": "boundaries",
+          "nickname": "boundaries",
+          "description": "Boundaries where environmental analysis occurs.",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "cell size",
+          "nickname": "cell size",
+          "description": "Size of environment cells. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "topo",
+          "nickname": "topo",
+          "description": "topo mesh",
+          "type": "mesh",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "environment definition"
+        }
+      ],
+      "file": "create_water_env.py"
+    },
+    {
+      "name": "Customize Parameters",
+      "nickname": "PARAMS",
+      "description": "Customize parameters in a dedicated window for selected geometry on a specific layer. Stores each parameter as user text, key and value. And keeps them in sync across geometry.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Layer name whose parameters you want to customize. One layer at a time, please.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "activate",
+          "nickname": "activate",
+          "description": "Boolean to activate the parameter editting window. Triggering True will launch the window, only if i",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "parameters",
+          "nickname": "parameters",
+          "description": "Set of keys to use for the parameters. Will add any parameters that are not already assigned to the ",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [],
+      "file": "customize_parameters.py"
+    },
+    {
+      "name": "Cut Sections",
+      "nickname": "SECTION",
+      "description": "Cuts sections through geometry and provide corresponding planes.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "sections",
+          "nickname": "sections",
+          "description": "Linear section curves in plan. Flip curves to flip section.",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "List of geometry to cut through. breps, meshes, and curves.",
+          "type": "geometry",
+          "required": false
+        },
+        {
+          "name": "layers",
+          "nickname": "layers",
+          "description": "Layer names of each piece of geometry. Match layers to each piece of geometry or branch.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "colors",
+          "nickname": "colors",
+          "description": "Colors for each piece of geometry. Match colors to each piece of geometry or branch.",
+          "type": "color",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "cuts",
+          "description": "List of cut geometry. curves, surfaces, or points"
+        },
+        {
+          "name": "layers",
+          "description": "Layer for each cut geometry"
+        },
+        {
+          "name": "colors",
+          "description": "Color for each cut geometry"
+        },
+        {
+          "name": "planes",
+          "description": "Reference plane for each section"
+        }
+      ],
+      "file": "cut_sections.py"
+    },
+    {
+      "name": "Load Data",
+      "nickname": "LOAD",
+      "description": "Loads plant kit data from a .land file. Just plants for now.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "file path",
+          "nickname": "file path",
+          "description": "Full path to load file from.",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plants",
+          "description": "Plants loaded from .land file"
+        }
+      ],
+      "file": "data_load.py"
+    },
+    {
+      "name": "Save Data",
+      "nickname": "SAVE",
+      "description": "Saves plant kit data to a .land file. Just plants for now",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plants to save. FLATTEN for now.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "file path",
+          "nickname": "file path",
+          "description": "Path to save file. Include file name.",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [],
+      "file": "data_save.py"
+    },
+    {
+      "name": "Diffuse Layer",
+      "nickname": "DIFFUSE",
+      "description": "Diffuses the values of a layer between its cells",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Name of the layer to diffuse. Should be a layer with number values.",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "intensity",
+          "nickname": "intensity",
+          "description": "Intensity of diffusion or blurring between 0 and 1. Default = 1.0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "steps",
+          "nickname": "steps",
+          "description": "Number of steps to diffuse layer. Default = 1",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment Instance with specified area layer diffused or blurred."
+        }
+      ],
+      "file": "diffuse_layer.py"
+    },
+    {
+      "name": "Draw Area Linework",
+      "nickname": "areaLINEWORK",
+      "description": "Draws area linework in a few different ways.",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "List of Area Instances to get linework from.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "style",
+          "nickname": "style",
+          "description": "Different modes: 0=basic 1=adjacency 2=conservative 3=boundaries. Default = 1",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "linework",
+          "description": "List of curves defining the edges of the areas."
+        },
+        {
+          "name": "layers",
+          "description": "Layer for each linework curve."
+        },
+        {
+          "name": "colors",
+          "description": "Color for each linework curve."
+        }
+      ],
+      "file": "draw_area_linework.py"
+    },
+    {
+      "name": "Draw Area Pattern",
+      "nickname": "DRAW PAT",
+      "description": "Draw the patterns in areas according to pattern, colors, and color rules.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area to draw",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "colors",
+          "nickname": "colors",
+          "description": "optional parameters indicating location of each color on gradient. Default: range from number of inp",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "type",
+          "nickname": "type",
+          "description": "type of geometry to draw - curve-0, surface-1, extruded-2 - surfaces and extrusions are SLOW. Defaul",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "thickness",
+          "nickname": "thickness",
+          "description": "thickness of pavers if extruding. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pavers",
+          "description": "Pavers drawn as type chosen"
+        },
+        {
+          "name": "colors",
+          "description": "colors corresponding with the pavers"
+        },
+        {
+          "name": "mix index",
+          "description": "index of each color input whether color mix or single color"
+        },
+        {
+          "name": "color index",
+          "description": "index of each color, regardless of mix index"
+        }
+      ],
+      "file": "draw_area_pattern.py"
+    },
+    {
+      "name": "Draw Areas as Meshes",
+      "nickname": "AREA=MESH",
+      "description": "Draws areas as meshes and projected to the underlying topo mesh",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances to draw as meshes and projected area meshes if a topo mesh is provided",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Topography as described by a mesh.",
+          "type": "mesh",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flat meshes",
+          "description": "flat meshes"
+        },
+        {
+          "name": "projected meshes",
+          "description": "projected meshes"
+        },
+        {
+          "name": "layers",
+          "description": "layers"
+        },
+        {
+          "name": "colors",
+          "description": "colors"
+        }
+      ],
+      "file": "draw_areas.py"
+    },
+    {
+      "name": "Bake Areas as Hatches",
+      "nickname": "AREA=HATCHES",
+      "description": "Bakes areas as hatches into Rhino",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances to bake as hatches",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "overwrite",
+          "nickname": "overwrite",
+          "description": "Whether to overwrite hatches on same layers. Default = True",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "bake",
+          "nickname": "bake",
+          "description": "Whether to bake. Use a button input. Bake with care. Default = False",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [],
+      "file": "draw_areas_as_hatches.py"
+    },
+    {
+      "name": "Draw Areas as Slabs",
+      "nickname": "AREA=SLAB",
+      "description": "Draws areas as thickened slabs with independent top and bottom topography. Mesh style is way faster",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances to draw as slabs",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "top topo",
+          "nickname": "top topo",
+          "description": "Top topography as described by a mesh",
+          "type": "mesh",
+          "required": false
+        },
+        {
+          "name": "bottom topo",
+          "nickname": "bottom topo",
+          "description": "Bottom topography as described by a mesh",
+          "type": "mesh",
+          "required": false
+        },
+        {
+          "name": "style",
+          "nickname": "style",
+          "description": "style to draw 0=mesh 1=grid_srf 2=patch. Default = 0",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "cell size",
+          "nickname": "cell size",
+          "description": "Surface cell size when drawing as a style. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "slabs",
+          "description": "mesh or polysurface solids describing the resulting slab"
+        },
+        {
+          "name": "layers",
+          "description": "layer of the area slab"
+        },
+        {
+          "name": "colors",
+          "description": "color of the area slab"
+        }
+      ],
+      "file": "draw_areas_as_slabs.py"
+    },
+    {
+      "name": "Draw Areas as Surfaces",
+      "nickname": "AREA=SRF",
+      "description": "Draws areas as surfaces as closely as possible. Draw Areas -as meshes- is faster",
+      "category": "3 areas",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances to draw as surfaces",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Topography as described by a mesh",
+          "type": "mesh",
+          "required": false
+        },
+        {
+          "name": "cell size",
+          "nickname": "cell size",
+          "description": "Surface cell size for srf_types 0 and 1. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "srf type",
+          "nickname": "srf type",
+          "description": "type of surface to draw 0=grid 1=patch 2=SubD. Default = 0",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "surfaces",
+          "description": "surfaces"
+        },
+        {
+          "name": "layers",
+          "description": "layers"
+        },
+        {
+          "name": "colors",
+          "description": "colors"
+        }
+      ],
+      "file": "draw_areas_as_surfaces.py"
+    },
+    {
+      "name": "Draw Bloom Calendar",
+      "nickname": "BLOOMcal",
+      "description": "Draws components of a bloom calendar in a few different styles.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P/A>",
+          "nickname": "<P/A>",
+          "description": "List or lists plants or areas to draw a bloom calendar from.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "bloom field",
+          "nickname": "bloom field",
+          "description": "Data field containing the numeric bloom range. Default = Flowering",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "origin",
+          "nickname": "origin",
+          "description": "Starting point of the bloom calendar geometry. Default = 0,0,0",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "graph type",
+          "nickname": "graph type",
+          "description": "Type of bloom calendar to draw. 0=Table 1=Radial. Default = 1",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "ani month",
+          "nickname": "ani month",
+          "description": "Month to set for visualization of bloom in situ.",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "curves",
+          "description": "Curve describing duration of each species flowering window."
+        },
+        {
+          "name": "colors",
+          "description": "Color for each species curve"
+        },
+        {
+          "name": "month lines",
+          "description": "Background lines describing month intervals."
+        },
+        {
+          "name": "species label",
+          "description": "Name of each species corresponding to label frames."
+        },
+        {
+          "name": "label frames",
+          "description": "Frame location or orientation for each species label."
+        },
+        {
+          "name": "animated",
+          "description": "Plants with updated colors at specified month."
+        }
+      ],
+      "file": "draw_bloom_calendar.py"
+    },
+    {
+      "name": "Draw Curbs",
+      "nickname": "CURB=",
+      "description": "Draws curb features",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<C>",
+          "nickname": "curb",
+          "description": "Curb Instances",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mass",
+          "description": "brep describing the form of the curb"
+        },
+        {
+          "name": "back top",
+          "description": "Curve defining the back top of curb"
+        },
+        {
+          "name": "front bottom",
+          "description": "Curve defining the front bottom of curb"
+        },
+        {
+          "name": "top spots",
+          "description": "Spots along the top of curb"
+        },
+        {
+          "name": "bottom spots",
+          "description": "Spots along the bottom of curb"
+        }
+      ],
+      "file": "draw_curbs.py"
+    },
+    {
+      "name": "Water Flow Lines",
+      "nickname": "FLOWLINES=",
+      "description": "Draws flow line polylines geometry on a mesh.",
+      "category": "5 mesh ops",
+      "inputs": [
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Topo mesh to follow",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "pt def",
+          "nickname": "pt def",
+          "description": "Either points OR a cell size for a grid of starting points. Default >> ",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "step size",
+          "nickname": "step size",
+          "description": "Length of each flow line step. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "steps",
+          "nickname": "steps",
+          "description": "Maximum umber of steps for each flow line. Default = 1000",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "degree",
+          "nickname": "degree",
+          "description": "Degree of the flow line curves. Default = 1 = polyline",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "flow lines",
+          "description": "Curves describing the flow lines"
+        }
+      ],
+      "file": "draw_flow_lines.py"
+    },
+    {
+      "name": "Draw Layer as Shapes",
+      "nickname": "ENVlayerSHAPES",
+      "description": "Draws unique areas of a layer as surfaces. Will work for any analysis layer. Default=catchments",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Layer to draw catchments for. Default = catchments",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "strength",
+          "nickname": "strength",
+          "description": "Amount to smooth catchment boundaries. Default = 1.0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "times",
+          "nickname": "times",
+          "description": "Number of times to smooth catchment boundaries Default = 1",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "boundaries",
+          "description": "Surfaces describing catchment areas"
+        },
+        {
+          "name": "names",
+          "description": "Names of catchment areas."
+        },
+        {
+          "name": "colors",
+          "description": "Random colors for each boundary surface name."
+        }
+      ],
+      "file": "draw_layer_as_shapes.py"
+    },
+    {
+      "name": "Draw Layer as Mesh",
+      "nickname": "ENVlayerMESH",
+      "description": "Draw a particular environment layer as a mesh with colored vertices.",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Land Kit environment",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Name of layer as a string",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "hues",
+          "nickname": "hues",
+          "description": "Colors to use for vis. A single color or a list. Default = Blue",
+          "type": "color",
+          "required": false
+        },
+        {
+          "name": "domain",
+          "nickname": "domain",
+          "description": "Domain to describe the mapping of color values between 0 and 1",
+          "type": "domain",
+          "required": false
+        },
+        {
+          "name": "elevate",
+          "nickname": "elevate",
+          "description": "Whether to elevation the mesh vertices according to elevation layer values. Default = False",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mesh",
+          "description": "mesh visualization of layer"
+        },
+        {
+          "name": "values",
+          "description": "layer values"
+        },
+        {
+          "name": "color keys",
+          "description": "color keys for a legend"
+        },
+        {
+          "name": "tag keys",
+          "description": "tag keys for a legend"
+        }
+      ],
+      "file": "draw_layer_mesh.py"
+    },
+    {
+      "name": "Draw Paths",
+      "nickname": "PATH=",
+      "description": "Draws separate path geometries",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Path Instances",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "surface",
+          "description": "polysurface describing the path"
+        },
+        {
+          "name": "sides",
+          "description": "Curves defining the sides of the path"
+        }
+      ],
+      "file": "draw_paths.py"
+    },
+    {
+      "name": "Draw Stairs",
+      "nickname": "STAIRS=",
+      "description": "Draws geometry for a stair instance",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<S>",
+          "nickname": "stair",
+          "description": "Stair to draw.",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "masses",
+          "description": "Massing of stairs"
+        },
+        {
+          "name": "breaklines",
+          "description": "Breaklines of the stairs"
+        }
+      ],
+      "file": "draw_stairs.py"
+    },
+    {
+      "name": "Draw Topo",
+      "nickname": "TOPO=",
+      "description": "Draws topography based on all modifications",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<T>",
+          "nickname": "<T>",
+          "description": "Topo instance to draw",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "min div",
+          "nickname": "min div",
+          "description": "min curve length division for contours and breaklines. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "max div",
+          "nickname": "max div",
+          "description": "max curve length division for contours and breaklines. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "angle tol",
+          "nickname": "angle tol",
+          "description": "Max curve angle division tolerance for contours and breaklines. Default = 2",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mesh",
+          "description": "Topo mesh"
+        },
+        {
+          "name": "points",
+          "description": "Topo mesh points"
+        }
+      ],
+      "file": "draw_topo.py"
+    },
+    {
+      "name": "Draw Walls",
+      "nickname": "WALL=",
+      "description": "Draws wall features",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<W>",
+          "nickname": "wall",
+          "description": "Wall Instances",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mass",
+          "description": "brep describing the form of the wall"
+        },
+        {
+          "name": "back top",
+          "description": "Curve defining the back top of wall"
+        },
+        {
+          "name": "front bottom",
+          "description": "Curve defining the front bottom of wall"
+        },
+        {
+          "name": "top spots",
+          "description": "Spots along the top of wall"
+        },
+        {
+          "name": "bottom spots",
+          "description": "Spots along the bottom of wall"
+        }
+      ],
+      "file": "draw_walls.py"
+    },
+    {
+      "name": "Environment Color Rule",
+      "nickname": "CR:Enviro",
+      "description": "Create a color rule using a layer from an environment.",
+      "category": "6 pattern",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "<C>",
+          "description": "Resulting Color Rule. Add to area with the add color rule component"
+        }
+      ],
+      "file": "environment_color_rule.py"
+    },
+    {
+      "name": "Evaluate Environment",
+      "nickname": "EVAL<E>",
+      "description": "Will evaluate environment layers at given points",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment to evaluate. Environment must have at least one analysis layer",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "pt",
+          "nickname": "pt",
+          "description": "Point or points at which to evaluate the environment",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "layer filter",
+          "nickname": "layer filter",
+          "description": "Layers to evaluate. If none provided, will evaluate all layers",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "layers",
+          "description": "Layers evaluated"
+        },
+        {
+          "name": "values",
+          "description": "Values found on each layer at location specified"
+        },
+        {
+          "name": "printed",
+          "description": "Summary of all layers and values for each point"
+        }
+      ],
+      "file": "evaluate_environment.py"
+    },
+    {
+      "name": "Export Blocks as DAE",
+      "nickname": "BLCKS=DAE",
+      "description": "Export sublayers to dae files. Activating will initiate prompts.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "activate",
+          "nickname": "activate",
+          "description": "Whether to activate the process of exporting to dae files.",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [],
+      "file": "export_daes.py"
+    },
+    {
+      "name": "Get Plant Block Info",
+      "nickname": "{PLNT}S",
+      "description": "Get info needed to make and place plant blocks",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P/A>",
+          "nickname": "<P/A>",
+          "description": "Plants or Areas with plants",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "style",
+          "nickname": "style",
+          "description": "Integer to determine the style of the plant symbol. 0=Circle 1=Glyph 2=Lockup 3=Branching 4=Modern 1",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "species",
+          "description": "plant species"
+        },
+        {
+          "name": "symbol",
+          "description": "plant representation"
+        },
+        {
+          "name": "colors",
+          "description": "plant colors"
+        },
+        {
+          "name": "locs",
+          "description": "plant locations"
+        },
+        {
+          "name": "radii",
+          "description": "plant radii"
+        },
+        {
+          "name": "heights",
+          "description": "plant heights"
+        }
+      ],
+      "file": "export_plant_block_info.py"
+    },
+    {
+      "name": "Bake Plant Blocks",
+      "nickname": "{PLNT}S=BLCKS",
+      "description": "Bake plant species to sub layers.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P/A>",
+          "nickname": "<P/A>",
+          "description": "Plants or Areas with plants",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Name of parent layer for baking plant species. Default = PLANT_BLOCKS",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "overwrite",
+          "nickname": "overwrite",
+          "description": "Whether to overwrite previously baked plant blocks. Default = True",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "style",
+          "nickname": "style",
+          "description": "Integer to determine the style of the plant symbol. 0=Circle 1=Glyph 2=Lockup 3=Branching 4=Modern 1",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "bake",
+          "nickname": "bake",
+          "description": "Whether to bake. Use a button input. Bake with care. Default = False",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "message",
+          "description": "message"
+        }
+      ],
+      "file": "export_plant_blocks.py"
+    },
+    {
+      "name": "Get Area Plants",
+      "nickname": "AreaPLNT=",
+      "description": "Get the plants from an area instance",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area or areas to get plants from.",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plants from planting_area"
+        }
+      ],
+      "file": "get_area_plants.py"
+    },
+    {
+      "name": "Get Current Plant Data",
+      "nickname": "PLANTdata=",
+      "description": "Reveals attributes and data, keys and values",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plant Instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "attr keys",
+          "nickname": "attr keys",
+          "description": "Keys of attributes to extract. None returns all keys.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "data keys",
+          "nickname": "data keys",
+          "description": "Keys of data to extract. None returns all keys",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "attr keys",
+          "description": "Keys for plant attributes"
+        },
+        {
+          "name": "attr values",
+          "description": "Values of plant attributes"
+        },
+        {
+          "name": "data keys",
+          "description": "Keys for plant data fields"
+        },
+        {
+          "name": "data values",
+          "description": "Values of plant data fields"
+        }
+      ],
+      "file": "get_current_plant_data.py"
+    },
+    {
+      "name": "Get Environment Layer",
+      "nickname": "ENVlayer",
+      "description": "Get values from a particular environment layer",
+      "category": "7 layer ops",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Land Kit environment",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Name of layer as a string",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "locs",
+          "description": "value locations"
+        },
+        {
+          "name": "values",
+          "description": "layer values"
+        }
+      ],
+      "file": "get_environment_layer.py"
+    },
+    {
+      "name": "Get Plant Info",
+      "nickname": "PLNT=",
+      "description": "Get the attributes and geometries of a plant",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plant Instance",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "species",
+          "description": "plant species"
+        },
+        {
+          "name": "circle",
+          "description": "plant circle"
+        },
+        {
+          "name": "sphere",
+          "description": "stretched plant sphere"
+        },
+        {
+          "name": "color",
+          "description": "plant color"
+        },
+        {
+          "name": "loc",
+          "description": "plant location"
+        },
+        {
+          "name": "radius",
+          "description": "plant radius"
+        },
+        {
+          "name": "height",
+          "description": "plant height"
+        }
+      ],
+      "file": "get_plant_info.py"
+    },
+    {
+      "name": "Get Plant Niche Info",
+      "nickname": "NICHEinfo",
+      "description": "Gets a plant's niche information a few ways",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<P/N>",
+          "nickname": "<P/N>",
+          "description": "Plant or Niche to get niche info from",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "constraints",
+          "description": "name of each constraint in a niche"
+        },
+        {
+          "name": "domains",
+          "description": "domain value of each constraint in the niche"
+        },
+        {
+          "name": "cushions",
+          "description": "cushion or offset value for each constraint"
+        },
+        {
+          "name": "printed",
+          "description": "compiled text dump of niche values"
+        }
+      ],
+      "file": "get_plant_niche_info.py"
+    },
+    {
+      "name": "Gradient Curve Color Rule",
+      "nickname": "CR:Grad",
+      "description": "Create a color rule to create a gradient that follows a curve",
+      "category": "6 pattern",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "<C>",
+          "description": "Gradient curve color rule. Add to area with add color rule component"
+        }
+      ],
+      "file": "gradient_curve_color_rule.py"
+    },
+    {
+      "name": "Image Color Rule",
+      "nickname": "CR:Image",
+      "description": "Create a color rule using an image from a surface.",
+      "category": "6 pattern",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "<C>",
+          "description": "image color rule. Add to area with add color rule component"
+        }
+      ],
+      "file": "image_color_rule.py"
+    },
+    {
+      "name": "Land Kit Help",
+      "nickname": "HELP!",
+      "description": "Get more info, report a bug, or leave us some feedback. Component also updates all Land Kit component input and output names",
+      "category": "1 info",
+      "inputs": [],
+      "outputs": [],
+      "file": "land_kit_help.py"
+    },
+    {
+      "name": "Land Kit License",
+      "nickname": "LICENSE",
+      "description": "Update Land Kit License with a key.",
+      "category": "1 info",
+      "inputs": [],
+      "outputs": [],
+      "file": "land_kit_license.py"
+    },
+    {
+      "name": "Layer Pipeline",
+      "nickname": "PIPELINE",
+      "description": "Pulls geometry from Rhino layers as it is updated.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "Provide layer or layers with a wildcard to match. Example: parent_layer*",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "filter",
+          "nickname": "filter",
+          "description": "Filter geometry by type. 0=any 1=points 2=curves 3=breps 4=meshes 5=text 6=block-geo-layer 7=block-l",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "geo",
+          "description": "geometries from layers"
+        },
+        {
+          "name": "layers",
+          "description": "layer for each geometry"
+        },
+        {
+          "name": "colors",
+          "description": "color for each geometry"
+        },
+        {
+          "name": "keys",
+          "description": "usertext keys for each geometry"
+        },
+        {
+          "name": "values",
+          "description": "usertext values for each geometry"
+        }
+      ],
+      "file": "layer_pipeline.py"
+    },
+    {
+      "name": "Freeze Area Plants",
+      "nickname": "FREEZE!",
+      "description": "Freezes or makes all plants fixed within an area during subsequent plant packing. Option to unfreeze.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Planting area instance whose plants you want to freeze... or unfreeze",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "freeze",
+          "nickname": "freeze",
+          "description": "True = all frozen, False = all unfrozen. Default = True",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area whose plants have either all been frozen or all unfrozen"
+        }
+      ],
+      "file": "layout_freeze_area.py"
+    },
+    {
+      "name": "Pack Plants",
+      "nickname": "PACK",
+      "description": "Packs plants to avoid overlap. Think fish eggs.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area Instance with plants in it",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "steps",
+          "nickname": "steps",
+          "description": "Integer between 1 and 100 defining number of packing steps. Default = 20",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "fixed",
+          "nickname": "fixed",
+          "description": "Whether plants will remain fixed during area packing. Default = False",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area Instance with plants packed"
+        },
+        {
+          "name": "<P>",
+          "description": "Plants packed"
+        }
+      ],
+      "file": "layout_pack_plants.py"
+    },
+    {
+      "name": "Fill Area with Pattern",
+      "nickname": "+fillPTRN[]",
+      "description": "Fill a planting area based on given points, rules, and parameters. Individual self spacing has no effect.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Planting area to be populated",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with needed layers to apply niche constraints and rules.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "plant library to layout",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "weights",
+          "nickname": "weights",
+          "description": "Optional weight override of the plants from library in the mix. Default = plant.w attribute",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "pt pattern",
+          "nickname": "pt pattern",
+          "description": "Pattern described as points for each area",
+          "type": "point",
+          "required": true
+        },
+        {
+          "name": "tries",
+          "nickname": "tries",
+          "description": "Number of tries to allow for any given point. Default = 20",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "fixed",
+          "nickname": "fixed",
+          "description": "Whether plants would remain fixed during later area packing. Default = True",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "constrained",
+          "nickname": "constrained",
+          "description": "Whether plants will be constrained by niches. Default = True.",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "buffer",
+          "nickname": "buffer",
+          "description": "Distance allowed from existing plants. Default = None",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with random plants populated"
+        },
+        {
+          "name": "not filled",
+          "description": "Points in pattern not filled due to limiting constraints or not enough tries."
+        }
+      ],
+      "file": "layout_pattern_fill_constrained.py"
+    },
+    {
+      "name": "Layout Plant Row",
+      "nickname": "+ROW",
+      "description": "Create rows of plants. Will stack according to the plant's radius + spacing",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plants list. More than one will be randomly ordered and packed based on radii",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "curve",
+          "nickname": "curve",
+          "description": "centerline curve of the row",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "spacing",
+          "nickname": "spacing",
+          "description": "Spacing between plants. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "fixed",
+          "nickname": "fixed",
+          "description": "Whether plants will remain fixed during area packing. Default = True",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plants in a row"
+        }
+      ],
+      "file": "layout_plant_row.py"
+    },
+    {
+      "name": "Fill Area with Plants",
+      "nickname": "+fillPLNTS[]",
+      "description": "Fill a planting area based on rules and parameters given",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Planting area to be populated",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with needed layers to apply niche constraints and rules.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "plant library to layout",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "weights",
+          "nickname": "weights",
+          "description": "Optional weight override of the plants from library in the mix. Default = plant.w attribute",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "packing_ratio",
+          "nickname": "packing_ratio",
+          "description": "ratio to pack the mix - manually tweak this to get desired results. Default = 1.0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "fixed",
+          "nickname": "fixed",
+          "description": "Whether plants will remain fixed during area packing. Default = False",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "constrained",
+          "nickname": "constrained",
+          "description": "Whether plants will be constrained by niches. Default = True.",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "buffer",
+          "nickname": "buffer",
+          "description": "Distance allowed from existing plants. Default = None",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with random plants populated"
+        }
+      ],
+      "file": "layout_plants_fill_constrained.py"
+    },
+    {
+      "name": "Remove Overlaps",
+      "nickname": "-OVERLAPS",
+      "description": "Removes overlapping plants based on a max overlap value.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Planting Area whose plants may be overlapping more than you want. Removes the smaller plant or flips",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "max overlap",
+          "nickname": "max overlap",
+          "description": "Max overlap of any two plants. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "mode",
+          "nickname": "mode",
+          "description": "Which radius to use for calculating overlap. 0 = radius_current. 1 = radius_max. Default = 0",
+          "type": "int",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area whose overlaps have been removed"
+        },
+        {
+          "name": "culled",
+          "description": "Plants that have been removed."
+        }
+      ],
+      "file": "layout_remove_overlaps.py"
+    },
+    {
+      "name": "Update Conditions",
+      "nickname": "UPDATE<A>",
+      "description": "Will update planting areas based on new conditions. This will remove plants that are invalid based on the new environmental conditions.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Planting areas to test.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with updated conditions. Updated layers must be present to re-assess niche constraints a",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Areas with plants removed based on updated conditions."
+        },
+        {
+          "name": "invalid",
+          "description": "Plants that are invalid based on updated conditions."
+        },
+        {
+          "name": "invalid_pts",
+          "description": "Points that represent empty locations from removed plants."
+        },
+        {
+          "name": "layers",
+          "description": "Layers evaluated for each removed plant location."
+        },
+        {
+          "name": "values",
+          "description": "Values found on each layer at location specified."
+        }
+      ],
+      "file": "layout_update_conditions.py"
+    },
+    {
+      "name": "Merge Plant Niche",
+      "nickname": "+=NICHE",
+      "description": "Adds constraints from a niche into a plant's niche",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "Plant list to modify",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "plant names",
+          "nickname": "plant names",
+          "description": "Names of plants whose niche should be merged to or overwritten.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "<N>",
+          "nickname": "<N>",
+          "description": "Niches to merge into the plant list",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "overwrite",
+          "nickname": "overwrite",
+          "description": "If overwrite is True, input niches will replace niche, otherwise, merge. Default = False",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plants whose niches have been added to or replaced"
+        },
+        {
+          "name": "message",
+          "description": "Info regarding what we were able to change."
+        }
+      ],
+      "file": "merge_plant_niche.py"
+    },
+    {
+      "name": "Grade Topo Mod",
+      "nickname": "GRADE_mod",
+      "description": "adjusts topography point elevations in relation to slope and geometry and feature elevations",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "<T>",
+          "nickname": "<T>",
+          "description": "Topo instance with existing mesh data",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "boundaries",
+          "nickname": "boundaries",
+          "description": "Optional boundaries for grading topo areas",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "Geometry to grade from. Actual geometry elevations are important here.",
+          "type": "geometry",
+          "required": false
+        },
+        {
+          "name": "<F>",
+          "nickname": "<F>",
+          "description": "Features to grade from. Actual feature elevations are important here.",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "slopes",
+          "nickname": "slopes",
+          "description": "Percent slope to use when grading away from geometry or features. Can be custom for each geometry or",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "offset",
+          "nickname": "offset",
+          "description": "Offset from geometry or features before slope begins. Can be custom for each geometry or as one glob",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<T>",
+          "description": "Topo Instance"
+        }
+      ],
+      "file": "modify_grade_topo.py"
+    },
+    {
+      "name": "Patch Topo Mod",
+      "nickname": "PATCH_mod",
+      "description": "Patch changes into a topography instance. Includes all geo set geometries and topo features as inputs.",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "<T>",
+          "nickname": "<T>",
+          "description": "Topo instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<GT>",
+          "nickname": "<GT>",
+          "description": "Geometry Set for Topo - created from spots and contours, etc",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<F>",
+          "nickname": "<F>",
+          "description": "Feature instances - Walls, Paths, Curbs, etc",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<T>",
+          "description": "Topo Instance"
+        }
+      ],
+      "file": "modify_patch_topo.py"
+    },
+    {
+      "name": "Sculpt Topo Mod",
+      "nickname": "SCULPT_mod",
+      "description": "adjusts topography elevations in relation to height parameter and distance to inputs",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "<T>",
+          "nickname": "<T>",
+          "description": "Topo instance with existing mesh data",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "boundaries",
+          "nickname": "boundaries",
+          "description": "Optional boundaries for sculpting topo areas",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "geometry",
+          "nickname": "geometry",
+          "description": "Geometry to grade from. Actual elevation does not matter.",
+          "type": "geometry",
+          "required": false
+        },
+        {
+          "name": "height",
+          "nickname": "height",
+          "description": "height from original topo. Can be assigned per attractor. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "spread",
+          "nickname": "spread",
+          "description": "width of sculpting not including offset. Can be assigned per attractor. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "offset",
+          "nickname": "offset",
+          "description": "Offset from geometry or features before spread begins. Can be assigned per attractor. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<T>",
+          "description": "Topo Instance"
+        }
+      ],
+      "file": "modify_sculpt_topo.py"
+    },
+    {
+      "name": "Smooth Topo Mod",
+      "nickname": "SMOOTH_mod",
+      "description": "modifies topography object by smoothing given areas",
+      "category": "4 mods",
+      "inputs": [
+        {
+          "name": "<T>",
+          "nickname": "<T>",
+          "description": "Topo instance",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "boundaries",
+          "nickname": "boundaries",
+          "description": "Specific boundaries for smoothing topo areas. No boundaries will smooth all topo.",
+          "type": "curve",
+          "required": false
+        },
+        {
+          "name": "strength",
+          "nickname": "strength",
+          "description": "strength of smoothing. Default = 1.0",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "iterations",
+          "nickname": "iterations",
+          "description": "number smoothing iterations. Default = 1",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "remesh",
+          "nickname": "remesh",
+          "description": "quad remesh smooth area in Rhino 7+. Default = False",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "dist tol",
+          "nickname": "dist tol",
+          "description": "distance tolerance of smooth points to topo prior to smoothing. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "spacing tol",
+          "nickname": "spacing tol",
+          "description": "spacing tolerance between smooth points. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<T>",
+          "description": "Topo Instance"
+        }
+      ],
+      "file": "modify_topo_smooth.py"
+    },
+    {
+      "name": "Niche Rule Loose Constraint",
+      "nickname": "r=Loose",
+      "description": "Creates a niche rule that acts like a loose constraint; if any parameters of this sub niche are met, constraint will be met.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<N>",
+          "nickname": "<N>",
+          "description": "Niche to use as a loose constraint. Constraint met if any constraints in this niche are met.",
+          "type": "generic",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<NR>",
+          "description": "Niche Rule. Treat like a niche. Merge or add."
+        }
+      ],
+      "file": "niche_rule_loose_constraint.py"
+    },
+    {
+      "name": "Niche Rule Mapped Constraint",
+      "nickname": "r=MAPPED",
+      "description": "Maps value at location from one analysis layer to another and compares to value on other map.",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "map from",
+          "nickname": "map from",
+          "description": "Name of analysis layer to map from.",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "from domain",
+          "nickname": "from domain",
+          "description": "Domain to map from.",
+          "type": "domain",
+          "required": true
+        },
+        {
+          "name": "map to",
+          "nickname": "map to",
+          "description": "Name of analysis layer to map to.",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "to domain",
+          "nickname": "to domain",
+          "description": "Domain to map to.",
+          "type": "domain",
+          "required": true
+        },
+        {
+          "name": "less than",
+          "nickname": "less than",
+          "description": "Whether value being tested would be less than. Greater than if False. Default = True",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<NR>",
+          "description": "Niche Rule. Should be treated like a niche when applying to plants. Merge or add."
+        }
+      ],
+      "file": "niche_rule_mapped_constraint.py"
+    },
+    {
+      "name": "Paver Texture",
+      "nickname": "+TEXTURE",
+      "description": "Adds a randomly scaled texture to paver meshes within given scale range. Best with square images.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "paver meshes",
+          "nickname": "paver meshes",
+          "description": "meshes describing pavers",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "min scale",
+          "nickname": "min scale",
+          "description": "minimum random scaling. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "max scale",
+          "nickname": "max scale",
+          "description": "maximum random scaling. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "textured pavers",
+          "description": "pavers with randomly scaled and rotated texturing."
+        }
+      ],
+      "file": "paver_textures.py"
+    },
+    {
+      "name": "Draw Plant Schedule",
+      "nickname": "=SCHED",
+      "description": "Draws a plant schedule at specified origin. Will save a csv file as well if csv path is given.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area instances that have plants. Best to flatten if you want one schedule.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "start pt",
+          "nickname": "start pt",
+          "description": "Point to define the top, left corner of the schedule. Default = 0,0,0",
+          "type": "point",
+          "required": false
+        },
+        {
+          "name": "niches",
+          "nickname": "niches",
+          "description": "Whether to include niche info in the schedule. Default = False",
+          "type": "generic",
+          "required": false
+        },
+        {
+          "name": "size",
+          "nickname": "size",
+          "description": "Font size for schedule text. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "padding",
+          "nickname": "padding",
+          "description": "General padding around items in the schedule. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "csv path",
+          "nickname": "csv path",
+          "description": "Full path to a csv_file if you want to write to a file.",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "style",
+          "nickname": "style",
+          "description": "Integer to determine the style of the plant symbol. 0=Circle 1=Glyph 2=Lockup 3=Branching 4=Modern 1",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "table",
+          "description": "grid around text - not implemented yet"
+        },
+        {
+          "name": "text list",
+          "description": "list of text to preview"
+        },
+        {
+          "name": "text locs",
+          "description": "list of text locations to preview"
+        },
+        {
+          "name": "symbols",
+          "description": "previews of plant size to preview"
+        },
+        {
+          "name": "colors",
+          "description": "colors of plant symbols"
+        }
+      ],
+      "file": "plant_schedule_from_area.py"
+    },
+    {
+      "name": "Pull Plants by Name",
+      "nickname": "PULLplant",
+      "description": "Pulls subset of plants from a list by name",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "<P>",
+          "nickname": "<P>",
+          "description": "List of plant instances, short or long to pull from",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "names",
+          "nickname": "names",
+          "description": "Names of plants to pull out of the list.",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<P>",
+          "description": "Plants that matched"
+        },
+        {
+          "name": "included",
+          "description": "set of plant names found"
+        }
+      ],
+      "file": "plants_by_name.py"
+    },
+    {
+      "name": "Project Paver Meshes",
+      "nickname": "PROJpav",
+      "description": "Projects paver meshes to a topo mesh, while keeping them flat",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "paver meshes",
+          "nickname": "paver meshes",
+          "description": "pavers described as meshes",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "topo meshes",
+          "nickname": "topo meshes",
+          "description": "Topography described as a mesh or meshes",
+          "type": "mesh",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "projected",
+          "description": "Projected paver meshes"
+        }
+      ],
+      "file": "project_paver_meshes.py"
+    },
+    {
+      "name": "Pseudo Niche Parameters",
+      "nickname": "~nichePARAM",
+      "description": "Creates fake niche paramters based on particularly available analysis layers in an environment.",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "item list",
+          "nickname": "item list",
+          "description": "Will generate parameters for every item in the list.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Environment with analysis layers added.",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layers",
+          "nickname": "layers",
+          "description": "Names of layers to include. If no input all layers will be included.",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "constraints",
+          "description": "analysis layer names to constrain"
+        },
+        {
+          "name": "domains",
+          "description": "domains for pseudo niche"
+        },
+        {
+          "name": "cushions",
+          "description": "cushions for pseudo niche"
+        }
+      ],
+      "file": "pseudo_niche_param.py"
+    },
+    {
+      "name": "Pseudo Plant Parameters",
+      "nickname": "~plntPARAM",
+      "description": "Randomly creates basic plant species parameters for non-existent species.",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "color lib",
+          "nickname": "color lib",
+          "description": "List of colors to start from. Creates tints and shades from this library.",
+          "type": "color",
+          "required": true
+        },
+        {
+          "name": "min sp",
+          "nickname": "min sp",
+          "description": "minimum number of species. Default = 5",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "max sp",
+          "nickname": "max sp",
+          "description": "Maximum number of species. Default = 10",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "activate",
+          "nickname": "activate",
+          "description": "activate the generator",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "radius",
+          "description": "Randomly generated species radius"
+        },
+        {
+          "name": "color",
+          "description": "Randomly generated species color"
+        },
+        {
+          "name": "height",
+          "description": "Randomly generated species height"
+        },
+        {
+          "name": "self spacing",
+          "description": "Randomly generated self spacing for a given species"
+        },
+        {
+          "name": "cluster radius",
+          "description": "Randomly generated radius for plant clustering upon placement"
+        },
+        {
+          "name": "weight",
+          "description": "Randomly generated weight for each species"
+        }
+      ],
+      "file": "pseudo_plant_param.py"
+    },
+    {
+      "name": "Rationalize Pattern",
+      "nickname": "RATIONAL",
+      "description": "Given a pattern of paver shapes and colors, in combination with an grid pattern, rationalize pattern.",
+      "category": "output",
+      "inputs": [
+        {
+          "name": "pattern",
+          "nickname": "pattern",
+          "description": "paver/pattern shapes as they come out of the draw area pattern component.",
+          "type": "curve",
+          "required": true
+        },
+        {
+          "name": "colors",
+          "nickname": "colors",
+          "description": "color indices as they come out of the draw area pattern component.",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "grid",
+          "nickname": "grid",
+          "description": "Granularity of output percentages. Examples: 5%, 10%, 20%. Default = 10",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "color index set",
+          "description": "List of sorted color indices for reference."
+        },
+        {
+          "name": "percentages",
+          "description": "percentage of each paving color for each grid zone."
+        },
+        {
+          "name": "pattern",
+          "description": "pattern shapes by grid zone."
+        },
+        {
+          "name": "colors",
+          "description": "test colors to show the application of percentages with random placements."
+        }
+      ],
+      "file": "rationalize_pattern.py"
+    },
+    {
+      "name": "Rule Restriction Gradient",
+      "nickname": "ruleGRAD",
+      "description": "Limits plants in an environment by mapping an attribute range to an analysis layer range",
+      "category": "8 place",
+      "inputs": [
+        {
+          "name": "<E>",
+          "nickname": "<E>",
+          "description": "Land Kit Environment",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "nickname": "layer",
+          "description": "name of layer",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "layer domain",
+          "nickname": "layer domain",
+          "description": "Domain to map to on given analysis layer",
+          "type": "domain",
+          "required": true
+        },
+        {
+          "name": "attr name",
+          "nickname": "attr name",
+          "description": "name of numeric plant attribute",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "attr domain",
+          "nickname": "attr domain",
+          "description": "Domain of attributes to map to on given analysis layer.",
+          "type": "range",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<E>",
+          "description": "Environment to add restriction gradient rule to"
+        }
+      ],
+      "file": "rule_restriction_gradient.py"
+    },
+    {
+      "name": "Set Age",
+      "nickname": "AGE",
+      "description": "Sets the age of the plants in a particular area. Based on max size and 'Growth Rate' data field (And Mature height(.5-100 ft) ('Slow'(5-200yr), 'Moderate'(2-50yr), and 'Rapid'(1-20yr)).",
+      "category": "9 data",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area with plants whose age you want to set",
+          "type": "generic",
+          "required": true
+        },
+        {
+          "name": "year",
+          "nickname": "year",
+          "description": "Age in years. Default = 2",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with plants with modified values for .radius_current and .height_current"
+        }
+      ],
+      "file": "set_age.py"
+    },
+    {
+      "name": "Contours",
+      "nickname": "CONTOURS",
+      "description": "Cut topo mesh contours quickly.",
+      "category": "5 mesh ops",
+      "inputs": [
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Mesh describing topography",
+          "type": "mesh",
+          "required": false
+        },
+        {
+          "name": "step",
+          "nickname": "step",
+          "description": "Step size for cutting contours. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "spacing",
+          "nickname": "spacing",
+          "description": "Input Options determine behavior: Op1.Number describing anno spacing along contour. Op2.Cross-curves",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "contours",
+          "description": "Polylines representing contours cut from the mesh at each elevation."
+        },
+        {
+          "name": "elevations",
+          "description": "Value of each contour elevation in a similar data tree structure"
+        },
+        {
+          "name": "anno planes",
+          "description": "Planes for annotation along each contour elevation. If spacing is None, this will be empty."
+        }
+      ],
+      "file": "topo_analysis_contours.py"
+    },
+    {
+      "name": "Cut+Fill Analysis",
+      "nickname": "CUT+FILL",
+      "description": "Evaluates and visualizes the topo cut and fill volumes between 2 meshes",
+      "category": "5 mesh ops",
+      "inputs": [
+        {
+          "name": "original",
+          "nickname": "original",
+          "description": "Mesh describing original topography",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "changed",
+          "nickname": "changed",
+          "description": "Mesh describing changed topography",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "cell size",
+          "nickname": "cell size",
+          "description": "Size of cell to evaluate cut and fill. Default >> ",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "vis depth",
+          "nickname": "vis depth",
+          "description": "Depth of max cut or fill for visualization. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mesh",
+          "description": "Colored mesh according to cut fill. Fill is saturated and Cut is grayscale."
+        },
+        {
+          "name": "cut volume",
+          "description": "Volume of soil to cut"
+        },
+        {
+          "name": "fill volume",
+          "description": "Volume of soil to fill"
+        },
+        {
+          "name": "legend colors",
+          "description": "Colors for the legend"
+        },
+        {
+          "name": "legend steps",
+          "description": "Steps for the legend"
+        }
+      ],
+      "file": "topo_analysis_cut_fill.py"
+    },
+    {
+      "name": "Elevation Analysis",
+      "nickname": "ELEVATION",
+      "description": "Evaluates mesh elevation of vertices and creates a colored mesh.",
+      "category": "5 mesh ops",
+      "inputs": [
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Mesh describing topography",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "colors",
+          "nickname": "colors",
+          "description": "Color to tint the gradient. Or to create a gradient with more than one color. Default = Gold",
+          "type": "color",
+          "required": false
+        },
+        {
+          "name": "legend step",
+          "nickname": "legend step",
+          "description": "Step size for the legend steps. Will round down to nearest whole number for each step. Default >> ",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mesh",
+          "description": "Colored mesh according to elevation"
+        },
+        {
+          "name": "legend colors",
+          "description": "Colors of each legend step"
+        },
+        {
+          "name": "step values",
+          "description": "Value of each legend step"
+        }
+      ],
+      "file": "topo_analysis_elevation.py"
+    },
+    {
+      "name": "Slope Analysis Pieces",
+      "nickname": "SLOPEpieces",
+      "description": "Evaluates mesh slope of each face and groups into separate mesh pieces",
+      "category": "5 mesh ops",
+      "inputs": [
+        {
+          "name": "topo mesh",
+          "nickname": "topo mesh",
+          "description": "Mesh describing topography",
+          "type": "mesh",
+          "required": true
+        },
+        {
+          "name": "steps",
+          "nickname": "steps",
+          "description": "Steps delineating slope groups. Default = [2, 5, 8.333333, 15, 25, 33, 50]",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "colors",
+          "nickname": "colors",
+          "description": "Colors for each slope groups. Default = Gold gradient",
+          "type": "color",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "meshes",
+          "description": "slope group pieces as separate meshes"
+        },
+        {
+          "name": "colors",
+          "description": "color of slope zones"
+        },
+        {
+          "name": "domains",
+          "description": "domains of the slope zones, i.e. 0 To 2"
+        }
+      ],
+      "file": "topo_analysis_slope_pieces.py"
+    },
+    {
+      "name": "Trim Pavers to Area",
+      "nickname": "PAVTrim",
+      "description": "Trim pavers in an area to the area border. This can be slower.",
+      "category": "6 pattern",
+      "inputs": [
+        {
+          "name": "<A>",
+          "nickname": "<A>",
+          "description": "Area for trimming pavers",
+          "type": "generic",
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "name": "<A>",
+          "description": "Area with trimmed pavers"
+        },
+        {
+          "name": "pavers",
+          "description": "paver outlines"
+        },
+        {
+          "name": "uncut",
+          "description": "uncut paver outlines"
+        },
+        {
+          "name": "cut",
+          "description": "cut paver outlines"
+        }
+      ],
+      "file": "trim_pavers_to_area.py"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "last_updated": "2026-11-04",
+    "description": "Common workflow patterns for Land Kit AI scripting"
+  },
+  "workflows": [
+    {
+      "id": "basic_hydrology",
+      "name": "Basic Hydrology Analysis",
+      "description": "Foundation workflow for hydrological analysis - sets up environment and basic layers",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Water Environment",
+          "inputs": ["boundaries (curves)", "cell size (number)", "topo (mesh)"],
+          "outputs": ["E (Environment)"],
+          "description": "Initialize the environment with grid cells"
+        },
+        {
+          "order": 2,
+          "component": "Add Elevation Layer",
+          "inputs": ["<E>"],
+          "outputs": ["<E>"],
+          "description": "Extract elevation from topo mesh to grid cells"
+        },
+        {
+          "order": 3,
+          "component": "Add Slope Layer",
+          "inputs": ["<E>"],
+          "outputs": ["<E>"],
+          "description": "Calculate slope from elevation"
+        },
+        {
+          "order": 4,
+          "component": "Add Catchments Layer",
+          "inputs": ["<E>", "basins (optional)", "pipes (optional)"],
+          "outputs": ["<E>", "curves", "colors", "indices", "areas"],
+          "description": "Delineate catchments and flow paths"
+        }
+      ],
+      "output_layers": ["elevation", "slope", "catchments", "flow"],
+      "use_case": "When you need a basic hydrological framework"
+    },
+    {
+      "id": "cn_calculation",
+      "name": "CN Calculation Workflow",
+      "description": "Complete workflow for calculating Curve Numbers for storm water modeling",
+      "prerequisite_workflow": "basic_hydrology",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Add Shape Values Layer",
+          "inputs": ["<E> (from basic hydrology)", "name: 'hsg'", "shapes (soil boundaries)", "values (A, B, C, D)"],
+          "outputs": ["<E>"],
+          "description": "Add Hydrologic Soil Group data from soil survey"
+        },
+        {
+          "order": 2,
+          "component": "Add Shape Values Layer",
+          "inputs": ["<E>", "name: 'gc'", "shapes (land use/cover)", "values (LAWN, WOODS, etc)"],
+          "outputs": ["<E>"],
+          "description": "Add ground cover type from land use classification"
+        },
+        {
+          "order": 3,
+          "component": "Add Shape Values Layer",
+          "inputs": ["<E>", "name: 'condition'", "shapes (condition zones)", "values (POOR, FAIR, GOOD)"],
+          "outputs": ["<E>"],
+          "description": "Add land condition ratings"
+        },
+        {
+          "order": 4,
+          "component": "Calculate CN Layer",
+          "inputs": ["<E>", "csv path (optional)"],
+          "outputs": ["<E>", "water area id", "area", "types", "catchment id", "Average CNs"],
+          "description": "Calculate CN values from HSG, GC, and Condition"
+        }
+      ],
+      "output_layers": ["cn", "water area"],
+      "generated_outputs": ["csv file with CN breakdown by catchment"],
+      "use_case": "For stormwater runoff modeling, detention calculations, or watershed planning"
+    },
+    {
+      "id": "solar_analysis",
+      "name": "Solar Analysis Workflow",
+      "description": "Analyze solar exposure and heat flux across landscape",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Water Environment",
+          "inputs": ["boundaries (curves)", "cell size (number)", "topo (mesh)"],
+          "outputs": ["E (Environment)"]
+        },
+        {
+          "order": 2,
+          "component": "Add Elevation Layer",
+          "inputs": ["<E>"],
+          "outputs": ["<E>"]
+        },
+        {
+          "order": 3,
+          "component": "Add Sun Exposure Layer",
+          "inputs": ["<E>"],
+          "outputs": ["<E>"],
+          "description": "Calculate hours of direct sun exposure"
+        },
+        {
+          "order": 4,
+          "component": "Calculate Heat Flux",
+          "inputs": ["<E>", "A (areas)", "S (solar radiation)", "celsius (temperature)"],
+          "outputs": ["<E>"],
+          "description": "Calculate thermal energy balance"
+        }
+      ],
+      "output_layers": ["hours_of_sun"],
+      "use_case": "For urban heat island analysis, PV potential, or thermal comfort studies"
+    },
+    {
+      "id": "drainage_design",
+      "name": "Drainage Design Workflow",
+      "description": "Analyze drainage patterns and design storm water management",
+      "prerequisite_workflow": "basic_hydrology",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Add Upslope Area Layer",
+          "inputs": ["<E> (from hydrology)"],
+          "outputs": ["<E>"],
+          "description": "Calculate contributing drainage area for each cell"
+        },
+        {
+          "order": 2,
+          "component": "Add Static Storage Layer",
+          "inputs": ["<E>"],
+          "outputs": ["<E>"],
+          "description": "Define areas for potential storage/detention"
+        },
+        {
+          "order": 3,
+          "component": "Add Shape Values Layer",
+          "inputs": ["<E>", "name: 'inlet_cells'", "shapes (inlet locations)", "values (1 or True)"],
+          "outputs": ["<E>"],
+          "description": "Mark inlet locations"
+        },
+        {
+          "order": 4,
+          "component": "Draw Flow Lines",
+          "inputs": ["<E>"],
+          "outputs": ["flow paths (curves)"],
+          "description": "Visualize flow routing"
+        }
+      ],
+      "output_layers": ["upslope_area", "static_storage", "inlet_cells", "outlet_cells"],
+      "use_case": "For designing bioswales, detention ponds, or drainage systems"
+    },
+    {
+      "id": "custom_analysis",
+      "name": "Custom Layer Analysis",
+      "description": "Add custom data layers for specialized analysis",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Water Environment",
+          "inputs": ["boundaries", "cell size", "topo"],
+          "outputs": ["E"]
+        },
+        {
+          "order": 2,
+          "component": "Add Layer by Formula",
+          "inputs": ["<E>", "formula (string with layer names and math)", "formula: 'new_layer = layer1 * 0.5 + layer2'"],
+          "outputs": ["<E>"],
+          "description": "Create derived layers using mathematical formulas"
+        }
+      ],
+      "output_layers": ["custom (user-defined)"],
+      "use_case": "For combining layers or creating new metrics"
+    }
+  ],
+  "workflow_dependency_graph": {
+    "Create Water Environment": [],
+    "Add Elevation Layer": ["Create Water Environment"],
+    "Add Slope Layer": ["Add Elevation Layer"],
+    "Add Catchments Layer": ["Add Elevation Layer"],
+    "Calculate CN Layer": ["Add Shape Values Layer (hsg)", "Add Shape Values Layer (gc)", "Add Shape Values Layer (condition)"],
+    "Add Upslope Area Layer": ["Add Catchments Layer"],
+    "Add Sun Exposure Layer": ["Create Water Environment"],
+    "Calculate Heat Flux": ["Add Sun Exposure Layer"],
+    "Add Static Storage Layer": ["Create Water Environment"],
+    "Draw Flow Lines": ["Add Catchments Layer"],
+    "Add Layer by Formula": ["Create Water Environment"]
+  },
+  "common_patterns": [
+    {
+      "pattern": "Adding categorical data from CAD/shapefiles",
+      "approach": "Use 'Add Shape Values Layer' with curves/areas from Rhino that represent zones",
+      "example": "Import soil survey boundaries -> Add Shape Values Layer with HSG codes"
+    },
+    {
+      "pattern": "Combining multiple data sources",
+      "approach": "Stack multiple 'Add Shape Values Layer' calls, each adding a different data type",
+      "note": "Order doesn't matter for non-overlapping data; overlapping areas use last-added value"
+    },
+    {
+      "pattern": "Creating derived layers",
+      "approach": "Use 'Add Layer by Formula' to create new layers from existing ones",
+      "example": "infiltration_rate = 100 - (cn / 98 * 100)"
+    },
+    {
+      "pattern": "Exporting results",
+      "approach": "Use component outputs or 'Draw' components to visualize; optional CSV export on some components",
+      "example": "Calculate CN Layer can export detailed CSV with areas, CN values per catchment"
+    }
+  ]
+}
