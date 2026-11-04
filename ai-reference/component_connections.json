@@ -1,0 +1,4996 @@
+{
+  "meta": {
+    "version": "2.3.1",
+    "last_updated": "2026-11-04",
+    "description": "Detailed component connection mapping by data type",
+    "note": "Uses output names and types to infer which components can connect",
+    "total_components": 122
+  },
+  "component_outputs": {
+    "Add Color Rule": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Add CSV Data": [
+      {
+        "output_name": "<P/A>",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data list",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Curb Cuts": [
+      {
+        "output_name": "curbs",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "ramps",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "preview",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Custom Pattern": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Layer by Formula": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Catchments Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "indices",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "areas",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "high pts",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "low pts",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Elevation Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Feature Proximity Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Layer Fill": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Image Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Occurrence Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Layer Overlay": [
+      {
+        "output_name": "E",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "area id",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "area",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Layer Shape Value Set": [
+      {
+        "output_name": "layer shapes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layer values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layer colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Shape Values Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Slope Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Static Storage Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "volumes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Sun Exposure Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Upslope Area Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Values Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Add Land Use to Areas": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Add Path Cross Slope": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      }
+    ],
+    "Add Path Pattern": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "pavers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Pattern to Area": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "pavers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Plants Constrained": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "invalid",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add Tessellation Pattern": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "pavers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "tess preview",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Add to Geo Set": [
+      {
+        "output_name": "<GT>",
+        "inferred_type": "GeoSet",
+        "can_connect_to": []
+      }
+    ],
+    "Add Wall Tops": [
+      {
+        "output_name": "<W>",
+        "inferred_type": "Wall",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Apply Niches from Data": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "<N>",
+        "inferred_type": "Niche",
+        "can_connect_to": []
+      }
+    ],
+    "Area Stats": [
+      {
+        "output_name": "geometry",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layer",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "color",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "srf area",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data keys",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Pull Areas by Name": [
+      {
+        "output_name": "remaining",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "pulled",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "found",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Array Modules": [
+      {
+        "output_name": "modules <A>",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Attractor Color Rule": [
+      {
+        "output_name": "<C>",
+        "inferred_type": "Curb",
+        "can_connect_to": []
+      }
+    ],
+    "Bake Text": [],
+    "Calculate CN Layer": [
+      {
+        "output_name": "E",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "water area id",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "area",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "types",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "catchment id",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "Average CNs",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Calculate Carbon": [
+      {
+        "output_name": "materials",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "dec curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "totals",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Calculate Heat Flux": [
+      {
+        "output_name": "E",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Change Plant Attributes": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "message",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Change Plant Data Values": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "message",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Clip Areas": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "surfaces",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Collage Areas": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "surfaces",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Area": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "mesh",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Curbs": [
+      {
+        "output_name": "<C>",
+        "inferred_type": "Curb",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Environment": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Create Geo Set": [
+      {
+        "output_name": "<GT>",
+        "inferred_type": "GeoSet",
+        "can_connect_to": []
+      }
+    ],
+    "Create Mix": [
+      {
+        "output_name": "<M>",
+        "inferred_type": "Mix",
+        "can_connect_to": []
+      }
+    ],
+    "Create Multi Mix": [
+      {
+        "output_name": "<M>",
+        "inferred_type": "Mix",
+        "can_connect_to": []
+      }
+    ],
+    "Create Niche": [
+      {
+        "output_name": "<N>",
+        "inferred_type": "Niche",
+        "can_connect_to": []
+      }
+    ],
+    "Create Paths": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "breaklines",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Paths with Variable Slope": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "elevated centerline",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "REPLACE W CREATE AREAS (Create Paving Areas)": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Create Plant": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      }
+    ],
+    "Create Plants from CSV Data": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Plant List from Prompt BETA": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Plant Query": [
+      {
+        "output_name": "<Q>",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "REPLACE W CREATE AREAS (Create Planting Area)": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Create Pseudo Plants": [
+      {
+        "output_name": "<PS>",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Stairs": [
+      {
+        "output_name": "<S>",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "preview",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Create Topo": [
+      {
+        "output_name": "<T>",
+        "inferred_type": "Topo",
+        "can_connect_to": []
+      }
+    ],
+    "Create Walls": [
+      {
+        "output_name": "<W>",
+        "inferred_type": "Wall",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Customize Parameters": [],
+    "Cut Sections": [
+      {
+        "output_name": "cuts",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "planes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Load Data": [
+      {
+        "output_name": "plants",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Save Data": [],
+    "Diffuse Layer": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Area Linework": [
+      {
+        "output_name": "linework",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Area Pattern": [
+      {
+        "output_name": "pavers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "mix index",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "color index",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Areas as Meshes": [
+      {
+        "output_name": "flat meshes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "projected meshes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Bake Areas as Hatches": [],
+    "Draw Areas as Slabs": [
+      {
+        "output_name": "slabs",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Areas as Surfaces": [
+      {
+        "output_name": "surfaces",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Bloom Calendar": [
+      {
+        "output_name": "curves",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "month lines",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "species label",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "label frames",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "animated",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Curbs": [
+      {
+        "output_name": "mass",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "back top",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "front bottom",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "top spots",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "bottom spots",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Water Flow Lines": [
+      {
+        "output_name": "flow lines",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Layer as Shapes": [
+      {
+        "output_name": "boundaries",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "names",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Layer as Mesh": [
+      {
+        "output_name": "mesh",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "color keys",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "tag keys",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Paths": [
+      {
+        "output_name": "surface",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "sides",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Stairs": [
+      {
+        "output_name": "masses",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "breaklines",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Topo": [
+      {
+        "output_name": "mesh",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "points",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Walls": [
+      {
+        "output_name": "mass",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "back top",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "front bottom",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "top spots",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "bottom spots",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Environment Color Rule": [
+      {
+        "output_name": "<C>",
+        "inferred_type": "Curb",
+        "can_connect_to": []
+      }
+    ],
+    "Evaluate Environment": [
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "printed",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Export Blocks as DAE": [],
+    "Get Plant Block Info": [
+      {
+        "output_name": "species",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "symbol",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "locs",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "radii",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "heights",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Bake Plant Blocks": [
+      {
+        "output_name": "message",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Get Area Plants": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      }
+    ],
+    "Get Current Plant Data": [
+      {
+        "output_name": "attr keys",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "attr values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data keys",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "data values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Get Environment Layer": [
+      {
+        "output_name": "locs",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Get Plant Info": [
+      {
+        "output_name": "species",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "circle",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "sphere",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "color",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "loc",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "radius",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "height",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Get Plant Niche Info": [
+      {
+        "output_name": "constraints",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "domains",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "cushions",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "printed",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Gradient Curve Color Rule": [
+      {
+        "output_name": "<C>",
+        "inferred_type": "Curb",
+        "can_connect_to": []
+      }
+    ],
+    "Image Color Rule": [
+      {
+        "output_name": "<C>",
+        "inferred_type": "Curb",
+        "can_connect_to": []
+      }
+    ],
+    "Land Kit Help": [],
+    "Land Kit License": [],
+    "Layer Pipeline": [
+      {
+        "output_name": "geo",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "keys",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Freeze Area Plants": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Pack Plants": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      }
+    ],
+    "Fill Area with Pattern": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "not filled",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Layout Plant Row": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      }
+    ],
+    "Fill Area with Plants": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Remove Overlaps": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "culled",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Update Conditions": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "invalid",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "invalid_pts",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "layers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Merge Plant Niche": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "message",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Grade Topo Mod": [
+      {
+        "output_name": "<T>",
+        "inferred_type": "Topo",
+        "can_connect_to": []
+      }
+    ],
+    "Patch Topo Mod": [
+      {
+        "output_name": "<T>",
+        "inferred_type": "Topo",
+        "can_connect_to": []
+      }
+    ],
+    "Sculpt Topo Mod": [
+      {
+        "output_name": "<T>",
+        "inferred_type": "Topo",
+        "can_connect_to": []
+      }
+    ],
+    "Smooth Topo Mod": [
+      {
+        "output_name": "<T>",
+        "inferred_type": "Topo",
+        "can_connect_to": []
+      }
+    ],
+    "Niche Rule Loose Constraint": [
+      {
+        "output_name": "<NR>",
+        "inferred_type": "NicheRule",
+        "can_connect_to": []
+      }
+    ],
+    "Niche Rule Mapped Constraint": [
+      {
+        "output_name": "<NR>",
+        "inferred_type": "NicheRule",
+        "can_connect_to": []
+      }
+    ],
+    "Paver Texture": [
+      {
+        "output_name": "textured pavers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Draw Plant Schedule": [
+      {
+        "output_name": "table",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "text list",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "text locs",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "symbols",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Pull Plants by Name": [
+      {
+        "output_name": "<P>",
+        "inferred_type": "Plant",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "included",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Project Paver Meshes": [
+      {
+        "output_name": "projected",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Pseudo Niche Parameters": [
+      {
+        "output_name": "constraints",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "domains",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "cushions",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Pseudo Plant Parameters": [
+      {
+        "output_name": "radius",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "color",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "height",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "self spacing",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "cluster radius",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "weight",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Rationalize Pattern": [
+      {
+        "output_name": "color index set",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "percentages",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "pattern",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Rule Restriction Gradient": [
+      {
+        "output_name": "<E>",
+        "inferred_type": "Environment",
+        "can_connect_to": []
+      }
+    ],
+    "Set Age": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      }
+    ],
+    "Contours": [
+      {
+        "output_name": "contours",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "elevations",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "anno planes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Cut+Fill Analysis": [
+      {
+        "output_name": "mesh",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "cut volume",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "fill volume",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "legend colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "legend steps",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Elevation Analysis": [
+      {
+        "output_name": "mesh",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "legend colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "step values",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Slope Analysis Pieces": [
+      {
+        "output_name": "meshes",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "colors",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "domains",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ],
+    "Trim Pavers to Area": [
+      {
+        "output_name": "<A>",
+        "inferred_type": "Area",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "pavers",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "uncut",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      },
+      {
+        "output_name": "cut",
+        "inferred_type": "Generic",
+        "can_connect_to": []
+      }
+    ]
+  },
+  "component_inputs": {
+    "Add Color Rule": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<C>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add CSV Data": [
+      {
+        "input_name": "csv path",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<P/A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "name key",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Curb Cuts": [
+      {
+        "input_name": "<C>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cut cls",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "width",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "run",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "flare",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Custom Pattern": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "pavers",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Layer by Formula": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "formula",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Catchments Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "basins",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "pipes",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Elevation Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Add Feature Proximity Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "features",
+        "input_type": "geometry",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Layer Fill": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "value",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Image Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "picture",
+        "input_type": "guid",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "channel",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Occurrence Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "geometry",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Layer Overlay": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layers",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Layer Shape Value Set": [
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Add Shape Values Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "shapes",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "values",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Slope Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Add Static Storage Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "basins",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Sun Exposure Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "other",
+        "input_type": "mesh",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "vectors",
+        "input_type": "vector",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "start",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "last",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "alt name",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Upslope Area Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Add Values Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "values",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Land Use to Areas": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "activate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Path Cross Slope": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "slope",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "mode",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Path Pattern": [
+      {
+        "input_name": "<A/P>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "centerline",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "path width",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "length",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "width",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "seam",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "start mode",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Pattern to Area": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "pattern",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "POB",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "length",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "width",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "steps",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "seam",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "rotation",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Plants Constrained": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "locs",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "fixed",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "constrained",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Tessellation Pattern": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "POB",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "tess geo",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "origin",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "u point",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "v point",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "rotation",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add to Geo Set": [
+      {
+        "input_name": "geo set",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "contours",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spots",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "breaklines",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "other geo",
+        "input_type": "geometry",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "mendlines",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "boundaries",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Add Wall Tops": [
+      {
+        "input_name": "walls",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spots",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spot tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Apply Niches from Data": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "fields",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Area Stats": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Pull Areas by Name": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "names",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Array Modules": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "module curves",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "module area",
+        "input_type": "brep",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "trim",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Attractor Color Rule": [
+      {
+        "input_name": "attractors",
+        "input_type": "geometry",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "min dist",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "max dist",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Bake Text": [
+      {
+        "input_name": "text",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "planes",
+        "input_type": "plane",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "font",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "alignment",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "color",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bakename",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bake",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Calculate CN Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "csv path",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Calculate Carbon": [
+      {
+        "input_name": "<P/A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "years",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Calculate Heat Flux": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "S",
+        "input_type": "float",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "C",
+        "input_type": "float",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Change Plant Attributes": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "plant names",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "attributes",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "new values",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Change Plant Data Values": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "plant names",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "keys",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "new values",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Clip Areas": [
+      {
+        "input_name": "<A/F>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "boundary",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Collage Areas": [
+      {
+        "input_name": "<A/F>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Create Area": [
+      {
+        "input_name": "geometry",
+        "input_type": "brep",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "dist tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "edge tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "color",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Curbs": [
+      {
+        "input_name": "curves",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spots",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "curve tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spot tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Environment": [
+      {
+        "input_name": "boundaries",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cell size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "topo",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Create Geo Set": [
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "refresh",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Mix": [
+      {
+        "input_name": "color 1",
+        "input_type": "color",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "color 2",
+        "input_type": "color",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "mix %",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Multi Mix": [
+      {
+        "input_name": "colors",
+        "input_type": "colors",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "parts",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Niche": [
+      {
+        "input_name": "constraints",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "domains",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cushions",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Paths": [
+      {
+        "input_name": "centerlines",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "width",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bottoms",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "slope",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Paths with Variable Slope": [
+      {
+        "input_name": "centerline",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "width",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "slope min",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "slope max",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "smoothing",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "REPLACE W CREATE AREAS (Create Paving Areas)": [
+      {
+        "input_name": "geometry",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Create Plant": [
+      {
+        "input_name": "species",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "radius",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "color",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "height",
+        "input_type": "number",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<N>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "self spacing",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cluster radius",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Plants from CSV Data": [
+      {
+        "input_name": "csv_path",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "names",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "num",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "species_key",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "random",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<Q>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Plant List from Prompt BETA": [
+      {
+        "input_name": "prompt",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "API",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "model",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "activate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Plant Query": [
+      {
+        "input_name": "fields",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "values",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "includes",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "REPLACE W CREATE AREAS (Create Planting Area)": [
+      {
+        "input_name": "geometry",
+        "input_type": "geometry",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Create Pseudo Plants": [
+      {
+        "input_name": "number",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "filter",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "activate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Stairs": [
+      {
+        "input_name": "surface",
+        "input_type": "surface",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "rise",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Topo": [
+      {
+        "input_name": "<GT>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<F>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Create Walls": [
+      {
+        "input_name": "curves",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spots",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "curve tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spot tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Customize Parameters": [
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "activate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "parameters",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Cut Sections": [
+      {
+        "input_name": "sections",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "geometry",
+        "input_type": "geometry",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layers",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "colors",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Load Data": [
+      {
+        "input_name": "file path",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Save Data": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "file path",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Diffuse Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "intensity",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "steps",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Area Linework": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "style",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Area Pattern": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "colors",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "positions",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "type",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "thickness",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Areas as Meshes": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Bake Areas as Hatches": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "overwrite",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bake",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Areas as Slabs": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "top topo",
+        "input_type": "mesh",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bottom topo",
+        "input_type": "mesh",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "style",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cell size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Areas as Surfaces": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cell size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "srf type",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Bloom Calendar": [
+      {
+        "input_name": "<P/A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bloom field",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "origin",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "graph type",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "ani month",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Curbs": [
+      {
+        "input_name": "<C>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Water Flow Lines": [
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "pt def",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "step size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "steps",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "degree",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Layer as Shapes": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "strength",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "times",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Layer as Mesh": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "hues",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "domain",
+        "input_type": "domain",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "elevate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Paths": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Stairs": [
+      {
+        "input_name": "<S>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Topo": [
+      {
+        "input_name": "<T>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "min div",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "max div",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "angle tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Walls": [
+      {
+        "input_name": "<W>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Environment Color Rule": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "text",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Evaluate Environment": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "pt",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer filter",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Export Blocks as DAE": [
+      {
+        "input_name": "activate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Get Plant Block Info": [
+      {
+        "input_name": "<P/A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "style",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Bake Plant Blocks": [
+      {
+        "input_name": "<P/A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "overwrite",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "style",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "bake",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Get Area Plants": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Get Current Plant Data": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "attr keys",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "data keys",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Get Environment Layer": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Get Plant Info": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Get Plant Niche Info": [
+      {
+        "input_name": "<P/N>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Gradient Curve Color Rule": [
+      {
+        "input_name": "guide curve",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Image Color Rule": [
+      {
+        "input_name": "picture",
+        "input_type": "guid",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "channel",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Land Kit Help": [],
+    "Land Kit License": [],
+    "Layer Pipeline": [
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "filter",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Freeze Area Plants": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "freeze",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Pack Plants": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "steps",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "fixed",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Fill Area with Pattern": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "weights",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "pt pattern",
+        "input_type": "point",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "tries",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "fixed",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "constrained",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "buffer",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Layout Plant Row": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "curve",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spacing",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "fixed",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Fill Area with Plants": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "weights",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "packing_ratio",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "fixed",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "constrained",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "buffer",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Remove Overlaps": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "max overlap",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "mode",
+        "input_type": "int",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Update Conditions": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Merge Plant Niche": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "plant names",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<N>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "overwrite",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Grade Topo Mod": [
+      {
+        "input_name": "<T>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "boundaries",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "geometry",
+        "input_type": "geometry",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<F>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "slopes",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "offset",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Patch Topo Mod": [
+      {
+        "input_name": "<T>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<GT>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<F>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Sculpt Topo Mod": [
+      {
+        "input_name": "<T>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "boundaries",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "geometry",
+        "input_type": "geometry",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "height",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spread",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "offset",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Smooth Topo Mod": [
+      {
+        "input_name": "<T>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "boundaries",
+        "input_type": "curve",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "strength",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "iterations",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "remesh",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "dist tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spacing tol",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Niche Rule Loose Constraint": [
+      {
+        "input_name": "<N>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Niche Rule Mapped Constraint": [
+      {
+        "input_name": "map from",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "from domain",
+        "input_type": "domain",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "map to",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "to domain",
+        "input_type": "domain",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "less than",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Paver Texture": [
+      {
+        "input_name": "paver meshes",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "min scale",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "max scale",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Draw Plant Schedule": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "start pt",
+        "input_type": "point",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "niches",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "padding",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "csv path",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "style",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Pull Plants by Name": [
+      {
+        "input_name": "<P>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "names",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Project Paver Meshes": [
+      {
+        "input_name": "paver meshes",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "topo meshes",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Pseudo Niche Parameters": [
+      {
+        "input_name": "item list",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layers",
+        "input_type": "string",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Pseudo Plant Parameters": [
+      {
+        "input_name": "color lib",
+        "input_type": "color",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "min sp",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "max sp",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "activate",
+        "input_type": "boolean",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Rationalize Pattern": [
+      {
+        "input_name": "pattern",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "colors",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "color indices",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "grid",
+        "input_type": "curve",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "denominator",
+        "input_type": "integer",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Rule Restriction Gradient": [
+      {
+        "input_name": "<E>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "layer domain",
+        "input_type": "domain",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "attr name",
+        "input_type": "string",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "attr domain",
+        "input_type": "range",
+        "required": true,
+        "can_receive_from": []
+      }
+    ],
+    "Set Age": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "year",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Contours": [
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "step",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "spacing",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Cut+Fill Analysis": [
+      {
+        "input_name": "original",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "changed",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "cell size",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "vis depth",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Elevation Analysis": [
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "colors",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "legend step",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Slope Analysis Pieces": [
+      {
+        "input_name": "topo mesh",
+        "input_type": "mesh",
+        "required": true,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "steps",
+        "input_type": "number",
+        "required": false,
+        "can_receive_from": []
+      },
+      {
+        "input_name": "colors",
+        "input_type": "color",
+        "required": false,
+        "can_receive_from": []
+      }
+    ],
+    "Trim Pavers to Area": [
+      {
+        "input_name": "<A>",
+        "input_type": "generic",
+        "required": false,
+        "can_receive_from": []
+      }
+    ]
+  },
+  "connection_pathways": {
+    "boolean": {
+      "description": "Components accepting boolean input",
+      "num_consumers": 28,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Land Use to Areas",
+        "Add Plants Constrained",
+        "Add Plants Constrained",
+        "Array Modules",
+        "Bake Text",
+        "Create Geo Set",
+        "Create Plants from CSV Data",
+        "Create Plant List from Prompt BETA",
+        "Create Plant Query",
+        "Create Pseudo Plants",
+        "Customize Parameters",
+        "Bake Areas as Hatches",
+        "Bake Areas as Hatches",
+        "Draw Layer as Mesh",
+        "Export Blocks as DAE",
+        "Bake Plant Blocks",
+        "Bake Plant Blocks",
+        "Freeze Area Plants",
+        "Pack Plants",
+        "Fill Area with Pattern",
+        "Fill Area with Pattern",
+        "Layout Plant Row",
+        "Fill Area with Plants",
+        "Fill Area with Plants",
+        "Merge Plant Niche",
+        "Smooth Topo Mod",
+        "Niche Rule Mapped Constraint",
+        "Pseudo Plant Parameters"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "brep": {
+      "description": "Components accepting brep input",
+      "num_consumers": 2,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Array Modules",
+        "Create Area"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "color": {
+      "description": "Components accepting color input",
+      "num_consumers": 11,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Bake Text",
+        "Create Area",
+        "Create Mix",
+        "Create Mix",
+        "Create Plant",
+        "Cut Sections",
+        "Draw Layer as Mesh",
+        "Pseudo Plant Parameters",
+        "Rationalize Pattern",
+        "Elevation Analysis",
+        "Slope Analysis Pieces"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "colors": {
+      "description": "Components accepting colors input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Create Multi Mix"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "curve": {
+      "description": "Components accepting curve input",
+      "num_consumers": 26,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Curb Cuts",
+        "Add Custom Pattern",
+        "Add Catchments Layer",
+        "Add Catchments Layer",
+        "Add Static Storage Layer",
+        "Add Path Pattern",
+        "Add Tessellation Pattern",
+        "Add to Geo Set",
+        "Add to Geo Set",
+        "Add to Geo Set",
+        "Add to Geo Set",
+        "Array Modules",
+        "Clip Areas",
+        "Create Curbs",
+        "Create Environment",
+        "Create Paths",
+        "Create Paths with Variable Slope",
+        "Create Walls",
+        "Cut Sections",
+        "Gradient Curve Color Rule",
+        "Layout Plant Row",
+        "Grade Topo Mod",
+        "Sculpt Topo Mod",
+        "Smooth Topo Mod",
+        "Rationalize Pattern",
+        "Rationalize Pattern"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "domain": {
+      "description": "Components accepting domain input",
+      "num_consumers": 4,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Draw Layer as Mesh",
+        "Niche Rule Mapped Constraint",
+        "Niche Rule Mapped Constraint",
+        "Rule Restriction Gradient"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "float": {
+      "description": "Components accepting float input",
+      "num_consumers": 2,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Calculate Heat Flux",
+        "Calculate Heat Flux"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "generic": {
+      "description": "Components accepting generic input",
+      "num_consumers": 115,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Color Rule",
+        "Add Color Rule",
+        "Add CSV Data",
+        "Add Curb Cuts",
+        "Add Custom Pattern",
+        "Layer by Formula",
+        "Add Catchments Layer",
+        "Add Elevation Layer",
+        "Add Feature Proximity Layer",
+        "Add Layer Fill",
+        "Add Layer Fill",
+        "Add Image Layer",
+        "Add Occurrence Layer",
+        "Add Occurrence Layer",
+        "Add Layer Overlay",
+        "Add Shape Values Layer",
+        "Add Shape Values Layer",
+        "Add Shape Values Layer",
+        "Add Slope Layer",
+        "Add Static Storage Layer",
+        "Add Sun Exposure Layer",
+        "Add Upslope Area Layer",
+        "Add Values Layer",
+        "Add Values Layer",
+        "Add Land Use to Areas",
+        "Add Path Cross Slope",
+        "Add Path Pattern",
+        "Add Pattern to Area",
+        "Add Plants Constrained",
+        "Add Plants Constrained",
+        "Add Plants Constrained",
+        "Add Tessellation Pattern",
+        "Add to Geo Set",
+        "Add Wall Tops",
+        "Apply Niches from Data",
+        "Area Stats",
+        "Pull Areas by Name",
+        "Array Modules",
+        "Calculate CN Layer",
+        "Calculate Carbon",
+        "Calculate Heat Flux",
+        "Calculate Heat Flux",
+        "Change Plant Attributes",
+        "Change Plant Attributes",
+        "Change Plant Data Values",
+        "Change Plant Data Values",
+        "Clip Areas",
+        "Collage Areas",
+        "Create Niche",
+        "REPLACE W CREATE AREAS (Create Paving Areas)",
+        "Create Plant",
+        "Create Plants from CSV Data",
+        "REPLACE W CREATE AREAS (Create Planting Area)",
+        "Create Topo",
+        "Create Topo",
+        "Load Data",
+        "Save Data",
+        "Save Data",
+        "Diffuse Layer",
+        "Draw Area Linework",
+        "Draw Area Pattern",
+        "Draw Area Pattern",
+        "Draw Areas as Meshes",
+        "Bake Areas as Hatches",
+        "Draw Areas as Slabs",
+        "Draw Areas as Surfaces",
+        "Draw Bloom Calendar",
+        "Draw Curbs",
+        "Water Flow Lines",
+        "Draw Layer as Shapes",
+        "Draw Layer as Mesh",
+        "Draw Paths",
+        "Draw Stairs",
+        "Draw Topo",
+        "Draw Walls",
+        "Environment Color Rule",
+        "Evaluate Environment",
+        "Get Plant Block Info",
+        "Bake Plant Blocks",
+        "Get Area Plants",
+        "Get Current Plant Data",
+        "Get Environment Layer",
+        "Get Plant Info",
+        "Get Plant Niche Info",
+        "Freeze Area Plants",
+        "Pack Plants",
+        "Fill Area with Pattern",
+        "Fill Area with Pattern",
+        "Fill Area with Pattern",
+        "Layout Plant Row",
+        "Fill Area with Plants",
+        "Fill Area with Plants",
+        "Fill Area with Plants",
+        "Remove Overlaps",
+        "Update Conditions",
+        "Update Conditions",
+        "Merge Plant Niche",
+        "Merge Plant Niche",
+        "Grade Topo Mod",
+        "Grade Topo Mod",
+        "Patch Topo Mod",
+        "Patch Topo Mod",
+        "Patch Topo Mod",
+        "Sculpt Topo Mod",
+        "Smooth Topo Mod",
+        "Niche Rule Loose Constraint",
+        "Draw Plant Schedule",
+        "Draw Plant Schedule",
+        "Pull Plants by Name",
+        "Pseudo Niche Parameters",
+        "Pseudo Niche Parameters",
+        "Rule Restriction Gradient",
+        "Set Age",
+        "Contours",
+        "Trim Pavers to Area"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "geometry": {
+      "description": "Components accepting geometry input",
+      "num_consumers": 7,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Feature Proximity Layer",
+        "Add to Geo Set",
+        "Attractor Color Rule",
+        "REPLACE W CREATE AREAS (Create Planting Area)",
+        "Cut Sections",
+        "Grade Topo Mod",
+        "Sculpt Topo Mod"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "guid": {
+      "description": "Components accepting guid input",
+      "num_consumers": 2,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Image Layer",
+        "Image Color Rule"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "int": {
+      "description": "Components accepting int input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Remove Overlaps"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "integer": {
+      "description": "Components accepting integer input",
+      "num_consumers": 32,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Image Layer",
+        "Add Sun Exposure Layer",
+        "Add Sun Exposure Layer",
+        "Add Path Cross Slope",
+        "Add Path Pattern",
+        "Add Pattern to Area",
+        "Add Pattern to Area",
+        "Bake Text",
+        "Create Plants from CSV Data",
+        "Create Pseudo Plants",
+        "Create Pseudo Plants",
+        "Diffuse Layer",
+        "Draw Area Linework",
+        "Draw Area Pattern",
+        "Draw Areas as Slabs",
+        "Draw Areas as Surfaces",
+        "Draw Bloom Calendar",
+        "Draw Bloom Calendar",
+        "Water Flow Lines",
+        "Water Flow Lines",
+        "Draw Layer as Shapes",
+        "Get Plant Block Info",
+        "Bake Plant Blocks",
+        "Image Color Rule",
+        "Layer Pipeline",
+        "Pack Plants",
+        "Smooth Topo Mod",
+        "Draw Plant Schedule",
+        "Pseudo Plant Parameters",
+        "Pseudo Plant Parameters",
+        "Rationalize Pattern",
+        "Rationalize Pattern"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "mesh": {
+      "description": "Components accepting mesh input",
+      "num_consumers": 16,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Sun Exposure Layer",
+        "Create Environment",
+        "Create Paths with Variable Slope",
+        "Draw Areas as Meshes",
+        "Draw Areas as Slabs",
+        "Draw Areas as Slabs",
+        "Draw Areas as Surfaces",
+        "Water Flow Lines",
+        "Paver Texture",
+        "Project Paver Meshes",
+        "Project Paver Meshes",
+        "Contours",
+        "Cut+Fill Analysis",
+        "Cut+Fill Analysis",
+        "Elevation Analysis",
+        "Slope Analysis Pieces"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "number": {
+      "description": "Components accepting number input",
+      "num_consumers": 75,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Curb Cuts",
+        "Add Curb Cuts",
+        "Add Curb Cuts",
+        "Add Path Cross Slope",
+        "Add Path Pattern",
+        "Add Path Pattern",
+        "Add Path Pattern",
+        "Add Path Pattern",
+        "Add Pattern to Area",
+        "Add Pattern to Area",
+        "Add Pattern to Area",
+        "Add Pattern to Area",
+        "Add Tessellation Pattern",
+        "Add Wall Tops",
+        "Attractor Color Rule",
+        "Attractor Color Rule",
+        "Bake Text",
+        "Calculate Carbon",
+        "Create Area",
+        "Create Area",
+        "Create Curbs",
+        "Create Curbs",
+        "Create Environment",
+        "Create Mix",
+        "Create Multi Mix",
+        "Create Niche",
+        "Create Paths",
+        "Create Paths",
+        "Create Paths with Variable Slope",
+        "Create Paths with Variable Slope",
+        "Create Paths with Variable Slope",
+        "Create Paths with Variable Slope",
+        "Create Plant",
+        "Create Plant",
+        "Create Plant",
+        "Create Plant",
+        "Create Stairs",
+        "Create Walls",
+        "Create Walls",
+        "Diffuse Layer",
+        "Draw Area Pattern",
+        "Draw Area Pattern",
+        "Draw Areas as Slabs",
+        "Draw Areas as Surfaces",
+        "Water Flow Lines",
+        "Draw Layer as Shapes",
+        "Draw Topo",
+        "Draw Topo",
+        "Draw Topo",
+        "Fill Area with Pattern",
+        "Fill Area with Pattern",
+        "Fill Area with Pattern",
+        "Layout Plant Row",
+        "Fill Area with Plants",
+        "Fill Area with Plants",
+        "Fill Area with Plants",
+        "Remove Overlaps",
+        "Grade Topo Mod",
+        "Grade Topo Mod",
+        "Sculpt Topo Mod",
+        "Sculpt Topo Mod",
+        "Sculpt Topo Mod",
+        "Smooth Topo Mod",
+        "Smooth Topo Mod",
+        "Smooth Topo Mod",
+        "Paver Texture",
+        "Paver Texture",
+        "Draw Plant Schedule",
+        "Draw Plant Schedule",
+        "Set Age",
+        "Contours",
+        "Cut+Fill Analysis",
+        "Cut+Fill Analysis",
+        "Elevation Analysis",
+        "Slope Analysis Pieces"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "plane": {
+      "description": "Components accepting plane input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Bake Text"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "point": {
+      "description": "Components accepting point input",
+      "num_consumers": 15,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Pattern to Area",
+        "Add Plants Constrained",
+        "Add Tessellation Pattern",
+        "Add Tessellation Pattern",
+        "Add Tessellation Pattern",
+        "Add Tessellation Pattern",
+        "Add to Geo Set",
+        "Add Wall Tops",
+        "Create Curbs",
+        "Create Paths",
+        "Create Walls",
+        "Draw Bloom Calendar",
+        "Evaluate Environment",
+        "Fill Area with Pattern",
+        "Draw Plant Schedule"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "range": {
+      "description": "Components accepting range input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Rule Restriction Gradient"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "string": {
+      "description": "Components accepting string input",
+      "num_consumers": 57,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add CSV Data",
+        "Add CSV Data",
+        "Layer by Formula",
+        "Add Feature Proximity Layer",
+        "Add Layer Fill",
+        "Add Image Layer",
+        "Add Occurrence Layer",
+        "Add Layer Overlay",
+        "Add Layer Overlay",
+        "Layer Shape Value Set",
+        "Add Shape Values Layer",
+        "Add Sun Exposure Layer",
+        "Add Values Layer",
+        "Apply Niches from Data",
+        "Pull Areas by Name",
+        "Bake Text",
+        "Bake Text",
+        "Bake Text",
+        "Bake Text",
+        "Calculate CN Layer",
+        "Change Plant Attributes",
+        "Change Plant Attributes",
+        "Change Plant Data Values",
+        "Change Plant Data Values",
+        "Create Area",
+        "Create Geo Set",
+        "Create Niche",
+        "Create Plant",
+        "Create Plants from CSV Data",
+        "Create Plants from CSV Data",
+        "Create Plants from CSV Data",
+        "Create Plant List from Prompt BETA",
+        "Create Plant List from Prompt BETA",
+        "Create Plant List from Prompt BETA",
+        "Create Plant Query",
+        "Create Plant Query",
+        "Customize Parameters",
+        "Customize Parameters",
+        "Cut Sections",
+        "Diffuse Layer",
+        "Draw Bloom Calendar",
+        "Draw Layer as Shapes",
+        "Draw Layer as Mesh",
+        "Evaluate Environment",
+        "Bake Plant Blocks",
+        "Get Current Plant Data",
+        "Get Current Plant Data",
+        "Get Environment Layer",
+        "Layer Pipeline",
+        "Merge Plant Niche",
+        "Niche Rule Mapped Constraint",
+        "Niche Rule Mapped Constraint",
+        "Draw Plant Schedule",
+        "Pull Plants by Name",
+        "Pseudo Niche Parameters",
+        "Rule Restriction Gradient",
+        "Rule Restriction Gradient"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "surface": {
+      "description": "Components accepting surface input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Create Stairs"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "text": {
+      "description": "Components accepting text input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Environment Color Rule"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    },
+    "vector": {
+      "description": "Components accepting vector input",
+      "num_consumers": 1,
+      "num_potential_producers": 70,
+      "consumers": [
+        "Add Sun Exposure Layer"
+      ],
+      "potential_producers": [
+        "Update Conditions",
+        "Add CSV Data",
+        "Calculate Carbon",
+        "Clip Areas",
+        "Add Layer Overlay",
+        "Draw Areas as Surfaces",
+        "Create Curbs",
+        "Draw Areas as Meshes",
+        "Add Static Storage Layer",
+        "Add Tessellation Pattern"
+      ]
+    }
+  }
+}
