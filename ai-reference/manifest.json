@@ -4,13 +4,13 @@
     "version": "2.3.1",
     "last_updated": "2026-11-04",
     "description": "Complete documentation for AI assistants building Land Kit Grasshopper scripts",
-    "repository": "https://github.com/landau-design/land-kit",
-    "docs_repo_path": "docs/ai-reference/"
+    "repository": "https://github.com/chrislandau/land-kit-docs",
+    "docs_repo_path": "ai-reference/"
   },
   "landing_page": "See README.md for complete overview and usage instructions",
   "quick_links": {
-    "full_docs": "https://github.com/landau-design/land-kit/tree/main/docs/ai-reference",
-    "readme": "https://github.com/landau-design/land-kit/blob/main/docs/ai-reference/README.md"
+    "full_docs": "https://github.com/chrislandau/land-kit-docs/tree/main/ai-reference",
+    "readme": "https://github.com/chrislandau/land-kit-docs/blob/main/README.md"
   },
   "reference_files": [
     {
@@ -121,25 +121,25 @@
   ],
   "access_instructions": {
     "for_raven_users": [
-      "1. In your Raven prompt, reference these docs: 'See Land Kit AI reference at https://github.com/landau-design/land-kit/tree/main/docs/ai-reference'",
+      "1. In your Raven prompt, reference these docs: 'See Land Kit AI reference at https://github.com/chrislandau/land-kit-docs/tree/main/ai-reference'",
       "2. Ask Raven to follow workflows from workflow_patterns.json",
       "3. Reference component nicknames from component_registry.json",
       "4. Ask Raven to validate data against layer_validation.json"
     ],
     "for_tool_developers": [
       "1. Fetch this manifest file at startup",
-      "2. For each reference file, construct GitHub raw URL: https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/{filename}",
+      "2. For each reference file, construct GitHub raw URL: https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/{filename}",
       "3. Implement caching with version checking (see INTEGRATION_GUIDE.json)",
       "4. Use data structures for validation and error handling"
     ]
   },
   "github_raw_urls": {
-    "manifest": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/manifest.json",
-    "component_registry": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/component_registry.json",
-    "layer_validation": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/layer_validation.json",
-    "workflow_patterns": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/workflow_patterns.json",
-    "error_reference": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/error_reference.json",
-    "integration_guide": "https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/INTEGRATION_GUIDE.json"
+    "manifest": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json",
+    "component_registry": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/component_registry.json",
+    "layer_validation": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/layer_validation.json",
+    "workflow_patterns": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/workflow_patterns.json",
+    "error_reference": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/error_reference.json",
+    "integration_guide": "https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/INTEGRATION_GUIDE.json"
   },
   "usage_examples": [
     {
@@ -147,7 +147,7 @@
       "code": [
         "import urllib2, json",
         "",
-        "manifest_url = 'https://raw.githubusercontent.com/landau-design/land-kit/main/docs/ai-reference/manifest.json'",
+        "manifest_url = 'https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json'",
         "manifest = json.load(urllib2.urlopen(manifest_url))",
         "",
         "# Now fetch all reference files using URLs from manifest",
@@ -159,7 +159,7 @@
     },
     {
       "example": "Raven prompt using this manifest",
-      "prompt": "Generate a Land Kit Grasshopper script. Reference the manifest at https://github.com/landau-design/land-kit/tree/main/docs/ai-reference. Follow the basic_hydrology workflow. Use +ShapeValues to add HSG and GC data. Then run Calculate CN Layer."
+      "prompt": "Generate a Land Kit Grasshopper script. Reference the manifest at https://github.com/chrislandau/land-kit-docs/tree/main/ai-reference. Follow the basic_hydrology workflow. Use +ShapeValues to add HSG and GC data. Then run Calculate CN Layer."
     },
     {
       "example": "Validating data against reference",
@@ -179,9 +179,9 @@
     "backwards_compatibility": "Minor and Patch versions maintain compatibility"
   },
   "support": {
-    "issues": "https://github.com/landau-design/land-kit/issues",
-    "discussions": "https://github.com/landau-design/land-kit/discussions",
-    "documentation": "https://github.com/landau-design/land-kit/tree/main/docs"
+    "issues": "https://github.com/chrislandau/land-kit-docs/issues",
+    "discussions": "https://github.com/chrislandau/land-kit-docs/discussions",
+    "documentation": "https://github.com/chrislandau/land-kit-docs/tree/main"
   },
   "next_steps": [
     "Start with README.md for complete overview",
