@@ -280,7 +280,7 @@
       "name": "Add Elevation Layer",
       "nickname": "+ELE",
       "description": "Adds a layer of elevation analysis to the environment",
-      "usage": "For environmental analysis of elevation data. Can be used for plant placement rules or niches.",
+      "usage": "For extracting terrain elevation data into analysis layers. Use for grading design and topographic analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -606,7 +606,7 @@
       "name": "Add Slope Layer",
       "nickname": "+SLOPE",
       "description": "Adds a layer of slope analysis to the environment",
-      "usage": "For environmental analysis layers. Can be used for plant placement rules or niches.",
+      "usage": "For calculating slope percentages from terrain. Use for grading planning and drainage analysis.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -731,7 +731,7 @@
       "name": "Add Upslope Area Layer",
       "nickname": "+UPSLOPE",
       "description": "Adds a layer of upslope area analysis to the environment",
-      "usage": "For evaluating upslope area in the environment. to understand the amount of upslope contributing to each location.",
+      "usage": "For watershed analysis and runoff potential. Use to understand contributing drainage area.",
       "category": "7 analysis",
       "inputs": [
         {
@@ -943,7 +943,7 @@
       "name": "Add Pattern to Area",
       "nickname": "+PAT",
       "description": "Add a paving pattern to an area",
-      "usage": "For applying generated patterns to specific areas. Use to fill areas with paving or planting patterns.",
+      "usage": "For applying standard generated patterns to specific areas. Use to fill areas with paving or planting patterns.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1167,7 +1167,7 @@
       "name": "Add to Geo Set",
       "nickname": "GT+x",
       "description": "Adds geometry to specific categories of a geo set for topo. ie contour curves, spots, etc",
-      "usage": "For adding data or features. Use to augment designs with information.",
+      "usage": "For adding geometry data to Geo Sets or creating new ones. Use to augment designs with geometry information.",
       "category": "4 mods",
       "inputs": [
         {
@@ -2098,7 +2098,7 @@
       "name": "Create Mix",
       "nickname": "MIX*2",
       "description": "Create 2-color mix",
-      "usage": "For defining paver or planting mixes with multiple components. Use to specify material composition.",
+      "usage": "For defining paver mixes with multiple components. Use to specify material composition.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -2138,7 +2138,7 @@
       "name": "Create Multi Mix",
       "nickname": "MIXxn",
       "description": "Create a multi color mix",
-      "usage": "For creating multiple paver or planting mixes with different ratios. Use for complex pattern variations.",
+      "usage": "For creating paver or material mixes with different ratios (more than two colors). Use for complex pattern variations.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -2256,7 +2256,7 @@
       "name": "Create Paths with Variable Slope",
       "nickname": "+PATH ~",
       "description": "Creates path from centerline, topo mesh, and slope range.",
-      "usage": "For circulation paths. Use for site connectivity and movement design.",
+      "usage": "For creating graded circulation paths with changing slopes. Use for accessible ramps and graded paths.",
       "category": "2 create",
       "inputs": [
         {
@@ -2842,7 +2842,7 @@
       "name": "Cut Sections",
       "nickname": "SECTION",
       "description": "Cuts sections through geometry and provide corresponding planes.",
-      "usage": "For cut sections operations. Use in relevant design workflows.",
+      "usage": "For generating cross-section cuts through terrain and geometry. Use for section drawings and grading visualization.",
       "category": "3 areas",
       "inputs": [
         {
@@ -4733,7 +4733,7 @@
       "name": "Grade Topo Mod",
       "nickname": "GRADE_mod",
       "description": "adjusts topography point elevations in relation to slope and geometry and feature elevations",
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
+      "usage": "For modifying terrain with controlled slopes. Use for grading design and creating level areas.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4794,7 +4794,7 @@
       "name": "Patch Topo Mod",
       "nickname": "PATCH_mod",
       "description": "Patch changes into a topography instance. Includes all geo set geometries and topo features as inputs.",
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
+      "usage": "For smoothly patching and blending terrain modifications. Use for finishing grading transitions.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4834,7 +4834,7 @@
       "name": "Sculpt Topo Mod",
       "nickname": "SCULPT_mod",
       "description": "adjusts topography elevations in relation to height parameter and distance to inputs",
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
+      "usage": "For sculpting and reshaping terrain features. Use for landform design and terrain sculpting.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4895,7 +4895,7 @@
       "name": "Smooth Topo Mod",
       "nickname": "SMOOTH_mod",
       "description": "modifies topography object by smoothing given areas",
-      "usage": "For terrain analysis and modification. Use for grading, slopes, and topographic design.",
+      "usage": "For smoothing terrain irregularities and rough edges. Use for finishing terrain geometry.",
       "category": "4 mods",
       "inputs": [
         {
@@ -5506,7 +5506,7 @@
       "name": "Contours",
       "nickname": "CONTOURS",
       "description": "Cut topo mesh contours quickly.",
-      "usage": "For contours operations. Use in relevant design workflows.",
+      "usage": "For generating contour lines from terrain mesh. Use for contour drawings and topographic visualization.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5556,7 +5556,7 @@
       "name": "Cut+Fill Analysis",
       "nickname": "CUT+FILL",
       "description": "Evaluates and visualizes the topo cut and fill volumes between 2 meshes",
-      "usage": "For cut+fill analysis operations. Use in relevant design workflows.",
+      "usage": "For calculating cut and fill volumes in grading. Use for earthwork budgeting and cost estimation.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5623,7 +5623,7 @@
       "name": "Elevation Analysis",
       "nickname": "ELEVATION",
       "description": "Evaluates mesh elevation of vertices and creates a colored mesh.",
-      "usage": "For elevation analysis operations. Use in relevant design workflows.",
+      "usage": "For analyzing elevation ranges and variations. Use for understanding terrain height changes.",
       "category": "5 mesh ops",
       "inputs": [
         {
@@ -5673,7 +5673,7 @@
       "name": "Slope Analysis Pieces",
       "nickname": "SLOPEpieces",
       "description": "Evaluates mesh slope of each face and groups into separate mesh pieces",
-      "usage": "For slope analysis pieces operations. Use in relevant design workflows.",
+      "usage": "For breaking terrain into slope categories. Use for slope classification and analysis.",
       "category": "5 mesh ops",
       "inputs": [
         {
