@@ -464,7 +464,7 @@
       "steps": [
         {
           "order": 1,
-          "component": "Create Planting Area",
+          "component": "Create Area",
           "inputs": ["boundary (closed curve or surface)"],
           "outputs": ["<A> (Area)"],
           "description": "Define the planting area boundary. Can be a closed curve or trimmed surface."
