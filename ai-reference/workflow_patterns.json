@@ -240,7 +240,15 @@
     "Calculate Heat Flux": ["Add Sun Exposure Layer"],
     "Add Static Storage Layer": ["Create Environment"],
     "Draw Flow Lines": ["Add Catchments Layer"],
-    "Add Layer by Formula": ["Create Environment"]
+    "Add Layer by Formula": ["Create Environment"],
+    "Create Land Kit Area": [],
+    "Add Tessellation Pattern": ["Create Land Kit Area"],
+    "Trim Pavers to Area": ["Add Tessellation Pattern"],
+    "Add Color Rule": ["Add Tessellation Pattern"],
+    "Add Pattern to Area": ["Create Land Kit Area"],
+    "Array Modules": ["Create Land Kit Area"],
+    "Create Mix": ["Create Land Kit Area"],
+    "Create Multi Mix": ["Create Land Kit Area"]
   },
   "common_patterns": [
     {
