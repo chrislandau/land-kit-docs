@@ -1023,7 +1023,7 @@
       "name": "Add Plants Constrained",
       "nickname": "[+PLNT]",
       "description": "Add plants to a planting area if all rules and parameters are met",
-      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts.",
+      "usage": "For placing, selecting, or managing plants. Use when designing planting schemes and vegetation layouts. Plants are automatically constrained to the planting area boundary - no need to pre-cull point locations outside the area.",
       "category": "8 place",
       "inputs": [
         {

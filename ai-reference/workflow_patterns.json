@@ -534,7 +534,8 @@
         "Add Plants Constrained returns both placed and unplaced plants - iterate if needed",
         "Plant query can use multiple field-value pairs to narrow selection",
         "Niche constraints prevent placement outside acceptable ranges",
-        "Can create multiple plant types and add them together to same area"
+        "Can create multiple plant types and add them together to same area",
+        "Plant fill operations automatically prevent plants from being placed outside the planting area boundary - point culling is not necessary"
       ],
       "workflow_options": [
         "Simple: Define area → Create plants → Add plants (no constraints)",
