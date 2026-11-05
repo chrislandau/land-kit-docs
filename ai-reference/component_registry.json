@@ -1088,8 +1088,8 @@
     {
       "name": "Add Tessellation Pattern",
       "nickname": "+TESS",
-      "description": "Creates a preview of a tessellation and adds it to an area",
-      "usage": "For generating repeating patterns. Use for rational design and modular arrangements.",
+      "description": "Creates custom tessellation patterns by copying a base module geometry across an area using origin, U, and V points as copy vectors. Generates a 3x3 preview before full tessellation.",
+      "usage": "For creating fully custom paving patterns with precise control. Tessellation geometry must include manual seam spacing. Origin point + U point (horizontal vector) + V point (vertical vector) define how the module copies across. Point of Beginning controls where pattern starts generating (important for geometry far from Rhino origin 0,0,0). Use Layer pipeline when pulling geo data.",
       "category": "6 pattern",
       "inputs": [
         {
@@ -1102,14 +1102,14 @@
         {
           "name": "POB",
           "nickname": "POB",
-          "description": "point of beginning for laying out the tessellation in the area. Default = 0,0,0",
+          "description": "point of beginning for pattern generation - controls where tessellation starts. Defaults to Rhino origin (0,0,0). Critical for geometry far from origin to ensure pattern generates correctly. Add explicit POB if pattern fails for distant geometry.",
           "type": "point",
           "required": false
         },
         {
           "name": "tess geo",
           "nickname": "tess geo",
-          "description": "closed curves or trim flat surfaces describing the tessellation module",
+          "description": "closed curves or trim flat surfaces defining the tessellation module - must include manual seam spacing between pavers. Seams are NOT generated automatically; they must be part of your geometry.",
           "type": "curve",
           "required": true
         },
@@ -1123,14 +1123,14 @@
         {
           "name": "u point",
           "nickname": "u point",
-          "description": "point that describes a step in the first direction of the pattern - generally orient with x axis",
+          "description": "horizontal copy vector point - offset from origin determines how far geometry copies in X direction (generally used for horizontal tessellation spacing, includes manual seam spacing)",
           "type": "point",
           "required": true
         },
         {
           "name": "v point",
           "nickname": "v point",
-          "description": "point that describes a step in the second direction of the pattern- generally orient with y axis",
+          "description": "vertical copy vector point - offset from origin determines how far geometry copies in Y direction (generally used for vertical tessellation spacing, includes manual seam spacing)",
           "type": "point",
           "required": true
         },
@@ -4733,7 +4733,7 @@
       "name": "Grade Topo Mod",
       "nickname": "GRADE_mod",
       "description": "adjusts topography point elevations in relation to slope and geometry and feature elevations",
-      "usage": "For modifying terrain with controlled slopes. Use for grading design and creating level areas.",
+      "usage": "For modifying terrain with controlled slopes. Use for grading design and creating level areas. Uses the closest geometry to determine slope influence.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4834,7 +4834,7 @@
       "name": "Sculpt Topo Mod",
       "nickname": "SCULPT_mod",
       "description": "adjusts topography elevations in relation to height parameter and distance to inputs",
-      "usage": "For sculpting and reshaping terrain features. Use for landform design and terrain sculpting.",
+      "usage": "For sculpting and reshaping terrain features with push and pull operations. Use for landform design and terrain sculpting. Each geometry pushes or pulls the terrain.",
       "category": "4 mods",
       "inputs": [
         {
@@ -4895,7 +4895,7 @@
       "name": "Smooth Topo Mod",
       "nickname": "SMOOTH_mod",
       "description": "modifies topography object by smoothing given areas",
-      "usage": "For smoothing terrain irregularities and rough edges. Use for finishing terrain geometry.",
+      "usage": "For smoothing terrain irregularities and rough edges. Use for finishing terrain geometry. Can also be thought of as a selective mesh resampling tool.",
       "category": "4 mods",
       "inputs": [
         {

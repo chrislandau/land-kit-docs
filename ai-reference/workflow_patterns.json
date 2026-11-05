@@ -175,6 +175,58 @@
       ],
       "output_layers": ["custom (user-defined)"],
       "use_case": "For combining layers or creating new metrics"
+    },
+    {
+      "id": "tessellation_paving",
+      "name": "Tessellation Paving Workflow",
+      "description": "Create custom tessellation patterns for paving areas with full control over geometry and spacing",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Land Kit Area",
+          "inputs": ["paving boundary (closed curve or surface)"],
+          "outputs": ["A (Area)"],
+          "description": "Create a Land Kit area from paving boundary geometry"
+        },
+        {
+          "order": 2,
+          "component": "Add Tessellation Pattern",
+          "inputs": ["<A>", "tessellation geometry (closed curve/surface)", "origin point", "U point (horizontal copy vector)", "V point (vertical copy vector)", "rotation (optional)", "point of beginning (optional)"],
+          "outputs": ["<A>", "tessellation preview (3x3 grid)"],
+          "description": "Apply custom tessellation pattern with manual seam spacing. Seams must be created manually in the tessellation geometry. Origin + U + V points define the copy vectors for pattern generation."
+        },
+        {
+          "order": 3,
+          "component": "Trim Pavers to Area",
+          "inputs": ["<A>"],
+          "outputs": ["<A>"],
+          "description": "Trim pattern to fit the paving area boundary"
+        },
+        {
+          "order": 4,
+          "component": "Add Color Rule or Add Pattern to Area",
+          "inputs": ["<A>", "color rule (optional)"],
+          "outputs": ["<A>"],
+          "description": "Apply colors or additional styling to tessellation"
+        }
+      ],
+      "key_concepts": {
+        "tessellation_geometry": "Closed curve or surface representing one or more base pavers with manual seam spacing",
+        "origin_point": "Reference location that defines where the pattern starts; U and V points offset from this determine copy vectors",
+        "u_point": "Horizontal copy vector - defines how pattern copies across X direction",
+        "v_point": "Vertical copy vector - defines how pattern copies across Y direction",
+        "point_of_beginning": "Controls where pattern generation originates (defaults to Rhino origin 0,0,0). Important for areas far from origin.",
+        "seam_spacing": "Manual - must be included in tessellation geometry, not generated automatically",
+        "tessellation_preview": "3x3 grid preview showing pattern before full site generation"
+      },
+      "important_notes": [
+        "Seam spacing between pavers must be manually created as part of tessellation geometry",
+        "Origin, U, and V point spacing controls the final seam width in the generated pattern",
+        "Point of Beginning matters for distant geometry - if pattern fails far from Rhino origin, add explicit Point of Beginning",
+        "Layer pipeline should be used when pulling geo data (not Geo pipeline)"
+      ],
+      "output_types": ["Paver Array (tessellated)", "Colors (if applied)"],
+      "use_case": "Create fully custom paving patterns that tessellate across any paving area with precise control over geometry and spacing"
     }
   ],
   "workflow_dependency_graph": {
