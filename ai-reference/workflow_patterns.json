@@ -356,7 +356,7 @@
       "steps": [
         {
           "order": 1,
-          "component": "Geometry Pipeline (or Get Geometry from Layer)",
+          "component": "Layer Pipeline (or Geometry Pipeline)",
           "inputs": ["layer path (string)", "geometry types (curves, points, surfaces)"],
           "outputs": ["geometry (auto-updates from Rhino)"],
           "description": "Pull geometry from Rhino layers. Automatically updates when layer contents change. Define layer path and specify what types to import."
@@ -426,7 +426,7 @@
         }
       ],
       "key_concepts": {
-        "geometry_pipeline": "Auto-updates from Rhino layers when geometry changes. Eliminates manual re-import.",
+        "layer_pipeline": "Auto-updates from Rhino layers when geometry changes. Layer Pipeline (replaces Geometry Pipeline) pulls directly from layer path specification.",
         "tolerances": {
           "curve_tolerance": "How close curves must be to pair together (for walls/curbs)",
           "spot_tolerance": "How close points must be to associate with curves (for elevation). Must be < curve_tolerance and < wall width"
@@ -485,8 +485,8 @@
     "Curb Cut": [],
     "Patch Topography": ["topo-producing components (Create Topography, etc)"],
     "Draw Topography": ["topo-producing components"],
-    "Geometry Pipeline": [],
-    "Create Paths": ["geometry-producing components (Geometry Pipeline, etc)"],
+    "Layer Pipeline": [],
+    "Create Paths": ["geometry-producing components (Layer Pipeline, etc)"],
     "Create Stairs": ["geometry-producing components"],
     "Create Walls": ["geometry-producing components"],
     "Create Curbs": ["geometry-producing components"],
