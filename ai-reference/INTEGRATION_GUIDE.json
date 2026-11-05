@@ -145,6 +145,32 @@
       "prompt_example": "Create a landscape design with plant placement, then output a plant schedule, bloom calendar, and cost breakdown."
     }
   ],
+  "example_user_prompts": {
+    "description": "Real-world prompts users can send to Raven or other AI tools, referencing the Land Kit documentation",
+    "how_to_use": "Copy these patterns and adapt them to your specific needs. Always include the manifest URL so the AI has access to current documentation.",
+    "examples": [
+      {
+        "task": "Grading Design",
+        "prompt": "I want to build a Grasshopper script using Land Kit components to do the grading using the info I have in this file. Here is the Land Kit documentation: https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json"
+      },
+      {
+        "task": "Plant Design with Constraints",
+        "prompt": "Create a planting script using Land Kit that selects plants based on available sun (4-6 hours), soil type (loam), and water availability. Reference: https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json"
+      },
+      {
+        "task": "Paving Pattern Generation",
+        "prompt": "Generate a tessellating paving pattern with color gradients using Land Kit components. Then rationalize it to minimize paver types. Documentation: https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json"
+      },
+      {
+        "task": "Environmental Analysis",
+        "prompt": "Build a script that calculates both stormwater runoff (using CN values) and landscaping carbon footprint. Reference the Land Kit docs: https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json"
+      },
+      {
+        "task": "Multi-Domain Workflow",
+        "prompt": "Create a landscape design that combines plant selection with cost estimation, grading analysis, and a printable plant schedule. Use Land Kit: https://raw.githubusercontent.com/chrislandau/land-kit-docs/main/ai-reference/manifest.json"
+      }
+    ]
+  },
   "for_grasshopper_raven": {
     "how_to_prompt": [
       "Describe what you're designing: 'Design a perennial garden with...' or 'Create paving with...' or 'Analyze site hydrology for...'",
