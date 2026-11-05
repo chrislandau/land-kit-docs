@@ -279,6 +279,75 @@
       ],
       "output_types": ["Area (with metadata)", "Surface[]", "Color[]", "Baked Geometry"],
       "use_case": "Design complex landscape areas with layer organization, collage overlapping zones, project to site topography, and generate organized CAD geometry for visualization or construction docs"
+    },
+    {
+      "id": "curb_cuts_topography",
+      "name": "Curb Cuts and Live Topography Editing",
+      "description": "Edit topography in real-time by cutting and modifying curbs, with live preview and parametric control",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Topography (from Geo Set)",
+          "inputs": ["Geo Set (existing topo surfaces/meshes)", "break lines (optional)", "boundaries (optional)"],
+          "outputs": ["Topo (Environment)"],
+          "description": "Create topography from existing surface or mesh. Define break lines to guide modification logic."
+        },
+        {
+          "order": 2,
+          "component": "Curb Cut",
+          "inputs": ["curb (curves)", "curb spots (points for elevation)", "center line (line defining cut location)", "width (number)", "run (number)", "flare (number)", "curb tolerance (number)", "curb spot tolerance (number)"],
+          "outputs": ["modified curbs (curves)", "ramps (path-like geometry)"],
+          "description": "Cut and modify curbs with parametric control. Curb curves are plan view (elevation doesn't matter for curve position). Curb spots define elevation. Tolerances control how close curves/points must be to match."
+        },
+        {
+          "order": 3,
+          "component": "Patch Topography",
+          "inputs": ["existing topo", "patch boundary (curve)", "break lines (from curb cut output)", "proposed geo set"],
+          "outputs": ["modified topo (mesh/surfaces)"],
+          "description": "Patch curb cuts into existing topography. Break lines and boundaries keep topology logical."
+        },
+        {
+          "order": 4,
+          "component": "Draw Topography",
+          "inputs": ["topo (from patch)", "contour interval (number)", "bake name (string)", "colors (optional)"],
+          "outputs": ["contours (curves)", "baked geometry (Rhino)"],
+          "description": "Visualize and bake topography. Live editing - no refresh needed. Bake name replaces previous geometry on each bake."
+        }
+      ],
+      "key_concepts": {
+        "live_editing": "Real-time topo updates without refresh. Change parameters and see immediate results.",
+        "curb_curves": "Plan view geometry - elevation position doesn't matter for curve matching",
+        "curb_spots": "Points that define curb elevation. Position matters - must be close enough to curves to associate (controlled by curb_spot_tolerance)",
+        "curb_cut_parameters": {
+          "center_line": "Line defining where curb cut is located",
+          "width": "Width of the curb cut opening",
+          "run": "Slope/length of ramp approach",
+          "flare": "Width expansion of ramp edges"
+        },
+        "tolerances": {
+          "curb_tolerance": "How close curves need to be together to be matched into one curb",
+          "curb_spot_tolerance": "How close points must be to curves to be associated as elevation control"
+        },
+        "break_lines": "Define how topography changes logically. Keep patch boundaries clean and intentional.",
+        "patch_boundary": "Curve that defines where patch topo meets existing topo. Creates logical edge."
+      },
+      "important_notes": [
+        "Curb curves are 2D (plan) - elevation doesn't matter for curve position, only for matching",
+        "Curb spots (points) define actual curb elevation - must be positioned correctly and close enough to curves",
+        "Set curb_spot_tolerance carefully - too loose and points associate with wrong curves",
+        "Break lines keep topology intentional - can move patch boundary to adjust logic",
+        "Live editing means changes apply instantly - useful for iterative design",
+        "Bake name with bake button replaces previous geometry - good for non-destructive iteration",
+        "Curb cuts can be used creatively (e.g., wall entrances) beyond traditional curb applications"
+      ],
+      "parametric_flexibility": [
+        "Adjust width, run, flare while watching live preview",
+        "Move curb spots to change elevation while cuts update",
+        "Adjust tolerances if curves/points aren't matching correctly",
+        "Change patch boundary to adjust how topo patches into existing surface"
+      ],
+      "output_types": ["Curb Curves (modified)", "Ramps", "Topography (mesh/surface)", "Contours (curves)"],
+      "use_case": "Edit topography parametrically with live feedback, creating curb cuts and ramps that patch into existing terrain while maintaining logical topology"
     }
   ],
   "workflow_dependency_graph": {
@@ -304,7 +373,11 @@
     "Create Area": [],
     "Collage Areas": ["Create Area"],
     "Project Paver Meshes": ["Collage Areas"],
-    "Bake Areas as Hatches": ["Project Paver Meshes"]
+    "Bake Areas as Hatches": ["Project Paver Meshes"],
+    "Create Topography": [],
+    "Curb Cut": [],
+    "Patch Topography": ["Create Topography", "Curb Cut"],
+    "Draw Topography": ["Patch Topography"]
   },
   "common_patterns": [
     {
