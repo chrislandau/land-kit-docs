@@ -304,7 +304,7 @@
           "component": "Patch Topography",
           "inputs": ["existing topo", "patch boundary (curve)", "break lines (from curb cut output)", "proposed geo set"],
           "outputs": ["modified topo (mesh/surfaces)"],
-          "description": "Patch curb cuts into existing topography. Break lines and boundaries keep topology logical."
+          "description": "Patch curb cuts into existing topography. Not necessary if not patching. Breaklines and boundaries keep topography logical."
         },
         {
           "order": 4,
@@ -348,6 +348,114 @@
       ],
       "output_types": ["Curb Curves (modified)", "Ramps", "Topography (mesh/surface)", "Contours (curves)"],
       "use_case": "Edit topography parametrically with live feedback, creating curb cuts and ramps that patch into existing terrain while maintaining logical topology"
+    },
+    {
+      "id": "advanced_topography_features",
+      "name": "Advanced Topography with Features (Paths, Stairs, Walls, Curbs)",
+      "description": "Create complex topography with integrated landscape features - paths, stairs, walls, and curbs pulled from Rhino layers with live editing",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Geometry Pipeline (or Get Geometry from Layer)",
+          "inputs": ["layer path (string)", "geometry types (curves, points, surfaces)"],
+          "outputs": ["geometry (auto-updates from Rhino)"],
+          "description": "Pull geometry from Rhino layers. Automatically updates when layer contents change. Define layer path and specify what types to import."
+        },
+        {
+          "order": 2,
+          "component": "Create Paths",
+          "inputs": ["centerline (curves from geometry pipeline)", "nearest point (point geometry)", "path width (number)", "path slope (number)"],
+          "outputs": ["paths (geometry)", "preview"],
+          "description": "Generate paths by finding nearest point to centerline. Parameters: path width and path slope. Can publish parameters to remote panel for live editing."
+        },
+        {
+          "order": 3,
+          "component": "Create Stairs",
+          "inputs": ["surface (from geometry pipeline)", "rise (number)"],
+          "outputs": ["stairs (geometry)", "preview"],
+          "description": "Create stairs from surface with defined rise. Publish rise to remote panel for live adjustment."
+        },
+        {
+          "order": 4,
+          "component": "Create Walls",
+          "inputs": ["front curve (from geometry pipeline)", "back curve (from geometry pipeline)", "point geometry for elevation", "curve tolerance (number)", "spot tolerance (number)"],
+          "outputs": ["walls (geometry)", "preview"],
+          "description": "Create walls from front/back curves with elevation from points. Tolerances control curve pairing (curve_tolerance) and point association (spot_tolerance). spot_tolerance < curve_tolerance < wall width."
+        },
+        {
+          "order": 5,
+          "component": "Create Curbs",
+          "inputs": ["front curve", "back curve", "point geometry for elevation", "curve tolerance (number)", "spot tolerance (number)"],
+          "outputs": ["curbs (geometry)", "preview"],
+          "description": "Similar to Create Walls - front/back curves with elevation points. Same tolerance logic applies."
+        },
+        {
+          "order": 6,
+          "component": "Draw/Bake Features (Paths, Stairs, Walls, Curbs)",
+          "inputs": ["feature geometry", "bake name (string)"],
+          "outputs": ["baked geometry (Rhino)"],
+          "description": "Preview and bake individual features. Bake name replaces previous geometry with same name on each bake."
+        },
+        {
+          "order": 7,
+          "component": "Merge Features",
+          "inputs": ["paths", "stairs", "walls", "curbs"],
+          "outputs": ["merged features (single dataset)"],
+          "description": "Combine all feature types into one dataset for topography generation."
+        },
+        {
+          "order": 8,
+          "component": "Get Topo GeoSet (from Layer)",
+          "inputs": ["topo geoset layer path"],
+          "outputs": ["contours", "spots (elevation points)", "break lines"],
+          "description": "Pull topo framework from GeoSet layer in Rhino."
+        },
+        {
+          "order": 9,
+          "component": "Create Topography (with Features)",
+          "inputs": ["merged features", "topo geoset", "minimum division (number)", "maximum division (number)", "angle tolerance (number)"],
+          "outputs": ["topo (mesh/surface with features)"],
+          "description": "Generate topography integrating all features. Division parameters control contour/break line subdivision. Angle tolerance controls smoothness."
+        },
+        {
+          "order": 10,
+          "component": "Draw Topography and Bake",
+          "inputs": ["topo", "bake name (for mesh)", "bake name (for contours)"],
+          "outputs": ["baked topo mesh", "baked contours"],
+          "description": "Visualize and bake final topography to 'topo mesh' layer and contours to 'topo contours' layer."
+        }
+      ],
+      "key_concepts": {
+        "geometry_pipeline": "Auto-updates from Rhino layers when geometry changes. Eliminates manual re-import.",
+        "tolerances": {
+          "curve_tolerance": "How close curves must be to pair together (for walls/curbs)",
+          "spot_tolerance": "How close points must be to associate with curves (for elevation). Must be < curve_tolerance and < wall width"
+        },
+        "feature_types": "Paths (with slope), Stairs (with rise), Walls (from paired curves), Curbs (similar to walls)",
+        "live_editing": "Publish parameters to remote panel to adjust width, slope, rise, tolerances without leaving Rhino",
+        "merge_features": "All features combine into single dataset before topography generation",
+        "topo_geoset": "Separate layer containing contours, elevation spots, and break lines that define topo framework",
+        "bake_workflow": "Each feature and final topo baked to named layers. Bake name replaces previous geometry for iterative design"
+      },
+      "important_notes": [
+        "Geometry pipeline pulls directly from Rhino - changes to layer update automatically",
+        "Curve tolerance and spot tolerance are critical for correct feature generation",
+        "spot_tolerance must be smaller than curve_tolerance to avoid point-curve association errors",
+        "All parameters can be published to remote panel for live editing without Grasshopper window",
+        "Features must be merged before creating final topography",
+        "Topo GeoSet is separate from feature layers - contains contours and break lines",
+        "Multiple features can be baked independently for preview before final topo generation",
+        "Bake name convention: layer names match bake names for automatic overwrite on iteration"
+      ],
+      "workflow_hints": [
+        "Publish path_width, path_slope, rise, and tolerances to remote panel first",
+        "Test individual features (draw/bake paths, stairs, walls separately) before merging",
+        "Adjust tolerances carefully - too loose causes incorrect pairing, too tight prevents pairing",
+        "Keep Rhino layers panel and Grasshopper remote panel visible simultaneously for efficiency",
+        "Use meaningful layer and bake names for quick iteration"
+      ],
+      "output_types": ["Paths", "Stairs", "Walls", "Curbs", "Topography (mesh)", "Contours"],
+      "use_case": "Create sophisticated topography with integrated features (paths, stairs, walls, curbs) with live parameter control and automatic layer synchronization from Rhino"
     }
   ],
   "workflow_dependency_graph": {
@@ -362,7 +470,6 @@
     "Add Static Storage Layer": ["environment-producing components"],
     "Draw Flow Lines": ["environment-producing components"],
     "Add Layer by Formula": ["environment-producing components"],
-    "Create Land Kit Area": [],
     "Add Tessellation Pattern": ["area-producing components (Create Land Kit Area, etc)"],
     "Trim Pavers to Area": ["area-producing components"],
     "Add Color Rule": ["area-producing components"],
@@ -377,7 +484,15 @@
     "Create Topography": [],
     "Curb Cut": [],
     "Patch Topography": ["topo-producing components (Create Topography, etc)"],
-    "Draw Topography": ["topo-producing components"]
+    "Draw Topography": ["topo-producing components"],
+    "Geometry Pipeline": [],
+    "Create Paths": ["geometry-producing components (Geometry Pipeline, etc)"],
+    "Create Stairs": ["geometry-producing components"],
+    "Create Walls": ["geometry-producing components"],
+    "Create Curbs": ["geometry-producing components"],
+    "Merge Features": ["feature-producing components (Create Paths, Create Stairs, Create Walls, Create Curbs)"],
+    "Get Topo GeoSet": [],
+    "Create Topography (Advanced)": ["feature-producing components (Merge Features)", "Get Topo GeoSet"]
   },
   "common_patterns": [
     {
