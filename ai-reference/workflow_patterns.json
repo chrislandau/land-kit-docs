@@ -373,7 +373,7 @@
     "Create Area": [],
     "Collage Areas": ["Create Area"],
     "Project Paver Meshes": ["Collage Areas"],
-    "Bake Areas as Hatches": ["Collage Areas"],
+    "Bake Areas as Hatches": [],
     "Create Topography": [],
     "Curb Cut": [],
     "Patch Topography": ["Create Topography", "Curb Cut"],
