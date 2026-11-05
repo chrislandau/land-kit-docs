@@ -227,6 +227,58 @@
       ],
       "output_types": ["Paver Array (tessellated)", "Colors (if applied)"],
       "use_case": "Create fully custom paving patterns that tessellate across any paving area with precise control over geometry and spacing"
+    },
+    {
+      "id": "areas_collage_topography",
+      "name": "Areas Collage with Topography Projection",
+      "description": "Create landscape areas from layer geometry, collage overlapping areas, project to topography, and bake with layer names",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Area",
+          "inputs": ["geometry (surfaces/curves from Rhino layers)", "layer name (optional)", "color (optional)"],
+          "outputs": ["<A> (Area with metadata)"],
+          "description": "Create areas from geometry, preserving layer name and color as persistent metadata. Use layer naming convention: parent::child (e.g., 'areas::concrete' with wildcards like 'areas::*')"
+        },
+        {
+          "order": 2,
+          "component": "Collage Areas",
+          "inputs": ["<A/F> (areas and/or topo features like walls)"],
+          "outputs": ["<A> (trimmed areas)", "surfaces (trimmed)", "colors"],
+          "description": "Flatten overlapping areas into plan view. Layer names and colors persist through collaging. Output areas maintain all original metadata."
+        },
+        {
+          "order": 3,
+          "component": "Project Paver Meshes (or Project Area Meshes)",
+          "inputs": ["<A> (collaged areas)", "topo (mesh to project onto)"],
+          "outputs": ["projected meshes (flat geometry)", "colors (by layer)"],
+          "description": "Project area surfaces/meshes onto topography while keeping them flat. Each projected mesh retains its layer name and color."
+        },
+        {
+          "order": 4,
+          "component": "Bake Areas as Hatches",
+          "inputs": ["projected meshes", "bake name (layer path)", "overwrite (boolean)"],
+          "outputs": ["baked geometry in Rhino"],
+          "description": "Bake hatches with layer names. Use layer name prefix like 'baked area meshes::' to organize. Overwrite mode replaces previous bakes (e.g., 'areas projected' replaces every bake)."
+        }
+      ],
+      "key_concepts": {
+        "layer_naming": "Use parent::child convention (areas::concrete, areas::green, areas::*). Wildcard '*' matches any child layer.",
+        "data_persistence": "Layer names, colors, and geometry metadata stay associated through collaging, clipping, and projection operations",
+        "collaging": "Flattens overlapping areas into a clean plan. Each resulting area retains its source layer name and color.",
+        "projection": "Keeps areas flat but repositions them to follow topography. Useful for visualization and baking.",
+        "baking": "Converts digital areas to Rhino geometry with layer organization. Overwrite mode updates existing bakes.",
+        "overwrite_baking": "Anything named 'areas projected' (or specified bake name) gets replaced on each bake. Prevents duplication."
+      },
+      "important_notes": [
+        "Layer names and colors persist through all operations (collaging, clipping, projection, baking)",
+        "Use double-colon (::) to define parent::child layer relationships; wildcard (*) matches any child layer",
+        "Surfaces and closed curves work; B-reps (Rhino 8) work but may need updates for Rhino 7",
+        "Bake name should include prefix (e.g., 'baked area meshes::' or 'areas projected') to organize output layers",
+        "Overwrite mode replaces old baked geometry - useful for iterative design workflows"
+      ],
+      "output_types": ["Area (with metadata)", "Surface[]", "Color[]", "Baked Geometry"],
+      "use_case": "Design complex landscape areas with layer organization, collage overlapping zones, project to site topography, and generate organized CAD geometry for visualization or construction docs"
     }
   ],
   "workflow_dependency_graph": {
@@ -248,7 +300,11 @@
     "Add Pattern to Area": ["Create Land Kit Area"],
     "Array Modules": ["Create Land Kit Area"],
     "Create Mix": ["Create Land Kit Area"],
-    "Create Multi Mix": ["Create Land Kit Area"]
+    "Create Multi Mix": ["Create Land Kit Area"],
+    "Create Area": [],
+    "Collage Areas": ["Create Area"],
+    "Project Paver Meshes": ["Collage Areas"],
+    "Bake Areas as Hatches": ["Project Paver Meshes"]
   },
   "common_patterns": [
     {
