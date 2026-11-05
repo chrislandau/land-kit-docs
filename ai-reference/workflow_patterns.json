@@ -456,6 +456,94 @@
       ],
       "output_types": ["Paths", "Stairs", "Walls", "Curbs", "Topography (mesh)", "Contours"],
       "use_case": "Create sophisticated topography with integrated features (paths, stairs, walls, curbs) with live parameter control and automatic layer synchronization from Rhino"
+    },
+    {
+      "id": "plant_design_constrained",
+      "name": "Constrained Plant Design",
+      "description": "Design planting schemes by querying plant database, creating plant instances, and placing them with niche constraints and environmental analysis",
+      "steps": [
+        {
+          "order": 1,
+          "component": "Create Planting Area",
+          "inputs": ["boundary (closed curve or surface)"],
+          "outputs": ["<A> (Area)"],
+          "description": "Define the planting area boundary. Can be a closed curve or trimmed surface."
+        },
+        {
+          "order": 2,
+          "component": "Create Plant Query",
+          "inputs": ["fields (string: 'Soil Moisture', 'Distribution USA', 'Sun Requirement', etc.)", "values (string: matching criteria)", "includes (boolean: include or exclude)"],
+          "outputs": ["<QUERY> (query filter)"],
+          "description": "Create a filter/query for plant database lookup. Define search criteria using field names and values. Use includes/excludes to refine selection."
+        },
+        {
+          "order": 3,
+          "component": "Get Plant Info (with Query)",
+          "inputs": ["<QUERY> (plant query)", "optional: field filter"],
+          "outputs": ["plant data (species list matching criteria)"],
+          "description": "Query plant database and retrieve species matching all criteria. Returns list of available plants for design."
+        },
+        {
+          "order": 4,
+          "component": "Create Plant",
+          "inputs": ["species (string, optional - auto-generated if not specified)", "height (number)", "radius (number, optional)", "color (color, optional)", "<N> (Niche, optional)", "self spacing (number, optional)", "cluster radius (number, optional)"],
+          "outputs": ["<P> (Plant instance)"],
+          "description": "Define individual plant with species, height, spacing, and optional niche constraints. Can create single or multiple plant types."
+        },
+        {
+          "order": 5,
+          "component": "Create Environment (optional)",
+          "inputs": ["boundaries", "cell size", "topo"],
+          "outputs": ["<E> (Environment)"],
+          "description": "If using environmental constraints (sun, soil moisture, etc.), create environment with relevant analysis layers."
+        },
+        {
+          "order": 6,
+          "component": "Add Plants Constrained",
+          "inputs": ["<A> (planting area)", "<E> (environment with constraint layers, optional)", "<P> (plants to add)", "locs (point locations, optional)", "fixed (boolean for packing behavior, optional)"],
+          "outputs": ["<A> (area with placed plants)", "placed plants", "unplaced plants (if any)"],
+          "description": "Place plants in area while respecting niche constraints and environmental rules. Environment layers provide constraint data (sun, moisture, soil, etc.). Returns placed + unplaced plants for design iteration."
+        },
+        {
+          "order": 7,
+          "component": "Get Plant Info or Get Area Plants",
+          "inputs": ["<A> (area with plants)", "optional: filter/query"],
+          "outputs": ["plant data", "plant schedule information"],
+          "description": "Extract plant information from placed plants. Can filter by species, size, or other attributes."
+        },
+        {
+          "order": 8,
+          "component": "Bake Plant Blocks or Draw/Export Plants",
+          "inputs": ["<A> (area with plants)", "bake name (optional)"],
+          "outputs": ["baked plant blocks (Rhino)", "plant schedule (data)", "visualization"],
+          "description": "Visualize planted design in Rhino and generate plant schedule for documentation."
+        }
+      ],
+      "key_concepts": {
+        "plant_query": "Database filter using field-value pairs. Examples: 'Soil Moisture=Moist', 'Sun Requirement=Full Sun', 'Distribution USA=PA'",
+        "plant_instance": "Individual plant with species, height, radius, color, and optional niche constraints",
+        "niche": "Defines plant compatibility rules and constraints (e.g., sun exposure range, soil type, moisture requirements)",
+        "environment_constraints": "Optional environment layers (hours_of_sun, elevation, etc.) that constrain plant placement",
+        "add_plants_constrained": "Solver that places plants while respecting niche rules and environment constraints. Returns placed + unplaced for iteration.",
+        "plant_spacing": "self_spacing defines spacing from this plant to itself; cluster_radius groups similar plants",
+        "fixed_plants": "Can lock certain plants in place during packing/optimization"
+      },
+      "important_notes": [
+        "Plant species can be auto-generated or specified by name",
+        "Environment is optional but enables constraint-based placement (sun, moisture, soil type, etc.)",
+        "Add Plants Constrained returns both placed and unplaced plants - iterate if needed",
+        "Plant query can use multiple field-value pairs to narrow selection",
+        "Niche constraints prevent placement outside acceptable ranges",
+        "Can create multiple plant types and add them together to same area"
+      ],
+      "workflow_options": [
+        "Simple: Define area → Create plants → Add plants (no constraints)",
+        "Database-driven: Query database → Get plants → Create instances → Add constrained",
+        "Environmentally-constrained: Create environment → Define niches → Query plants → Place with constraints",
+        "Multi-species: Create multiple plant types → Combine in single Add Plants step"
+      ],
+      "output_types": ["Plant Instance (<P>)", "Planted Area (<A>)", "Plant Schedule", "Plant Data"],
+      "use_case": "Design ecologically-appropriate planting schemes by querying plant databases, creating plant instances, and placing them with environmental and niche constraints"
     }
   ],
   "workflow_dependency_graph": {
@@ -490,9 +578,12 @@
     "Create Stairs": ["geometry-producing components"],
     "Create Walls": ["geometry-producing components"],
     "Create Curbs": ["geometry-producing components"],
-    "Merge Features": ["feature-producing components (Create Paths, Create Stairs, Create Walls, Create Curbs)"],
-    "Get Topo GeoSet": [],
-    "Create Topography (Advanced)": ["feature-producing components (Merge Features)", "Get Topo GeoSet"]
+    "Create Topography (Advanced)": ["feature-producing components", "Get Topo GeoSet"],
+    "Create Planting Area": [],
+    "Create Plant Query": [],
+    "Get Plant Info": ["plant-producing components (Create Plant Query, etc)"],
+    "Create Plant": [],
+    "Add Plants Constrained": ["area-producing components (Create Planting Area, etc)", "plant-producing components (Create Plant, etc)"]
   },
   "common_patterns": [
     {
