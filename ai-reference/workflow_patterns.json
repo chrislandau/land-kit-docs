@@ -545,6 +545,181 @@
       ],
       "output_types": ["Plant Instance (<P>)", "Planted Area (<A>)", "Plant Schedule", "Plant Data"],
       "use_case": "Design ecologically-appropriate planting schemes by querying plant databases, creating plant instances, and placing them with environmental and niche constraints"
+    },
+    {
+      "id": "ai_plugin_ux_patterns",
+      "name": "AI Plugin User Experience Best Practices",
+      "description": "Design patterns and best practices for AI-generated Grasshopper plugins to improve usability, reliability, and user control",
+      "context": "These patterns guide AI tools in creating intuitive, maintainable, and user-friendly plugin definitions. They prioritize user agency, clear workflow control, and professional output organization.",
+      "patterns": [
+        {
+          "pattern": "Publishing Parameters and Controls",
+          "description": "Expose important parameters, inputs, and outputs to Grasshopper Panel (or RCP Panel) for user accessibility. Open Grasshopper Panel automatically if MCP allows.",
+          "guidelines": [
+            "Publish key parameters (dimensions, thresholds, counts) that users may want to adjust iteratively",
+            "Include toggles and sliders for boolean/numeric controls",
+            "Publish layer inputs so users can swap source geometry without editing definitions",
+            "Label bake buttons clearly and specifically: 'BAKE Topo', 'BAKE Hatches', 'BAKE Paver Meshes', etc. (not generic 'Bake' buttons)",
+            "Organize published parameters logically - group related controls",
+            "Consider opening Grasshopper Panel automatically if the MCP/plugin system supports it for immediate visibility"
+          ],
+          "benefit": "Users retain control without editing the definition. Labeled buttons make workflows obvious and prevent accidental outputs."
+        },
+        {
+          "pattern": "Geometry Ingestion with Layer Pipeline",
+          "description": "Use Layer Pipeline components (not Geometry Pipeline) for automatic geometry updates from Rhino layers.",
+          "guidelines": [
+            "Replace Geometry Pipeline with Layer Pipeline for all layer-based geometry pulls",
+            "Layer Pipeline automatically updates when layer contents change in Rhino",
+            "Define clear layer path specifications (e.g., 'DESIGN::PATHS', 'DESIGN::WALLS')",
+            "Avoid manual geometry selection - automation reduces friction"
+          ],
+          "benefit": "Workflows stay synchronized with Rhino layers. Users can edit geometry directly in Rhino without rebuilding definitions."
+        },
+        {
+          "pattern": "Wildcard Layer Selection",
+          "description": "When ingesting multiple related sublayers (e.g., AREAS::CONCRETE, AREAS::LAWN, AREAS::BIODYNAMICFARM, AREAS::BIOSWALE), use wildcard patterns to pull all matching layers.",
+          "guidelines": [
+            "Use 'AREAS::*' to capture all child layers under AREAS (e.g., AREAS::CONCRETE, AREAS::LAWN, AREAS::BIOSWALE)",
+            "Avoid hardcoding individual sublayer names - wildcards scale with new layers added by users",
+            "Layer names should follow parent::child convention for wildcard matching to work",
+            "Communicate naming convention to users if not already established"
+          ],
+          "example": "Layer Pipeline with layer path 'AREAS::*' automatically pulls AREAS::CONCRETE, AREAS::LAWN, AREAS::BIOSWALE and any other child layers",
+          "benefit": "Scalable and flexible - users can add new sublayers without breaking definitions."
+        },
+        {
+          "pattern": "Area Output Layer Naming for Baking",
+          "description": "Modify area layer names before baking to prevent writing to layers connected to Layer Pipeline components/listeners.",
+          "guidelines": [
+            "If ingesting from 'AREAS::*', replace 'AREAS' prefix with 'MATERIALS' in output layer names",
+            "Examples: 'AREAS::CONCRETE' → 'MATERIALS::CONCRETE', 'AREAS::LAWN' → 'MATERIALS::LAWN'",
+            "This prevents feedback loops where baked geometry is re-consumed by Layer Pipeline listeners",
+            "If outputting multiple geometry types (e.g., Area Linework AND Draw Areas as Meshes), route each to separate, distinct layers",
+            "Never bake two outputs to the same layer - organize by feature type or feature name"
+          ],
+          "benefit": "Prevents data corruption and feedback loops. Keeps input and output layers logically separated."
+        },
+        {
+          "pattern": "Customize Parameters for Per-Geometry Settings",
+          "description": "Use Customize Parameters when collecting unique parameters for individual geometry pieces. Use judiciously - only when necessary.",
+          "guidelines": [
+            "Implement Customize Parameters only if the workflow clearly requires per-geometry customization (e.g., different colors, materials, or settings per area)",
+            "Use Sort Key Values to manage key-value output from Layer Pipeline in these workflows",
+            "Pair Customize Parameters with Layer Pipeline for robust geometry-to-parameter mapping",
+            "Avoid over-implementing - if a single parameter set works for all geometry, use it globally",
+            "Document the customization requirement so users understand when to use Customize Parameters"
+          ],
+          "benefit": "Preserves per-object metadata without cluttering simpler workflows. Keeps definitions maintainable."
+        },
+        {
+          "pattern": "Preview and Bake with Bake+Preview Components",
+          "description": "Use Bake+Preview components in Land Kit to show final results and important process steps with live feedback.",
+          "guidelines": [
+            "Use Bake+Preview for outputs that users need to see iteratively (areas, meshes, linework)",
+            "Provide unique, meaningful bake names or concatenate prefixes with layer names (e.g., 'baked_topo', 'areas::preview', 'materials::hatches')",
+            "Keep preview toggles ON for key outputs so users see results without baking",
+            "Use preview for intermediate steps if the plugin generates multi-stage results",
+            "Include descriptive labels on toggle buttons: 'Preview Topography', 'Preview Areas', etc."
+          ],
+          "benefit": "Immediate visual feedback. Users see results in real-time without manual baking, reducing iteration time."
+        },
+        {
+          "pattern": "Text Output and Labeling with Bake Text",
+          "description": "Use Bake Text for text-based outputs (contour labels, spot elevations, plant schedules, bloom calendars, etc.) where text visualization matters.",
+          "guidelines": [
+            "Bake Text does not currently preview, so consider two approaches:",
+            "A) Include a text 3D preview component separately for cases where text placement requires user verification before baking",
+            "B) Use a bake name with the bake toggle ON - geometry updates automatically on each run, allowing iterative refinement",
+            "Simpler approach preferred: set bake toggle to true, keep bake name consistent so it re-bakes and updates each iteration",
+            "For complex text layouts (multi-line schedules, labels), provide preview feedback so users can approve placement",
+            "Label bake text buttons clearly: 'BAKE Contour Labels', 'BAKE Plant Schedule', 'BAKE Bloom Calendar'"
+          ],
+          "benefit": "Text output is visible and controllable. Users can refine text placement and content through multiple iterations."
+        },
+        {
+          "pattern": "Plant Output with Bake Plant Blocks",
+          "description": "When outputting plants, use Bake Plant Blocks with a boolean toggle set to true and overwrite enabled.",
+          "guidelines": [
+            "Route all plant output through Bake Plant Blocks component",
+            "Add a boolean toggle (set default to true) to control baking on/off",
+            "Enable overwrite mode to replace previous plant blocks on each bake (prevents duplication)",
+            "Label toggle clearly: 'Bake Plants' or 'Plant Output'",
+            "Use consistent bake name for all plant outputs so they update together"
+          ],
+          "benefit": "Clean plant block management. Prevents duplicate blocks and ensures plant data always reflects current design."
+        },
+        {
+          "pattern": "Hatch Plans with Bake Areas as Hatches",
+          "description": "Use Bake Areas as Hatches component for hatch-based output (material plans, planting plans, etc.).",
+          "guidelines": [
+            "Route area data through Bake Areas as Hatches for pattern-filled output",
+            "Use layer naming convention to organize hatches (e.g., 'hatches::concrete', 'hatches::lawn')",
+            "Enable overwrite mode for iterative design",
+            "Pair with Clear Previous Bakes if replacing older hatch sets",
+            "Label clearly: 'BAKE Hatches' or 'BAKE Materials Plan'"
+          ],
+          "benefit": "Professional hatch output ready for documentation. Clean layer organization for CAD export."
+        },
+        {
+          "pattern": "Preview Hiding for Clarity",
+          "description": "Un-preview all non-essential geometry components, particularly duplicate geometry or intermediate processing steps.",
+          "guidelines": [
+            "Keep preview ON only for key outputs (final areas, final topography, final plants, final linework)",
+            "Turn preview OFF for duplicate geometry or intermediate processing (intersection calculations, temporary arrays, etc.)",
+            "Hide preview for components that show intermediate states of data transformation",
+            "This keeps the 3D view clean and focused on the final design",
+            "Use preview strategically - more previews = visual clutter = slower iteration"
+          ],
+          "benefit": "Uncluttered 3D preview. Users focus on design results, not intermediate calculations. Better performance."
+        },
+        {
+          "pattern": "Component Labeling and Organization",
+          "description": "Label components for clarity. Use one of two approaches: grouping with component names (Bifocals style) or single panel with numbered list.",
+          "guidelines": [
+            "Approach A (Bifocals style): Group related components and use the group name to label the component (e.g., group named 'Layer Pipeline' containing Layer Pipeline component)",
+            "Approach B (Number labels): If plugin uses number labels (like Raven does), create a single panel with returns between items:\n  1 - Layer Pipeline\n  2 - Create Area\n  3 - Sort Key Values\n  4 - Add Plants Constrained\n  5 - Bake Plant Blocks",
+            "Choose one approach consistently - don't mix both",
+            "Number labels work well for complex definitions with many steps - easy to reference in documentation",
+            "Component groups work well for simpler, more visual definitions"
+          ],
+          "benefit": "Clear workflow navigation. Users understand component order and purpose without reading definitions."
+        }
+      ],
+      "workflow_summary": "These patterns define a user-centric approach to AI plugin design: publish controls explicitly, automate geometry synchronization with Layer Pipeline, separate inputs from outputs, use clear baking conventions, preview selectively, and label everything consistently. The result is a professional, maintainable plugin that respects user agency and scales with design changes.",
+      "anti_patterns": [
+        {
+          "anti_pattern": "Not publishing key parameters",
+          "problem": "Users must edit the definition to adjust controls - friction and risk of breaking connections",
+          "fix": "Publish all adjustable parameters to Grasshopper Panel with clear labels"
+        },
+        {
+          "anti_pattern": "Using Geometry Pipeline instead of Layer Pipeline",
+          "problem": "Manual geometry selection breaks when users modify Rhino layers",
+          "fix": "Replace with Layer Pipeline and layer path specifications"
+        },
+        {
+          "anti_pattern": "Baking to the same layer as Layer Pipeline input",
+          "problem": "Creates feedback loop - baked geometry is re-consumed by Layer Pipeline, corrupting data",
+          "fix": "Rename output layers (e.g., AREAS → MATERIALS) to separate inputs from outputs"
+        },
+        {
+          "anti_pattern": "Leaving preview ON for all geometry",
+          "problem": "3D view becomes cluttered, performance degrades, user can't focus on results",
+          "fix": "Preview only key outputs; hide intermediate calculations and duplicate geometry"
+        },
+        {
+          "anti_pattern": "Generic, unlabeled bake buttons",
+          "problem": "Users don't know what each button does - risk of wrong outputs baking",
+          "fix": "Label buttons specifically: 'BAKE Topo', 'BAKE Hatches', 'BAKE Paver Meshes', etc."
+        },
+        {
+          "anti_pattern": "Implementing Customize Parameters everywhere",
+          "problem": "Adds complexity and overhead - slows down simple workflows",
+          "fix": "Use Customize Parameters only when per-geometry customization is clearly necessary"
+        }
+      ],
+      "use_case": "Guide AI assistants in generating professional, user-friendly Grasshopper plugins that prioritize clarity, automation, and user control"
     }
   ],
   "workflow_dependency_graph": {
